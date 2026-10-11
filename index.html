@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Cool Art Studios | Apple Design Pro Media Estimator</title>
+  
+  <!-- Tailwind CSS & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    :root {
+      --system-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+    }
+    body {
+      font-family: var(--system-font);
+      background-color: #05070c;
+      color: #f5f5f7;
+      letter-spacing: -0.015em;
+    }
+    /* Subtle Apple Grid Texture */
+    .apple-grid-texture {
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.12), transparent 45%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 48px 48px, 48px 48px;
+    }
+    /* Glassmorphism */
+    .apple-glass {
+      background: rgba(10, 15, 26, 0.85);
+      backdrop-filter: saturate(180%) blur(24px);
+      -webkit-backdrop-filter: saturate(180%) blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .apple-glass-card {
+      background: rgba(13, 20, 36, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+    }
+    .apple-blue-btn {
+      background-color: #0071e3;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .apple-blue-btn:hover {
+      background-color: #0077ed;
+      transform: scale(1.01);
+    }
+    .apple-blue-btn:active {
+      transform: scale(0.98);
+      background-color: #0062c4;
+    }
+    .apple-subtext {
+      color: #8b9bb4;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #25334e;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="apple-grid-texture selection:bg-blue-600 selection:text-white pb-32 lg:pb-16 antialiased">
+
+  <!-- ================= TOP BAR (STRICT max-w-5xl) ================= -->
+  <div class="bg-[#080d1a]/95 backdrop-blur-md border-b border-white/[0.08] py-2.5">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-500/20 text-[#2997ff] border border-blue-500/30 shrink-0">
+          Pro Media Network
+        </span>
+        <span class="apple-subtext text-[11px] sm:text-xs">शाही शादी • प्री-वेडिंग • कथा • एनुअल फंक्शन • स्पोर्ट्स • जनसभाएं</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-medium">
+        <a href="tel:9458614610" class="text-white hover:text-[#2997ff] transition flex items-center gap-1.5 font-semibold">
+          <i class="fa-solid fa-phone text-[#0071e3] text-xs"></i> 9458614610
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR (STRICT max-w-5xl) ================= -->
+  <header class="sticky top-0 z-40 apple-glass border-b border-white/[0.08]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+        <img src="cool art logo.png" alt="COOL ART®" class="h-7 sm:h-9 w-auto object-contain brightness-100 group-hover:opacity-90 transition" onerror="this.style.display='none'; document.getElementById('fallbackLogoText').style.display='block';">
+        <div id="fallbackLogoText" class="hidden">
+          <span class="text-lg font-extrabold tracking-tight text-[#f5f5f7] block leading-none">COOL ART&reg;</span>
+          <span class="text-[9px] font-semibold tracking-wider text-blue-400 uppercase">Studios & Broadcast</span>
+        </div>
+        <span class="hidden md:inline-block h-4 w-[1px] bg-white/20 mx-1"></span>
+        <span class="hidden md:inline-block text-[10px] font-medium text-slate-400 tracking-wider uppercase">Studios & Broadcast</span>
+      </a>
+
+      <!-- Quick Nav Buttons -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <a href="https://kryshankaant.github.io/sabkuchhprinting/" target="_blank" class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-xs font-semibold text-amber-300 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 transition">
+          <i class="fa-solid fa-print text-xs text-amber-400"></i>
+          <span>प्रिंटिंग सेवा</span>
+        </a>
+        <a href="tel:9458614610" class="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium text-[#f5f5f7] bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.1] transition">
+          <i class="fa-solid fa-phone text-xs text-[#2997ff]"></i>
+          <span>कॉल</span>
+        </a>
+        <a href="#calculator" class="apple-blue-btn text-white text-xs font-semibold px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-md">
+          कैलकुलेटर
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION (STRICT max-w-5xl) ================= -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-8 text-center space-y-4">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[#2997ff] text-xs font-medium">
+      <span class="w-2 h-2 rounded-full bg-[#2997ff] animate-ping"></span>
+      सिनेमैटिक 4K • ड्रोन पायलट • लाइव डिस्प्ले
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-[#f5f5f7] leading-tight">
+      हर कार्यक्रम की पारदर्शी व <br class="hidden sm:block">
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#2997ff] via-[#68b5ff] to-[#d0e5ff]">
+        प्रीमियम मीडिया बुकिंग
+      </span>
+    </h1>
+
+    <p class="apple-subtext text-xs sm:text-sm max-w-xl mx-auto leading-relaxed font-normal">
+      अपनी पसंद के अनुसार कैमरा, ड्रोन और अलग-अलग रस्में चुनें। सिस्टम लाइव बिल और आवागमन की पूरी जानकारी तुरंत तैयार करेगा।
+    </p>
+
+    <!-- Unified Width Banner Carousel (STRICT FULL WIDTH OF max-w-5xl) -->
+    <div class="pt-4 w-full">
+      <div class="relative w-full rounded-3xl overflow-hidden border border-white/[0.1] shadow-2xl bg-[#0c1424] aspect-[16/9] sm:aspect-[21/9]">
+        
+        <!-- Slide 1: Wedding -->
+        <div class="portfolio-slide absolute inset-0 transition-opacity duration-700 opacity-100">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&auto=format&fit=crop&q=80" alt="वेडिंग शूट" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex items-end p-5 sm:p-7">
+            <div class="text-left">
+              <span class="px-2.5 py-0.5 rounded-full bg-[#0071e3] text-white text-[10px] font-semibold">शाही विवाह</span>
+              <h3 class="text-base sm:text-xl font-bold text-white mt-1">जयमाला, फेरे व प्री-वेडिंग 4K सिनेमैटिक शूट</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Drone -->
+        <div class="portfolio-slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1200&auto=format&fit=crop&q=80" alt="ड्रोन कवरेज" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex items-end p-5 sm:p-7">
+            <div class="text-left">
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-semibold">4K एरियल ड्रोन</span>
+              <h3 class="text-base sm:text-xl font-bold text-white mt-1">बारात, विशाल पंडाल व जनसमूह का आसमानी व्यू</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Bhagwat Katha & Religious -->
+        <div class="portfolio-slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1545232979-fbf68fe9b10d?w=1200&auto=format&fit=crop&q=80" alt="श्रीमद्भागवत कथा व धार्मिक उत्सव" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent flex items-end p-5 sm:p-7">
+            <div class="text-left">
+              <span class="px-2.5 py-0.5 rounded-full bg-amber-500 text-black font-bold text-[10px]">धार्मिक महोत्सव</span>
+              <h3 class="text-base sm:text-xl font-bold text-white mt-1">श्रीमद्भागवत कथा, कलश यात्रा व लाइव टेलीकास्ट</h3>
+              <p class="text-xs text-amber-200/90 mt-0.5">व्यासपीठ रिकॉर्डिंग, मल्टी-कैमरा सेटअप व 8x12 एलईडी लाइव वॉल</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls Minimal Apple Glass -->
+        <div class="absolute bottom-4 right-4 flex items-center gap-1.5 z-20">
+          <button onclick="prevSlide()" class="w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/90 border border-white/20 transition">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+          </button>
+          <button onclick="nextSlide()" class="w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/90 border border-white/20 transition">
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
+
+        <!-- Dots Indicator -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1 z-20" id="sliderDots">
+          <span class="w-3.5 h-1.5 rounded-full bg-[#2997ff] transition-all"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all"></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= PRINTING PRESS SISTER VENTURE CARD (APPLE ECOSYSTEM STYLE) ================= -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-6 pb-2">
+    <div class="apple-glass-card rounded-3xl p-5 sm:p-7 relative overflow-hidden border border-white/[0.1] bg-gradient-to-r from-[#0d172e] via-[#0b1325] to-[#121028]">
+      <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-5 relative z-10">
+        <div class="space-y-1.5 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-400 text-[10px] font-bold uppercase tracking-wider">
+            <i class="fa-solid fa-print"></i> Cool Art Sister Division
+          </div>
+          <h2 class="text-lg sm:text-2xl font-bold text-white tracking-tight">
+            प्रिंटिंग प्रेस एवं कम्पलीट एडवरटाइजिंग सॉल्यूशंस
+          </h2>
+          <p class="apple-subtext text-xs sm:text-sm max-w-xl leading-relaxed">
+            शादी कार्ड (निमंत्रण पत्र), फ्लैक्स बोर्ड, विनाइल प्रिंटिंग, पम्पलेट, बिल बुक, कैलेंडर, विजिटिंग कार्ड व स्कूल स्टेशनरी की थोक व फुटकर प्रिंटिंग।
+          </p>
+        </div>
+
+        <div class="shrink-0">
+          <a href="https://kryshankaant.github.io/sabkuchhprinting/" target="_blank" 
+             class="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-white hover:bg-slate-100 text-slate-950 text-xs sm:text-sm font-bold shadow-xl transition transform active:scale-95 group">
+            <i class="fa-solid fa-layer-group text-blue-600"></i>
+            <span>प्रिंटिंग कैटलॉग व रेट देखें</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CALCULATOR WORKSPACE (STRICT max-w-5xl) ================= -->
+  <section id="calculator" class="max-w-5xl mx-auto px-4 sm:px-6 pt-4">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+      
+      <!-- Left Column: Modular Clean Cards (8 Cols) -->
+      <div class="lg:col-span-8 space-y-5">
+
+        <!-- 1. WEDDING CEREMONIES CARD -->
+        <div class="apple-glass-card rounded-3xl p-5 sm:p-7">
+          <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5 mb-4">
+            <div>
+              <h2 class="text-sm sm:text-base font-bold text-[#f5f5f7] flex items-center gap-2">
+                <i class="fa-solid fa-ring text-[#2997ff]"></i>
+                <span>1. वैवाहिक रस्में (शादी पूर्व व मुख्य प्रोग्राम)</span>
+              </h2>
+              <p class="text-[11px] apple-subtext mt-0.5">जो-जो रस्में आयोजित हैं, केवल उन्हें अलग-अलग टिक करें</p>
+            </div>
+            <span class="text-[10px] bg-blue-500/10 text-[#2997ff] border border-blue-500/20 px-2.5 py-0.5 rounded-full font-semibold">मल्टी-सेलेक्शन</span>
+          </div>
+
+          <div class="space-y-2.5">
+
+            <!-- विवाह पूर्व गोद भराई / रोका शगुन -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_roka_godbharai" value="3500" data-name="विवाह पूर्व गोद भराई / रोका शगुन (लड़की तय होना)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">विवाह पूर्व गोद भराई / रोका शगुन (लड़की तय होना)</div>
+                  <div class="text-[11px] text-[#2997ff] font-normal mt-0.5">रिश्ता पक्का करने की रस्म (लड़की के घर या बाहर रेस्टोरेंट/होटल)</div>
+                  <div class="text-[10px] apple-subtext mt-0.5">शगुन, चुनरी चढ़ाना, फल-मिठाई भेंट व पारिवारिक पोर्ट्रेट्स</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹3,500</span>
+            </label>
+
+            <!-- सगाई / रिंग सेरेमनी -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_engagement" value="7000" data-name="सगाई / रिंग सेरेमनी व लगन टीका" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">सगाई / रिंग सेरेमनी व लगन टीका</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">अंगूठी पहनाने की रस्म, स्टेज फोटो व परिवार का मेल-जोल</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-bold text-[#2997ff] shrink-0 ml-2">+ ₹7,000</span>
+            </label>
+
+            <!-- प्री-वेडिंग आउटडोर -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_prewedding" value="10000" data-name="प्री-वेडिंग सिनेमैटिक आउटडोर शूट (विथ टीज़र)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">प्री-वेडिंग सिनेमैटिक आउटडोर शूट</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">लोकेशन वीडियो टीज़र, रील्स, 3-4 ड्रेस चेंज व एडिटेड फोटोज</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹10,000</span>
+            </label>
+
+            <!-- हल्दी सेरेमनी -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_haldi" value="4000" data-name="हल्दी सेरेमनी (येलो थीम व फन शूट)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">हल्दी सेरेमनी (केवल हल्दी रस्म)</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">येलो थीम, हल्दी लेप, फ्लावर शॉवर व कैंडिड फैमिली मोमेंट्स</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
+            </label>
+
+            <!-- मेहंदी सेरेमनी -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_mehendi" value="4000" data-name="मेहंदी सेरेमनी (क्लोजअप शॉट्स)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">मेहंदी सेरेमनी (केवल मेहंदी फंक्शन)</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">हाथों-पैरों के क्लोजअप मेहंदी शॉट्स व पोर्ट्रेट्स</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
+            </label>
+
+            <!-- महिला संगीत व भात न्योता -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_sangeet" value="5000" data-name="महिला संगीत, डीजे डांस व भात न्योता" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">महिला संगीत, डीजे डांस व भात / मयका न्योता</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">पारिवारिक डांस परफॉर्मेंस, ढोलक व भात भरने की रस्म</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹5,000</span>
+            </label>
+
+            <!-- बारात & मुख्य शादी -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_wedding_main" value="18000" data-name="मुख्य शादी (बारात, जयमाला, फेरे व विदाई) - 2 क्रू (1 फोटो + 1 वीडियो)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0" checked>
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">मुख्य शादी (बारात, जयमाला, फेरे व विदाई तक)</div>
+                  <div class="text-[11px] text-[#2997ff] font-medium mt-0.5">
+                    2 लोग टीम: 1 कैमरा फोटो + 1 कैमरा वीडियो (फुल कवरेज)
+                  </div>
+                  <div class="text-[10px] apple-subtext mt-0.5">लड़की पक्ष या लड़का पक्ष (विदाई तक का समय)</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">₹18,000</span>
+            </label>
+
+            <!-- बहू गृह प्रवेश -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_bahu_entry" value="3000" data-name="बहू गृह प्रवेश (घर आगमन रस्म व थाली पूजन)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">बहू गृह प्रवेश (घर आगमन व पहली रस्में)</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">विदाई के बाद ससुराल आगमन, कलश गिराना, थाली पूजन व स्वागत</div>
+                  <div class="text-[10px] apple-subtext mt-0.5">अलग से फोटोग्राफर घर पर भेजा जाएगा</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹3,000</span>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- 2. MATERNITY & RELIGIOUS CARD -->
+        <div class="apple-glass-card rounded-3xl p-5 sm:p-7">
+          <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5 mb-4">
+            <div>
+              <h2 class="text-sm sm:text-base font-bold text-[#f5f5f7] flex items-center gap-2">
+                <i class="fa-solid fa-om text-[#2997ff]"></i>
+                <span>2. मातृत्व, धार्मिक व सार्वजनिक कार्यक्रम</span>
+              </h2>
+              <p class="text-[11px] apple-subtext mt-0.5">शिशु आगमन गोद भराई, भागवत कथा, मुंडन व जनसभाएं</p>
+            </div>
+            <span class="text-[10px] bg-white/[0.06] text-white/70 px-2.5 py-0.5 rounded-full font-semibold">ऐच्छिक</span>
+          </div>
+
+          <div class="space-y-2.5">
+            
+            <!-- शिशु आगमन गोद भराई -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_baby_shower" value="4000" data-name="शिशु आगमन गोद भराई / साध पूजन (Baby Shower)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">शिशु आगमन गोद भराई / साध पूजन (Baby Shower)</div>
+                  <div class="text-[11px] text-pink-400 font-normal mt-0.5">संतान जन्म से पूर्व होने वाली पारंपरिक गोद भराई / सीमंतोन्नयन</div>
+                  <div class="text-[10px] apple-subtext mt-0.5">गर्भवती माता की मंगलकामना, फल-मिठाई, चुनरी भेंट व फैमिली फंक्शन</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
+            </label>
+
+            <!-- भागवत कथा -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_bhagwat" value="22000" data-name="श्रीमद्भागवत कथा (7-दिवसीय संपूर्ण ज्ञान यज्ञ)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">श्रीमद्भागवत कथा (7 दिन संपूर्ण कथा)</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">कलश यात्रा, दैनिक प्रवचन व हवन पूर्णाहुति की डेली रिकॉर्डिंग</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹22,000</span>
+            </label>
+
+            <!-- कुआं पूजन / मुंडन -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_mundan" value="5000" data-name="कुआं पूजन / जलवा पूजन / मुंडन संस्कार" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">कुआं पूजन / जलवा पूजन / मुंडन संस्कार</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">पारंपरिक गीत, घाट/मंदिर पूजा व फैमिली दावत</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹5,000</span>
+            </label>
+
+            <!-- बर्थडे व गृह प्रवेश -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_birthday" value="4000" data-name="जन्मदिन उत्सव / गृह प्रवेश पूजा" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">बर्थडे पार्टी सेलिब्रेशन / गृह प्रवेश</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">केक कटिंग, डेकोरेशन व फैमिली ग्रुप फोटोशूट</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
+            </label>
+
+            <!-- स्कूल कॉलेज एनुअल फंक्शन -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_school" value="10000" data-name="स्कूल/कॉलेज वार्षिकोत्सव (Annual Function)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">स्कूल/कॉलेज वार्षिकोत्सव (Annual Function)</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">स्टेज ड्रामा, डांस, पुरस्कार वितरण व चीफ गेस्ट स्पीच</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹10,000</span>
+            </label>
+
+            <!-- क्रिकेट टूर्नामेंट लाइव -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_sports" value="8000" data-name="क्रिकेट टूर्नामेंट लाइव कवरेज (प्रति दिन)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">क्रिकेट / स्पोर्ट्स टूर्नामेंट लाइव (प्रति दिन)</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">बाउंड्री व विकेट शॉट्स, स्कोरबोर्ड व यूट्यूब लाइव सेटअप</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹8,000</span>
+            </label>
+
+            <!-- चुनावी रैली व जनसभा -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="prog_rally" value="15000" data-name="चुनावी जनसभा, रैली व रोड शो (Mega Rally)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">चुनावी रैली, जनसभा व रोड शो</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">विशाल जनसमूह, मंच भाषण व सोशल मीडिया रील्स शूट</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹15,000</span>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- 3. ADDITIONAL GEARS & ALBUMS -->
+        <div class="apple-glass-card rounded-3xl p-5 sm:p-7">
+          <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5 mb-4">
+            <div>
+              <h2 class="text-sm sm:text-base font-bold text-[#f5f5f7] flex items-center gap-2">
+                <i class="fa-solid fa-camera-retro text-[#2997ff]"></i>
+                <span>3. अतिरिक्त कैमरा, ड्रोन, लाइट व एल्बम</span>
+              </h2>
+              <p class="text-[11px] apple-subtext mt-0.5">गियर्स, स्क्रीन व फोटोबुक विकल्प</p>
+            </div>
+            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-semibold">ऐड-ऑन</span>
+          </div>
+
+          <div class="space-y-2.5">
+            
+            <!-- 4K ड्रोन (₹4000) -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="gear_drone" value="4000" data-name="4K एरियल ड्रोन शूट (पायलट सहित - 1 प्रोग्राम)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">4K एरियल ड्रोन शूट (1 प्रोग्राम कवरेज)</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">बारात, जयमाला, पंडाल व एंट्री का शानदार आसमानी नजारा (ऑपरेटर सहित)</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
+            </label>
+
+            <!-- अतिरिक्त 4K कैमरा -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="gear_extra_cam" value="3500" data-name="अतिरिक्त 4K कैमरा (सिनेमैटिक ऑपरेटर सहित)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">अतिरिक्त 4K सिनेमैटिक कैमरा (कैमरामैन सहित)</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">कैंडिड पलों, स्लो मोशन व स्टेज टीज़र शॉट्स के लिए</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹3,500</span>
+            </label>
+
+            <!-- DJI Ronin गिम्बल -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="gear_gimbal" value="1500" data-name="DJI RS3 रोनिन गिम्बल स्टेबलाइजर" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">DJI Ronin गिम्बल स्टेबलाइजर ऑपरेटर</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">बिना हिले स्मूथ फ्लोटिंग एंट्री शॉट्स व डांस कवरेज</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹1,500</span>
+            </label>
+
+            <!-- स्टूडियो अम्ब्रेला लाइट किट -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="gear_lights" value="2000" data-name="स्टूडियो सॉफ्टबॉक्स व अम्ब्रेला लाइट किट (2 यूनिट)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">स्टूडियो सॉफ्टबॉक्स व अम्ब्रेला लाइट (2 यूनिट्स)</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">चेहरे पर नेचुरल स्किन टोन व सॉफ्ट स्टूडियो चमक</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹2,000</span>
+            </label>
+
+            <!-- 24ft जिब क्रेन -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="gear_crane" value="7000" data-name="24ft जिब क्रेन (जिमी जिब मूवी-स्टाइल कैमरा)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">24 फीट जिब क्रेन (Jimmy Jib setup)</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">जयमाला व बड़ी जनसभाओं पर हाई-एंगल मूविंग क्रेन शॉट</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹7,000</span>
+            </label>
+
+            <!-- लाइव एलईडी स्क्रीन -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="gear_led" value="10000" data-name="8x12 फीट लाइव एलईडी वॉल स्क्रीन (Live Telecast)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">8x12 फीट लाइव एलईडी वॉल स्क्रीन (P3 Display)</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">पंडाल में दूर बैठे अतिथियों के लिए लाइव प्रसारण स्क्रीन</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹10,000</span>
+            </label>
+
+            <!-- बजट नॉर्मल फोटो एल्बम (₹3500) -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="gear_album_normal" value="3500" data-name="नॉर्मल डिजिटल फोटो एल्बम (25 शीट - बजट फ्रेंडली)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">नॉर्मल डिजिटल फोटो एल्बम (25 शीट - बजट फ्रेंडली)</div>
+                  <div class="text-[11px] text-blue-300 font-normal mt-0.5">सस्ती व मजबूत लैमिनेटेड एल्बम, 150-200 मुख्य फोटो प्रिंट</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹3,500</span>
+            </label>
+
+            <!-- प्रीमियम कैनवेरा लेदरबैक एल्बम (₹7000) -->
+            <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start gap-3">
+                <input type="checkbox" id="gear_album_canvera" value="7000" data-name="प्रीमियम कैनवेरा 30-शीट लेदरबैक फोटो एल्बम (वाटरप्रूफ)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <div>
+                  <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">प्रीमियम कैनवेरा 30-शीट लेदरबैक एल्बम</div>
+                  <div class="text-[11px] apple-subtext mt-0.5">वॉटरप्रूफ नॉन-टीयर शीट्स, लेदर बैग व मिनी एल्बम फ्री</div>
+                </div>
+              </div>
+              <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹7,000</span>
+            </label>
+
+          </div>
+        </div>
+
+        <!-- 4. LOGISTICS, TRANSPORT & TRAVEL FARE (DEFAULT AUTO TRAVEL CHARGE INCLUDED) -->
+        <div class="apple-glass-card rounded-3xl p-5 sm:p-7">
+          <div class="border-b border-white/[0.08] pb-3.5 mb-4">
+            <h2 class="text-sm sm:text-base font-bold text-[#f5f5f7] flex items-center gap-2">
+              <i class="fa-solid fa-truck-ramp-box text-[#2997ff]"></i>
+              <span>4. आवागमन, किराया व लॉजिस्टिक्स विवरण (Travel & Logistics)</span>
+            </h2>
+            <p class="text-[11px] apple-subtext mt-0.5">दूरी के अनुसार किराया स्वतः डिफॉल्ट जुड़ा हुआ है</p>
+          </div>
+
+          <div class="space-y-4">
+
+            <!-- TRAVEL FARE AUTOMATIC CHECKBOX (DEFAULT CHECKED) -->
+            <div class="p-4 bg-black/50 border border-blue-500/30 rounded-2xl">
+              <label class="flex items-start justify-between cursor-pointer">
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="travelFareCheckbox" onchange="toggleTravelFare()" class="w-4 h-4 mt-1 rounded text-[#0071e3] bg-black border-white/20 shrink-0" checked>
+                  <div>
+                    <div class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+                      <span>फोटोग्राफर टीम का आवागमन किराया (Travel Conveyance)</span>
+                      <span class="text-[9px] bg-blue-500/20 text-[#2997ff] border border-blue-500/30 px-2 py-0.5 rounded-full font-semibold">डिफ़ॉल्ट शामिल</span>
+                    </div>
+                    <p class="text-[11px] text-blue-300 mt-0.5">स्टूडियो टीम स्वयं अपनी बाइक/साधन से समय पर पहुंचेगी</p>
+                  </div>
+                </div>
+                <span class="text-xs sm:text-sm font-extrabold text-[#2997ff] shrink-0 ml-2" id="currentTravelFareText">+ ₹500</span>
+              </label>
+
+              <!-- Dynamic Distance Selector -->
+              <div id="distanceSelectorBox" class="mt-3 pt-3 border-t border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                <label class="apple-subtext font-medium">स्टूडियो (नहल/अतरौली) से कार्यक्रम स्थल की दूरी चुनें:</label>
+                <select id="travelDistanceSelect" onchange="updateDistanceFare()" class="bg-[#0a0f1d] border border-white/[0.12] rounded-xl px-3 py-1.5 text-white font-semibold outline-none focus:border-[#0071e3] transition">
+                  <option value="500">50 KM के अंदर (+ ₹500)</option>
+                  <option value="1000">50 से 100 KM के अंदर (+ ₹1,000)</option>
+                  <option value="1500">100 KM से अधिक (+ ₹1,500)</option>
+                </select>
+              </div>
+
+              <!-- Uncheck Notice -->
+              <div id="partySelfTransportNotice" class="hidden mt-3 p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-[11px] flex items-center gap-2">
+                <i class="fa-solid fa-triangle-exclamation text-amber-400 shrink-0"></i>
+                <span><strong>नोट:</strong> आपने किराया हटा दिया है। अतः <strong>पार्टी खुद जिम्मेदार होगी फोटोग्राफर को अपने वाहन से लाने व वापस छोड़ने के लिए।</strong></span>
+              </div>
+            </div>
+
+            <!-- Other Logistics Fields -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-1">
+              <div>
+                <label class="block text-slate-300 font-medium mb-1">प्रोग्राम स्थल का पता (Venue Address) *</label>
+                <input type="text" id="venueAddress" placeholder="गाँव / मैरिज होम का नाम" class="w-full bg-[#0a0f1d] border border-white/[0.1] rounded-xl px-3.5 py-2.5 text-white outline-none focus:border-[#0071e3] transition">
+              </div>
+
+              <div>
+                <label class="block text-slate-300 font-medium mb-1">स्थल तक का रास्ता व लैंडमार्क *</label>
+                <input type="text" id="venueLandmark" placeholder="मेन बस स्टैंड, नहर पुलिया या स्कूल" class="w-full bg-[#0a0f1d] border border-white/[0.1] rounded-xl px-3.5 py-2.5 text-white outline-none focus:border-[#0071e3] transition">
+              </div>
+
+              <div>
+                <label class="block text-slate-300 font-medium mb-1">क्रू पहुंचने का सही समय (Reporting Time) *</label>
+                <input type="text" id="crewReportingTime" placeholder="जैसे: दोपहर 2:00 बजे या शाम 6:00 बजे" class="w-full bg-[#0a0f1d] border border-white/[0.1] rounded-xl px-3.5 py-2.5 text-white outline-none focus:border-[#0071e3] transition">
+              </div>
+
+              <div>
+                <label class="block text-slate-300 font-medium mb-1">स्थल पर संपर्क सूत्र (Contact Person) *</label>
+                <input type="text" id="contactPersonOnSite" placeholder="स्थानीय व्यक्ति का नाम व मोबाइल नंबर" class="w-full bg-[#0a0f1d] border border-white/[0.1] rounded-xl px-3.5 py-2.5 text-white outline-none focus:border-[#0071e3] transition">
+              </div>
+
+              <div class="sm:col-span-2">
+                <label class="block text-slate-300 font-medium mb-1">भोजन व विश्राम व्यवस्था (Catering) *</label>
+                <select id="foodArrangement" class="w-full bg-[#0a0f1d] border border-white/[0.1] rounded-xl px-3.5 py-2.5 text-white outline-none focus:border-[#0071e3] transition">
+                  <option value="पार्टी द्वारा भोजन/चाय-नाश्ता व्यवस्था रहेगी">✅ क्रू टीम के लिए समारोह में भोजन व चाय-नाश्ता व्यवस्था रहेगी</option>
+                  <option value="आउटडोर/अन्य व्यवस्था">अन्य / केवल नाश्ता व्यवस्था</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Sticky Summary & Bill Card (4 Cols) -->
+      <div class="lg:col-span-4 sticky top-20">
+        <div class="apple-glass-card rounded-3xl p-5 sm:p-6 shadow-2xl space-y-4">
+          
+          <div class="border-b border-white/[0.08] pb-3">
+            <span class="text-[10px] font-semibold text-[#2997ff] uppercase tracking-wider bg-blue-500/10 px-2.5 py-0.5 rounded-full border border-blue-500/20">
+              Estimate Summary
+            </span>
+            <h3 class="text-base font-bold text-white mt-1.5">कुल अनुमानित बजट</h3>
+          </div>
+
+          <!-- Total Bill Widget -->
+          <div class="bg-black/60 p-4 rounded-2xl border border-white/[0.08] text-center">
+            <span class="text-[11px] apple-subtext block mb-0.5">फाइनल एस्टीमेट राशि</span>
+            <div class="text-3xl sm:text-4xl font-black text-white tracking-tight" id="liveTotalDisplay">₹18,500</div>
+            <span class="text-[10px] text-emerald-400 font-medium block mt-1">
+              <i class="fa-solid fa-check-circle mr-1"></i> पारदर्शी व बिना किसी हिडन चार्ज के
+            </span>
+          </div>
+
+          <!-- Selected Items Summary -->
+          <div>
+            <div class="flex items-center justify-between text-xs apple-subtext font-medium mb-2">
+              <span>चुने गए प्रोग्राम व सुविधाएं:</span>
+              <span id="selectedCountBadge" class="text-[#2997ff] font-semibold">2 सिलेक्टेड</span>
+            </div>
+            <ul class="text-xs text-slate-300 space-y-1.5 max-h-48 overflow-y-auto pr-1 border border-white/[0.06] p-2.5 rounded-xl bg-black/40 custom-scroll" id="selectedSummaryList">
+              <!-- Rendered via JS -->
+            </ul>
+          </div>
+
+          <!-- Client Input Section -->
+          <div class="space-y-2.5 pt-2 border-t border-white/[0.08] text-xs">
+            <div>
+              <label class="block apple-subtext font-medium mb-1">आयोजक / क्लाइंट का नाम *</label>
+              <input type="text" id="custName" placeholder="अपना नाम दर्ज करें" class="w-full bg-[#0a0f1d] border border-white/[0.1] rounded-xl px-3 py-2 text-white outline-none focus:border-[#0071e3] transition">
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="block apple-subtext font-medium mb-1">प्रोग्राम तारीख *</label>
+                <input type="date" id="custDate" class="w-full bg-[#0a0f1d] border border-white/[0.1] rounded-xl px-3 py-2 text-white outline-none focus:border-[#0071e3] transition text-xs">
+              </div>
+              <div>
+                <label class="block apple-subtext font-medium mb-1">शहर / गाँव *</label>
+                <input type="text" id="custCity" placeholder="नहल / अतरौली" class="w-full bg-[#0a0f1d] border border-white/[0.1] rounded-xl px-3 py-2 text-white outline-none focus:border-[#0071e3] transition">
+              </div>
+            </div>
+
+            <div>
+              <label class="block apple-subtext font-medium mb-1">मोबाइल नंबर *</label>
+              <input type="tel" id="custPhone" maxlength="10" placeholder="10 अंकों का फोन नंबर" class="w-full bg-[#0a0f1d] border border-white/[0.1] rounded-xl px-3 py-2 text-white outline-none focus:border-[#0071e3] transition">
+            </div>
+          </div>
+
+          <!-- ADVANCE TOKEN UPI DISPLAY (ONLY HERE IN SIDEBAR) -->
+          <div class="p-3 bg-black/50 rounded-2xl border border-white/[0.08] space-y-2 text-center">
+            <div class="flex items-center justify-between text-[11px] font-medium text-slate-300">
+              <span class="apple-subtext">एडवांस बुकिंग UPI:</span>
+              <span class="text-[#2997ff] select-all font-mono font-semibold">9458614610-2@ybl</span>
+            </div>
+            
+            <div class="w-24 h-24 mx-auto bg-white p-1 rounded-xl shadow flex items-center justify-center">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi%3A%2F%2Fpay%3Fpa%3D9458614610-2%40ybl%26pn%3DCOOL%20ART%26cu%3DINR" alt="Cool Art UPI QR" class="w-full h-full object-contain">
+            </div>
+
+            <p class="text-[9px] apple-subtext leading-tight">
+              PhonePe, GPay व Paytm द्वारा टोकन एडवांस मान्य
+            </p>
+          </div>
+
+          <!-- Apple Action Button -->
+          <button onclick="dispatchToWhatsApp()" class="w-full py-3.5 apple-blue-btn text-white font-bold rounded-xl text-xs sm:text-sm shadow-lg flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>इवेंट कोटेशन भेजें (WhatsApp)</span>
+          </button>
+
+          <p class="text-[10px] apple-subtext text-center leading-relaxed">
+            * विवरण प्राप्त होने पर टीम डेट फाइनल करने हेतु संपर्क करेगी।
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MOBILE FIXED BOTTOM DOCK ================= -->
+  <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 apple-glass border-t border-white/[0.08] p-3 px-4 flex items-center justify-between shadow-2xl">
+    <div>
+      <span class="text-[10px] apple-subtext block leading-tight">कुल अनुमानित बजट</span>
+      <div class="text-xl font-bold text-white leading-tight" id="mobileBottomTotal">₹18,500</div>
+    </div>
+    <button onclick="dispatchToWhatsApp()" class="apple-blue-btn text-white font-semibold text-xs px-4 py-2.5 rounded-full flex items-center gap-1.5 shadow-md">
+      <i class="fa-brands fa-whatsapp text-sm"></i>
+      <span>व्हाट्सएप कोटेशन</span>
+    </button>
+  </div>
+
+  <!-- ================= CLEAN FOOTER (STRICT max-w-5xl FULL WIDTH) ================= -->
+  <footer class="mt-20 max-w-5xl mx-auto px-4 sm:px-6">
+    
+    <!-- 100% Perfectly Aligned Footer Card with Main Layout -->
+    <div class="w-full bg-white rounded-3xl p-7 sm:p-9 shadow-2xl border border-slate-200 text-center space-y-2 text-slate-700">
+      <div class="flex justify-center mb-2">
+        <div class="bg-black px-5 py-2.5 rounded-2xl inline-block shadow-sm">
+          <img src="cool art logo.png" alt="COOL ART®" class="h-6 sm:h-7 w-auto object-contain">
+        </div>
+      </div>
+      <h3 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight">
+        Designed & Developed by: <span class="text-[#0071e3] font-black">COOL ART&reg;</span>
+      </h3>
+      <p class="text-xs sm:text-sm font-semibold text-slate-600">
+        Village: Nahal, Atrauli, Aligarh, UP
+      </p>
+      <p class="text-xs sm:text-sm font-medium text-slate-500">
+        Complete Graphic Design, Printing & Media Solutions
+      </p>
+      <div class="pt-2 flex flex-wrap items-center justify-center gap-3 text-xs font-bold">
+        <a href="tel:9458614610" class="text-[#0071e3] hover:underline flex items-center gap-1.5">
+          <i class="fa-solid fa-phone text-xs"></i> +91 9458614610
+        </a>
+        <span class="text-slate-300">•</span>
+        <a href="https://kryshankaant.github.io/sabkuchhprinting/" target="_blank" class="text-amber-600 hover:text-amber-700 hover:underline flex items-center gap-1">
+          <i class="fa-solid fa-print text-xs"></i> सब कुछ प्रिंटिंग प्रेस पोर्टल ↗
+        </a>
+      </div>
+    </div>
+
+    <p class="text-center text-[11px] apple-subtext mt-8 pb-6">
+      &copy; 2026 COOL ART STUDIOS & MEDIA PRODUCTION. ALL RIGHTS RESERVED.
+    </p>
+  </footer>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // 1. Banner Carousel Engine
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.portfolio-slide');
+    const dots = document.querySelectorAll('#sliderDots span');
+
+    function showSlide(index) {
+      slides.forEach((s, i) => {
+        if (i === index) {
+          s.classList.remove('opacity-0', 'pointer-events-none');
+          s.classList.add('opacity-100');
+        } else {
+          s.classList.add('opacity-0', 'pointer-events-none');
+          s.classList.remove('opacity-100');
+        }
+      });
+      dots.forEach((d, i) => {
+        d.className = i === index ? "w-3.5 h-1.5 rounded-full bg-[#2997ff] transition-all" : "w-1.5 h-1.5 rounded-full bg-white/40 transition-all";
+      });
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      showSlide((currentSlide + 1) % slides.length);
+    }
+    function prevSlide() {
+      showSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+    setInterval(nextSlide, 5000);
+
+    // 2. Travel Fare Toggle & Distance Selection Logic
+    function toggleTravelFare() {
+      const isChecked = document.getElementById('travelFareCheckbox').checked;
+      const distanceBox = document.getElementById('distanceSelectorBox');
+      const noticeBox = document.getElementById('partySelfTransportNotice');
+      const fareText = document.getElementById('currentTravelFareText');
+
+      if (isChecked) {
+        distanceBox.classList.remove('hidden');
+        noticeBox.classList.add('hidden');
+        updateDistanceFare();
+      } else {
+        distanceBox.classList.add('hidden');
+        noticeBox.classList.remove('hidden');
+        fareText.innerText = "₹0 (पार्टी वाहन)";
+      }
+      calcNetTotal();
+    }
+
+    function updateDistanceFare() {
+      const distVal = document.getElementById('travelDistanceSelect').value;
+      document.getElementById('currentTravelFareText').innerText = `+ ₹${parseInt(distVal).toLocaleString('en-IN')}`;
+      calcNetTotal();
+    }
+
+    // 3. Real-time Cost Calculation Engine
+    function calcNetTotal() {
+      let grandTotal = 0;
+      let selectedItems = [];
+
+      // Scan all regular checkboxes
+      const checkedBoxes = document.querySelectorAll('#calculator input[type="checkbox"]:checked');
+      checkedBoxes.forEach(cb => {
+        if (cb.id !== 'travelFareCheckbox') {
+          const val = parseInt(cb.value) || 0;
+          grandTotal += val;
+          selectedItems.push({
+            name: cb.getAttribute('data-name'),
+            price: val
+          });
+        }
+      });
+
+      // Handle Travel Fare Checkbox
+      const isTravelFareChecked = document.getElementById('travelFareCheckbox').checked;
+      if (isTravelFareChecked) {
+        const fareAmount = parseInt(document.getElementById('travelDistanceSelect').value) || 500;
+        grandTotal += fareAmount;
+        const distLabel = document.getElementById('travelDistanceSelect').options[document.getElementById('travelDistanceSelect').selectedIndex].text;
+        selectedItems.push({
+          name: `आवागमन किराया (${distLabel.split(' (+')[0]})`,
+          price: fareAmount
+        });
+      } else {
+        selectedItems.push({
+          name: "आवागमन व्यवस्था: पार्टी स्वयं गाड़ी भेजेगी (₹0 किराया)",
+          price: 0
+        });
+      }
+
+      const formatted = "₹" + grandTotal.toLocaleString('en-IN');
+      document.getElementById('liveTotalDisplay').innerText = formatted;
+      document.getElementById('mobileBottomTotal').innerText = formatted;
+      document.getElementById('selectedCountBadge').innerText = `${selectedItems.length} चुने गए`;
+
+      const summaryList = document.getElementById('selectedSummaryList');
+      if (selectedItems.length === 0) {
+        summaryList.innerHTML = `<li class="text-neutral-500 py-1">कोई प्रोग्राम नहीं चुना गया।</li>`;
+      } else {
+        summaryList.innerHTML = selectedItems.map(item => `
+          <li class="flex items-center justify-between text-slate-300 py-1 border-b border-white/[0.04] last:border-0">
+            <span class="truncate mr-2">• ${item.name}</span>
+            <span class="text-[#2997ff] font-semibold shrink-0">${item.price === 0 ? 'शामिल' : '₹' + item.price.toLocaleString('en-IN')}</span>
+          </li>
+        `).join('');
+      }
+    }
+
+    // 4. WhatsApp Dispatch Engine with Full Logistics
+    function dispatchToWhatsApp() {
+      const clientName = document.getElementById('custName').value.trim() || 'क्लाइंट';
+      const eventDate = document.getElementById('custDate').value || 'जल्द तय होगी';
+      const eventCity = document.getElementById('custCity').value.trim() || 'नहल / अतरौली';
+      const clientPhone = document.getElementById('custPhone').value.trim() || 'उपलब्ध नहीं';
+
+      // Travel Details
+      const isTravelFareChecked = document.getElementById('travelFareCheckbox').checked;
+      let travelStatusText = "";
+      if (isTravelFareChecked) {
+        const distLabel = document.getElementById('travelDistanceSelect').options[document.getElementById('travelDistanceSelect').selectedIndex].text;
+        travelStatusText = `स्टूडियो अपनी व्यवस्था से पहुंचेगा (${distLabel})`;
+      } else {
+        travelStatusText = "⚠️ पार्टी खुद जिम्मेदार होगी फोटोग्राफर को अपने वाहन से लाने व ले जाने के लिए (₹0 किराया)";
+      }
+
+      // Logistics inputs
+      const venueAddress = document.getElementById('venueAddress').value.trim() || 'लोकल स्थल';
+      const venueLandmark = document.getElementById('venueLandmark').value.trim() || 'मुख्य मार्ग';
+      const reportingTime = document.getElementById('crewReportingTime').value.trim() || 'समय अनुसार';
+      const contactPerson = document.getElementById('contactPersonOnSite').value.trim() || 'क्लाइंट स्वयं';
+      const foodArrangement = document.getElementById('foodArrangement').value;
+
+      let itemsText = "";
+      let totalAmount = 0;
+
+      const checkedBoxes = document.querySelectorAll('#calculator input[type="checkbox"]:checked');
+      let count = 1;
+      checkedBoxes.forEach((cb) => {
+        if (cb.id !== 'travelFareCheckbox') {
+          const val = parseInt(cb.value);
+          totalAmount += val;
+          itemsText += `\n  ${count}. ${cb.getAttribute('data-name')} (₹${val.toLocaleString('en-IN')})`;
+          count++;
+        }
+      });
+
+      if (isTravelFareChecked) {
+        const fare = parseInt(document.getElementById('travelDistanceSelect').value) || 500;
+        totalAmount += fare;
+        itemsText += `\n  ${count}. आवागमन किराया (₹${fare.toLocaleString('en-IN')})`;
+      }
+
+      const waMessage = 
+`🎬 *COOL ART STUDIOS & MEDIA PRODUCTION*
+📋 *इवेंट मीडिया बुकिंग कोटेशन व लॉजिस्टिक्स स्लिप*
+━━━━━━━━━━━━━━━━━━━━━━
+👤 *आयोजक/क्लाइंट:* ${clientName}
+📞 *फोन नंबर:* ${clientPhone}
+📅 *इवेंट दिनांक:* ${eventDate}
+📍 *शहर/गाँव:* ${eventCity}
+
+📋 *चुने गए प्रोग्राम व सुविधाएं:*${itemsText}
+━━━━━━━━━━━━━━━━━━━━━━
+💰 *कुल अनुमानित बजट:* ₹${totalAmount.toLocaleString('en-IN')}
+━━━━━━━━━━━━━━━━━━━━━━
+🚗 *आवागमन व लॉजिस्टिक्स विवरण:*
+• *वाहन/किराया:* ${travelStatusText}
+• *स्थल का पता:* ${venueAddress}
+• *रास्ता/लैंडमार्क:* ${venueLandmark}
+• *क्रू पहुंचने का समय:* ${reportingTime}
+• *स्थल संपर्क सूत्र:* ${contactPerson}
+• *खान-पान व्यवस्था:* ${foodArrangement}
+━━━━━━━━━━━━━━━━━━━━━━
+📞 *हेल्पलाइन:* 9458614610
+
+नमस्ते कृष्ण कांत जी, मैंने वेबसाइट से अपने कार्यक्रम के लिए यह बजट और आवागमन विवरण तैयार किया है। कृपया तारीख कन्फर्म करें।`;
+
+      const studioWhatsApp = "919458614610";
+      const targetUrl = `https://wa.me/${studioWhatsApp}?text=${encodeURIComponent(waMessage)}`;
+      window.open(targetUrl, '_blank');
+    }
+
+    // Initialize calculation
+    calcNetTotal();
+  </script>
+</body>
+</html>
