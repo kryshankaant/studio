@@ -280,7 +280,6 @@
              alt="Hero 8" class="w-full h-full object-cover object-center">
       </div>
 
-      <!-- Subtle Dark Gradient Vignette for Top/Bottom Contrast -->
       <div class="absolute inset-0 bg-gradient-to-t from-[#05070c] via-transparent to-[#05070c]/50"></div>
     </div>
 
@@ -454,97 +453,134 @@
     </div>
   </div>
 
-  <!-- ================= 5. LUXURY 12X36 PHOTOBOOK ALBUM SHOWCASE (25+1 COVER = 26 SHEETS BROWSER: pg1alb.jpg to pg26alb.jpg) ================= -->
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
-    <div class="apple-glass-card rounded-3xl p-5 sm:p-8 relative overflow-hidden border border-white/[0.1] bg-gradient-to-b from-[#0e172a]/95 via-[#0c1322]/90 to-[#060a14]/95 shadow-2xl">
+  <!-- ================= 5. FULL-BLEED 12X36 MASTER PHOTOBOOK SHOWCASE (ZERO CLUTTER, MAXIMUM PHONE SIZE) ================= -->
+  <section class="max-w-5xl mx-auto px-2 sm:px-6 pt-6 pb-2">
+    <div class="apple-glass-card rounded-3xl p-3 sm:p-6 relative overflow-hidden border border-white/[0.1] shadow-2xl">
       
-      <!-- Album Showcase Header -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.08]">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/25 text-amber-400 text-[10px] font-bold uppercase tracking-wider mb-2">
-            <i class="fa-solid fa-gem text-xs"></i> 36" &times; 12" Master Signature Photobook (25+1 Sheets)
-          </div>
-          <h2 class="text-xl sm:text-2xl font-black text-white tracking-tight heading-font">
-            सिनेमैटिक 12&times;36 इंच फोटो एल्बम लाइव शोकेस
+      <!-- Minimalist Compact Bar: Title, Sheet Counter & Info Icon Trigger -->
+      <div class="flex items-center justify-between pb-3 px-2 border-b border-white/[0.08]">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+          <h2 class="text-xs sm:text-sm font-black text-white tracking-wide uppercase heading-font">
+            12&times;36 मास्टर फोटोबुक
           </h2>
-          <p class="apple-subtext text-xs sm:text-sm mt-1">
-            25 अंदरूनी शीट्स + 1 मास्टर कवर शीट (कुल 26 शीट्स) &bull; 180&deg; सीमलेस ले-फ्लैट बाइंडिंग।
-          </p>
-        </div>
-
-        <!-- Sheet Direct Selector Dropdown -->
-        <div class="flex items-center gap-2 bg-black/60 p-2 rounded-2xl border border-white/15 shrink-0 text-xs">
-          <span class="apple-subtext font-semibold hidden sm:inline">शीट चुनें:</span>
-          <select id="albumSheetSelect" onchange="jumpToSheet(this.value)" class="bg-[#0a0f1d] border border-white/20 rounded-xl px-3 py-1.5 text-white font-bold outline-none focus:border-blue-500 transition">
-            <!-- Dynamically populated 26 sheets via JS -->
-          </select>
-        </div>
-      </div>
-
-      <!-- Album Canvas Stage (Strict 36x12 Full Open Spread Canvas) -->
-      <div class="mt-6 flex flex-col items-center justify-center">
-        <div class="relative w-full rounded-2xl overflow-hidden border-2 border-white/20 bg-[#02050b] p-2 sm:p-3 shadow-2xl flex items-center justify-center group aspect-[36/13] sm:aspect-[36/12]">
-          
-          <!-- Live 12x36 Sheet Image (Targeting pg1alb.jpg - pg26alb.jpg with 12X36.jpg fallback) -->
-          <img id="currentAlbumSheetImg" 
-               src="pg1alb.jpg" 
-               onerror="this.src='12X36.jpg'" 
-               alt="Photobook Sheet" 
-               class="w-full h-full object-contain rounded-xl shadow-lg cursor-pointer transition-transform duration-300 group-hover:scale-[1.005]"
-               onclick="openLightboxModal(this.src)">
-
-          <!-- 180-Degree Center Spine Fold Line -->
-          <div class="center-layflat-crease"></div>
-
-          <!-- Bottom Status Pill -->
-          <div class="absolute bottom-3 left-4 bg-black/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-[10px] sm:text-xs font-bold text-amber-300 border border-amber-400/30 flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span id="sheetNumberBadge">शीट 1 / 26 (मास्टर कवर शीट)</span>
-          </div>
-
-          <!-- Fullscreen Zoom Button -->
-          <button onclick="openLightboxModal(document.getElementById('currentAlbumSheetImg').src)" 
-                  class="absolute top-4 right-4 bg-black/70 hover:bg-black/90 text-white text-xs font-bold px-3 py-1.5 rounded-xl backdrop-blur-md border border-white/20 transition flex items-center gap-1.5">
-            <i class="fa-solid fa-expand text-[10px]"></i> <span>ज़ूम करें</span>
-          </button>
-        </div>
-
-        <!-- Sheet Controls Navigation Ribbon (Prev, Counter, Next) -->
-        <div class="mt-4 flex items-center justify-between w-full max-w-md px-2">
-          <button onclick="changeAlbumSheet(-1)" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs flex items-center gap-2 border border-white/15 transition active:scale-95">
-            <i class="fa-solid fa-chevron-left text-xs"></i>
-            <span>पिछली शीट</span>
-          </button>
-
-          <span id="sheetQuickCounter" class="text-xs font-bold text-slate-300 font-mono">
-            Sheet 1 of 26
+          <span id="sheetQuickCounter" class="text-[11px] font-mono font-bold text-[#2997ff] bg-blue-500/10 border border-blue-500/20 px-2 py-0.5 rounded-full">
+            1 / 26
           </span>
+        </div>
 
-          <button onclick="changeAlbumSheet(1)" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-blue-600/30 transition active:scale-95">
-            <span>अगली शीट</span>
-            <i class="fa-solid fa-chevron-right text-xs"></i>
+        <div class="flex items-center gap-2">
+          <!-- Sheet Direct Jump Selector -->
+          <select id="albumSheetSelect" onchange="jumpToSheet(this.value)" class="bg-[#0a0f1d] border border-white/20 rounded-xl px-2.5 py-1 text-white font-bold text-xs outline-none focus:border-blue-500 transition">
+          </select>
+          
+          <!-- Info Details Trigger Icon Button -->
+          <button onclick="toggleAlbumDetailsModal()" 
+                  class="w-8 h-8 rounded-xl bg-white/10 hover:bg-white/20 text-amber-400 border border-amber-400/30 flex items-center justify-center transition" 
+                  title="एल्बम खूबियाँ व स्पेसिफिकेशन">
+            <i class="fa-solid fa-circle-info text-sm"></i>
           </button>
         </div>
       </div>
 
-      <!-- Quality Specs Footer -->
-      <div class="mt-6 pt-5 border-t border-white/[0.08] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-        <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.06] text-center sm:text-left">
-          <span class="text-amber-400 font-bold block mb-0.5"><i class="fa-solid fa-award mr-1"></i> कैनवेरा एचडी लस्टर पेपर</span>
-          <span class="text-slate-400 text-[11px]">100% वाटरप्रूफ, नॉन-टीयर लैमिनेशन व फिंगरप्रिंट सुरक्षित</span>
+      <!-- Edge-to-Edge Sheet Display Stage (Maximum Width on Phones) -->
+      <div class="relative w-full rounded-2xl overflow-hidden bg-black mt-3 border border-white/15 flex items-center justify-center group aspect-[36/13] sm:aspect-[36/12]">
+        
+        <!-- Live Sheet Image -->
+        <img id="currentAlbumSheetImg" 
+             src="pg1alb.jpg" 
+             onerror="this.src='12X36.jpg'" 
+             alt="12x36 Photobook Sheet" 
+             class="w-full h-full object-contain cursor-pointer transition-transform duration-300 group-hover:scale-[1.01]"
+             onclick="openLightboxModal(this.src)">
+
+        <!-- Center Layflat Crease -->
+        <div class="center-layflat-crease"></div>
+
+        <!-- Floating Left Arrow (On Image) -->
+        <button onclick="changeAlbumSheet(-1)" 
+                class="absolute left-1.5 sm:left-3 top-1/2 -translate-y-1/2 w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition active:scale-95 shadow-xl">
+          <i class="fa-solid fa-chevron-left text-xs sm:text-sm"></i>
+        </button>
+
+        <!-- Floating Right Arrow (On Image) -->
+        <button onclick="changeAlbumSheet(1)" 
+                class="absolute right-1.5 sm:right-3 top-1/2 -translate-y-1/2 w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-blue-600/85 hover:bg-blue-600 text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition active:scale-95 shadow-xl">
+          <i class="fa-solid fa-chevron-right text-xs sm:text-sm"></i>
+        </button>
+
+        <!-- Floating Bottom Badge -->
+        <div class="absolute bottom-2 left-2 sm:left-3 bg-black/85 backdrop-blur-md px-2.5 py-0.5 rounded-lg text-[9px] sm:text-[11px] font-bold text-amber-300 border border-amber-400/30 pointer-events-none">
+          <span id="sheetNumberBadge">शीट 1 (मास्टर कवर)</span>
         </div>
-        <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.06] text-center sm:text-left">
-          <span class="text-blue-400 font-bold block mb-0.5"><i class="fa-solid fa-arrows-left-right mr-1"></i> 180&deg; सीमलेस ले-फ्लैट बाइंडिंग</span>
-          <span class="text-slate-400 text-[11px]">बीच के फोल्ड पर कोई कटिंग नहीं, 36&times;12 का अखंड पैनोरमा</span>
-        </div>
-        <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.06] text-center sm:text-left">
-          <span class="text-emerald-400 font-bold block mb-0.5"><i class="fa-solid fa-camera mr-1"></i> मास्टर फिनिशिंग</span>
-          <span class="text-slate-400 text-[11px]">PRODUCED BY: COOL ART&reg; STUDIOS</span>
-        </div>
+
+        <!-- Fullscreen Zoom Icon -->
+        <button onclick="openLightboxModal(document.getElementById('currentAlbumSheetImg').src)" 
+                class="absolute top-2 right-2 bg-black/75 hover:bg-black/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/20 flex items-center gap-1 transition">
+          <i class="fa-solid fa-expand text-[9px]"></i> <span class="hidden sm:inline">ज़ूम</span>
+        </button>
       </div>
 
     </div>
   </section>
+
+  <!-- ================= ALBUM SPECS POPUP MODAL (ON ICON CLICK) ================= -->
+  <div id="albumDetailsModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative max-w-md w-full bg-[#0d1627] text-white rounded-3xl p-6 border border-white/15 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-white/10">
+        <h3 class="text-sm font-bold text-amber-400 flex items-center gap-2 heading-font">
+          <i class="fa-solid fa-gem text-xs"></i> 12&times;36 एल्बम खूबियाँ व विवरण
+        </h3>
+        <button onclick="toggleAlbumDetailsModal()" class="w-7 h-7 rounded-full bg-white/10 text-slate-300 hover:text-white flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-xs"></i>
+        </button>
+      </div>
+
+      <div class="space-y-2.5 text-xs">
+        <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.08] space-y-1">
+          <span class="text-amber-300 font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-award"></i> 25+1 मास्टर शीट स्ट्रक्चर
+          </span>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            25 अंदरूनी 12&times;36 इंच स्प्रेड शीट्स + 1 मास्टर कवर शीट (कुल 26 पैनोरमिक शीट्स)।
+          </p>
+        </div>
+
+        <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.08] space-y-1">
+          <span class="text-blue-300 font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-arrows-left-right"></i> 180&deg; सीमलेस ले-फ्लैट बाइंडिंग
+          </span>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            बीच के जोड़ पर कोई कटिंग नहीं, पन्ना पूरा सीधा 180 डिग्री खुलता है।
+          </p>
+        </div>
+
+        <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.08] space-y-1">
+          <span class="text-emerald-300 font-bold flex items-center gap-1.5">
+            <i class="fa-solid fa-droplet-slash"></i> वाटरप्रूफ व नॉन-टीयर लैमिनेशन
+          </span>
+          <p class="text-slate-300 text-[11px] leading-relaxed">
+            कैनवेरा एचडी लस्टर पेपर, पानी व फिंगरप्रिंट सुरक्षित, 50 साल कलर लाइफ।
+          </p>
+        </div>
+      </div>
+
+      <button onclick="toggleAlbumDetailsModal()" class="w-full py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs shadow-lg transition">
+        समझ गया
+      </button>
+    </div>
+  </div>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <div id="albumLightboxModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg hidden items-center justify-center p-3 sm:p-6" onclick="closeLightboxModal()">
+    <div class="relative max-w-6xl w-full flex flex-col items-center">
+      <button onclick="closeLightboxModal()" class="absolute -top-10 right-0 text-white text-xl font-bold bg-white/10 w-9 h-9 rounded-full flex items-center justify-center hover:bg-white/20">
+        &times;
+      </button>
+      <img id="lightboxImg" src="" alt="Album HD Preview" class="max-h-[85vh] w-auto max-w-full rounded-2xl shadow-2xl object-contain border border-white/20">
+      <span class="text-xs text-slate-400 mt-3 font-semibold">कहीं भी क्लिक करके बंद करें</span>
+    </div>
+  </div>
 
   <!-- ================= 6. CALCULATOR WORKSPACE (WITH ACCORDION DRAWERS) ================= -->
   <section id="calculator" class="max-w-5xl mx-auto px-4 sm:px-6 pt-4">
@@ -1254,7 +1290,7 @@
       for (let i = 1; i <= totalAlbumSheets; i++) {
         const opt = document.createElement('option');
         opt.value = i;
-        opt.innerText = i === 1 ? 'शीट 1 (मास्टर कवर शीट)' : `शीट ${i} (12×36 स्प्रेड)`;
+        opt.innerText = i === 1 ? 'शीट 1 (मास्टर कवर)' : `शीट ${i} (12×36)`;
         select.appendChild(opt);
       }
     }
@@ -1274,11 +1310,11 @@
       }
       if (badge) {
         badge.innerText = sheetNum === 1 
-          ? 'शीट 1 / 26 (मास्टर कवर शीट)' 
-          : `शीट ${sheetNum} / 26 (12×36 पूरी खुली शीट)`;
+          ? 'शीट 1 (मास्टर कवर)' 
+          : `शीट ${sheetNum} / 26`;
       }
       if (counter) {
-        counter.innerText = `Sheet ${sheetNum} of ${totalAlbumSheets}`;
+        counter.innerText = `${sheetNum} / ${totalAlbumSheets}`;
       }
       if (select) {
         select.value = sheetNum;
@@ -1294,6 +1330,13 @@
 
     function jumpToSheet(val) {
       renderAlbumSheet(parseInt(val) || 1);
+    }
+
+    function toggleAlbumDetailsModal() {
+      const modal = document.getElementById('albumDetailsModal');
+      if (!modal) return;
+      modal.classList.toggle('hidden');
+      modal.classList.toggle('flex');
     }
 
     function openLightboxModal(src) {
@@ -1390,7 +1433,7 @@
         p2Title: "सगाई / रिंग सेरेमनी व लगन टीका",
         p2Sub: "अंगूठी पहनाने की रस्म, स्टेज फोटो व परिवार का मेल-जोल",
         p3Title: "प्री-वेडिंग सिनेमैटिक आउटडोर शूट",
-        p3Sub: "लोकेशन वीडियो टीज़र, रील्स, 3-4 ड्रेस चेंज व एडिटेड फोटोज",
+        p3Sub: "लोकेशन वीडियो टीज़र, रील्स, 3-4 dress changes व एडिटेड फोटोज",
         p4Title: "हल्दी सेरेमनी (केवल हल्दी रस्म)",
         p4Sub: "येलो थीम, हल्दी लेप, फ्लावर शॉवर व कैंडिड फैमिली मोमेंट्स",
         p5Title: "मेहंदी सेरेमनी (केवल मेहंदी फंक्शन)",
