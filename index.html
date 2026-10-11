@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Cool Art Studios | Apple Design Pro Media Estimator</title>
+  <title>Cool Art Studios | Apple Design Pro Media Estimator & Invoice Generator</title>
   
   <!-- Tailwind CSS & FontAwesome -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +19,6 @@
       color: #f5f5f7;
       letter-spacing: -0.015em;
     }
-    /* Subtle Apple Grid Texture */
     .apple-grid-texture {
       background-image: 
         radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.12), transparent 45%),
@@ -27,7 +26,6 @@
         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
       background-size: 100% 100%, 48px 48px, 48px 48px;
     }
-    /* Glassmorphism */
     .apple-glass {
       background: rgba(10, 15, 26, 0.85);
       backdrop-filter: saturate(180%) blur(24px);
@@ -63,6 +61,26 @@
     .custom-scroll::-webkit-scrollbar-thumb {
       background: #25334e;
       border-radius: 9999px;
+    }
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #printableInvoiceModal, #printableInvoiceModal * {
+        visibility: visible;
+      }
+      #printableInvoiceModal {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white !important;
+        color: black !important;
+        padding: 0 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
     }
   </style>
 </head>
@@ -133,7 +151,7 @@
     </h1>
 
     <p class="apple-subtext text-xs sm:text-sm max-w-xl mx-auto leading-relaxed font-normal">
-      अपनी पसंद के अनुसार कैमरा, ड्रोन और अलग-अलग रस्में चुनें। सिस्टम लाइव बिल और आवागमन की पूरी जानकारी तुरंत तैयार करेगा।
+      अपनी पसंद के अनुसार कैमरा, ड्रोन, एलईडी फ्रेम और अलग-अलग रस्में चुनें। सिस्टम पारदर्शी बिल, आवागमन विवरण व प्रोफेशनल इनवॉइस तैयार करेगा।
     </p>
 
     <!-- Unified Width Banner Carousel (STRICT FULL WIDTH OF max-w-5xl) -->
@@ -195,8 +213,7 @@
     </div>
   </section>
 
-
-  <!-- ================= PRINTING PRESS SISTER VENTURE CARD (APPLE ECOSYSTEM STYLE) ================= -->
+  <!-- ================= PRINTING PRESS SISTER VENTURE CARD ================= -->
   <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-6 pb-2">
     <div class="apple-glass-card rounded-3xl p-5 sm:p-7 relative overflow-hidden border border-white/[0.1] bg-gradient-to-r from-[#0d172e] via-[#0b1325] to-[#121028]">
       <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
@@ -247,7 +264,6 @@
           </div>
 
           <div class="space-y-2.5">
-
             <!-- विवाह पूर्व गोद भराई / रोका शगुन -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
@@ -348,7 +364,6 @@
               </div>
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹3,000</span>
             </label>
-
           </div>
         </div>
 
@@ -366,8 +381,6 @@
           </div>
 
           <div class="space-y-2.5">
-            
-            <!-- शिशु आगमन गोद भराई -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_baby_shower" value="4000" data-name="शिशु आगमन गोद भराई / साध पूजन (Baby Shower)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -380,7 +393,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
             </label>
 
-            <!-- भागवत कथा -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_bhagwat" value="22000" data-name="श्रीमद्भागवत कथा (7-दिवसीय संपूर्ण ज्ञान यज्ञ)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -392,7 +404,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹22,000</span>
             </label>
 
-            <!-- कुआं पूजन / मुंडन -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_mundan" value="5000" data-name="कुआं पूजन / जलवा पूजन / मुंडन संस्कार" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -404,7 +415,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹5,000</span>
             </label>
 
-            <!-- बर्थडे व गृह प्रवेश -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_birthday" value="4000" data-name="जन्मदिन उत्सव / गृह प्रवेश पूजा" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -416,7 +426,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
             </label>
 
-            <!-- स्कूल कॉलेज एनुअल फंक्शन -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_school" value="10000" data-name="स्कूल/कॉलेज वार्षिकोत्सव (Annual Function)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -428,7 +437,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹10,000</span>
             </label>
 
-            <!-- क्रिकेट टूर्नामेंट लाइव -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_sports" value="8000" data-name="क्रिकेट टूर्नामेंट लाइव कवरेज (प्रति दिन)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -440,7 +448,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹8,000</span>
             </label>
 
-            <!-- चुनावी रैली व जनसभा -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_rally" value="15000" data-name="चुनावी जनसभा, रैली व रोड शो (Mega Rally)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -451,25 +458,49 @@
               </div>
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹15,000</span>
             </label>
-
           </div>
         </div>
 
-        <!-- 3. ADDITIONAL GEARS & ALBUMS -->
+        <!-- 3. ADDITIONAL GEARS, LED FRAMES & ALBUMS (WITH LED FRAME QUANTITY COUNTER) -->
         <div class="apple-glass-card rounded-3xl p-5 sm:p-7">
           <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5 mb-4">
             <div>
               <h2 class="text-sm sm:text-base font-bold text-[#f5f5f7] flex items-center gap-2">
                 <i class="fa-solid fa-camera-retro text-[#2997ff]"></i>
-                <span>3. अतिरिक्त कैमरा, ड्रोन, लाइट व एल्बम</span>
+                <span>3. अतिरिक्त कैमरा, ड्रोन, एलईडी फ्रेम व एल्बम</span>
               </h2>
-              <p class="text-[11px] apple-subtext mt-0.5">गियर्स, स्क्रीन व फोटोबुक विकल्प</p>
+              <p class="text-[11px] apple-subtext mt-0.5">गियर्स, बैकलीट फ्रेम्स व फोटोबुक विकल्प</p>
             </div>
             <span class="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-semibold">ऐड-ऑन</span>
           </div>
 
           <div class="space-y-2.5">
-            
+
+            <!-- BACKLIT LED PHOTO FRAME WITH QUANTITY SELECTOR (+ / -) -->
+            <div class="p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
+              <div class="flex items-start justify-between cursor-pointer">
+                <label class="flex items-start gap-3 cursor-pointer flex-1">
+                  <input type="checkbox" id="gear_led_frame" onchange="toggleLedFrame()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                  <div>
+                    <div class="text-xs sm:text-sm font-semibold text-[#f5f5f7] leading-tight">बैकलीट एलईडी फोटो फ्रेम (ट्रांसलाइट मीडिया प्रिंट + स्टैंड रेंट)</div>
+                    <div class="text-[11px] text-[#2997ff] font-normal mt-0.5">इवेंट में स्टैंड सहित डिस्प्ले, ट्रांसलाइट प्रिंट हमेशा के लिए पार्टी का!</div>
+                    <div class="text-[10px] apple-subtext mt-0.5">प्रति फ्रेम किराया: ₹500 (स्टैंड सहित)</div>
+                  </div>
+                </label>
+                <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2" id="ledFrameTotalText">+ ₹500</span>
+              </div>
+
+              <!-- Quantity Counter (+ / -) -->
+              <div id="ledFrameQtyBox" class="hidden mt-3 pt-3 border-t border-white/[0.08] flex items-center justify-between text-xs">
+                <span class="apple-subtext font-medium">फ्रेम संख्या चुनें (Quantity):</span>
+                <div class="flex items-center gap-2 bg-[#0a0f1d] px-2 py-1 rounded-xl border border-white/[0.12]">
+                  <button type="button" onclick="adjustLedQty(-1)" class="w-6 h-6 rounded-lg bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold text-xs">-</button>
+                  <input type="number" id="ledFrameQty" value="1" min="1" max="100" onchange="updateLedQtyFromInput()" class="w-12 text-center bg-transparent text-white font-bold text-xs outline-none">
+                  <button type="button" onclick="adjustLedQty(1)" class="w-6 h-6 rounded-lg bg-[#0071e3] hover:bg-[#0077ed] text-white flex items-center justify-center font-bold text-xs">+</button>
+                </div>
+              </div>
+            </div>
+
             <!-- 4K ड्रोन (₹4000) -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
@@ -565,23 +596,21 @@
               </div>
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹7,000</span>
             </label>
-
           </div>
         </div>
 
-        <!-- 4. LOGISTICS, TRANSPORT & TRAVEL FARE (DEFAULT AUTO TRAVEL CHARGE INCLUDED) -->
+        <!-- 4. LOGISTICS, TRANSPORT & TRAVEL FARE -->
         <div class="apple-glass-card rounded-3xl p-5 sm:p-7">
           <div class="border-b border-white/[0.08] pb-3.5 mb-4">
             <h2 class="text-sm sm:text-base font-bold text-[#f5f5f7] flex items-center gap-2">
               <i class="fa-solid fa-truck-ramp-box text-[#2997ff]"></i>
               <span>4. आवागमन, किराया व लॉजिस्टिक्स विवरण (Travel & Logistics)</span>
             </h2>
-            <p class="text-[11px] apple-subtext mt-0.5">दूरी के अनुसार किराया स्वतः डिफॉल्ट जुड़ा हुआ है</p>
+            <p class="text-[11px] apple-subtext mt-0.5">दूरी के अनुसार किराया स्वतः डिफ़ॉल्ट जुड़ा हुआ है</p>
           </div>
 
           <div class="space-y-4">
-
-            <!-- TRAVEL FARE AUTOMATIC CHECKBOX (DEFAULT CHECKED) -->
+            <!-- Travel Fare Checkbox -->
             <div class="p-4 bg-black/50 border border-blue-500/30 rounded-2xl">
               <label class="flex items-start justify-between cursor-pointer">
                 <div class="flex items-start gap-3">
@@ -644,13 +673,50 @@
                 </select>
               </div>
             </div>
+          </div>
+        </div>
 
+        <!-- 5. TERMS & LEGAL JURISDICTION (ALIGARH COURT) -->
+        <div class="apple-glass-card rounded-3xl p-5 sm:p-7 border border-amber-500/20 bg-gradient-to-b from-[#141824]/90 to-[#0b0e17]/95">
+          <div class="border-b border-white/[0.08] pb-3.5 mb-4 flex items-center justify-between">
+            <h2 class="text-sm sm:text-base font-bold text-amber-300 flex items-center gap-2">
+              <i class="fa-solid fa-scale-balanced text-amber-400"></i>
+              <span>5. आवश्यक नियम, भुगतान शर्तें एवं कानूनी क्षेत्राधिकार (Legal Policy)</span>
+            </h2>
+            <span class="text-[10px] bg-amber-400/10 text-amber-300 border border-amber-400/25 px-2.5 py-0.5 rounded-full font-semibold">अनिवार्य नियम</span>
+          </div>
+
+          <div class="space-y-3 text-xs leading-relaxed text-slate-300">
+            <div class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-blue-500/20 text-[#2997ff] flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">1</span>
+              <p><strong>इवेंट के दिन 75% क्लियरेंस अनिवार्य:</strong> कार्यक्रम की तारीख (या उससे एक दिन पूर्व रिमाइंडर पर) कुल बिल का 75% भुगतान जमा होना अनिवार्य है, उसके बाद ही कैमरा क्रू/इक्विपमेंट्स रवाना होंगे।</p>
+            </div>
+
+            <div class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-blue-500/20 text-[#2997ff] flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">2</span>
+              <p><strong>प्रोग्राम समाप्ति पर शेष 25% का भुगतान:</strong> इवेंट संपन्न होने पर बचा हुआ 25% फाइनल अमाउंट पार्टी को क्लियर करना होगा।</p>
+            </div>
+
+            <div class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-blue-500/20 text-[#2997ff] flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">3</span>
+              <p><strong>100% पेमेंट पर ही डेटा/वीडियो डिलीवरी:</strong> हमारे सभी पैकेजेस पहले से भारी डिस्काउंटेड हैं, अतः ओरिजिनल RAW फाइल्स, 4K पेनड्राइव, मिक्सिंग वीडियो या फोटो एल्बम 100% फाइनल पेमेंट क्लियर होने के बाद ही हैंडओवर की जाएगी (बाहर से मिक्सिंग या प्रिंटिंग कराने की शर्त मान्य नहीं होगी)।</p>
+            </div>
+
+            <div class="flex items-start gap-2.5">
+              <span class="w-5 h-5 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">4</span>
+              <p><strong>7 दिन की डेटा बैकअप समय-सीमा (Data Expiry):</strong> यदि कार्यक्रम संपन्न होने के 7 दिनों के भीतर बकाया भुगतान को लेकर कोई संपर्क या क्लियरेंस नहीं किया जाता है, तो स्टूडियो की स्टोरेज से डेटा सुरक्षित रखने की कोई जिम्मेदारी नहीं होगी।</p>
+            </div>
+
+            <div class="flex items-start gap-2.5 pt-2 border-t border-white/[0.08] text-amber-200">
+              <i class="fa-solid fa-gavel text-amber-400 text-sm mt-0.5 shrink-0"></i>
+              <p><strong>न्यायिक क्षेत्राधिकार (Legal Jurisdiction):</strong> किसी भी प्रकार के वाद-विवाद, मतभेद अथवा कानूनी कार्रवाई की स्थिति में समस्त न्यायिक मामलों का क्षेत्राधिकार केवल और केवल <strong>जिला न्यायालय, अलीगढ़ (उत्तर प्रदेश)</strong> ही होगा।</p>
+            </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Right Column: Sticky Summary & Bill Card (4 Cols) -->
+      <!-- Right Column: Sticky Summary, Payment Slabs & Clean US-Style Invoice Generator (4 Cols) -->
       <div class="lg:col-span-4 sticky top-20">
         <div class="apple-glass-card rounded-3xl p-5 sm:p-6 shadow-2xl space-y-4">
           
@@ -676,9 +742,36 @@
               <span>चुने गए प्रोग्राम व सुविधाएं:</span>
               <span id="selectedCountBadge" class="text-[#2997ff] font-semibold">2 सिलेक्टेड</span>
             </div>
-            <ul class="text-xs text-slate-300 space-y-1.5 max-h-48 overflow-y-auto pr-1 border border-white/[0.06] p-2.5 rounded-xl bg-black/40 custom-scroll" id="selectedSummaryList">
+            <ul class="text-xs text-slate-300 space-y-1.5 max-h-40 overflow-y-auto pr-1 border border-white/[0.06] p-2.5 rounded-xl bg-black/40 custom-scroll" id="selectedSummaryList">
               <!-- Rendered via JS -->
             </ul>
+          </div>
+
+          <!-- DYNAMIC PAYMENT SLAB SELECTOR (25%, 50%, 75%, 100%) -->
+          <div class="p-3.5 bg-black/50 rounded-2xl border border-white/[0.08] space-y-2.5">
+            <div class="flex items-center justify-between text-xs">
+              <span class="apple-subtext font-semibold">पेमेंट स्टेज चुनें:</span>
+              <span class="text-blue-400 font-bold" id="slabPercentLabel">25% टोकन एडवांस</span>
+            </div>
+
+            <!-- Apple-style Segmented Control -->
+            <div class="grid grid-cols-4 gap-1 p-1 bg-[#0a0f1d] rounded-xl border border-white/[0.08] text-xs font-bold text-center">
+              <button type="button" onclick="selectPaymentSlab(25)" id="slabBtn25" class="py-1.5 rounded-lg bg-[#0071e3] text-white transition">25%</button>
+              <button type="button" onclick="selectPaymentSlab(50)" id="slabBtn50" class="py-1.5 rounded-lg text-slate-400 hover:text-white transition">50%</button>
+              <button type="button" onclick="selectPaymentSlab(75)" id="slabBtn75" class="py-1.5 rounded-lg text-slate-400 hover:text-white transition">75%</button>
+              <button type="button" onclick="selectPaymentSlab(100)" id="slabBtn100" class="py-1.5 rounded-lg text-slate-400 hover:text-white transition">100%</button>
+            </div>
+
+            <div class="pt-2 border-t border-white/[0.06] flex items-center justify-between text-xs">
+              <div>
+                <span class="apple-subtext block text-[10px]">आज देय एडवांस:</span>
+                <span class="text-base font-extrabold text-[#2997ff]" id="slabAdvanceAmount">₹4,625</span>
+              </div>
+              <div class="text-right">
+                <span class="apple-subtext block text-[10px]">बाकी शेष राशि:</span>
+                <span class="text-sm font-bold text-slate-300" id="slabDueAmount">₹13,875</span>
+              </div>
+            </div>
           </div>
 
           <!-- Client Input Section -->
@@ -705,7 +798,7 @@
             </div>
           </div>
 
-          <!-- ADVANCE TOKEN UPI DISPLAY (ONLY HERE IN SIDEBAR) -->
+          <!-- ADVANCE TOKEN UPI DISPLAY -->
           <div class="p-3 bg-black/50 rounded-2xl border border-white/[0.08] space-y-2 text-center">
             <div class="flex items-center justify-between text-[11px] font-medium text-slate-300">
               <span class="apple-subtext">एडवांस बुकिंग UPI:</span>
@@ -721,11 +814,19 @@
             </p>
           </div>
 
-          <!-- Apple Action Button -->
-          <button onclick="dispatchToWhatsApp()" class="w-full py-3.5 apple-blue-btn text-white font-bold rounded-xl text-xs sm:text-sm shadow-lg flex items-center justify-center gap-2">
-            <i class="fa-brands fa-whatsapp text-base"></i>
-            <span>इवेंट कोटेशन भेजें (WhatsApp)</span>
-          </button>
+          <!-- Primary Actions: WhatsApp + Neat Clean US-Style Invoice -->
+          <div class="space-y-2">
+            <button onclick="dispatchToWhatsApp()" class="w-full py-3 apple-blue-btn text-white font-bold rounded-xl text-xs sm:text-sm shadow-lg flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-base"></i>
+              <span>इवेंट कोटेशन भेजें (WhatsApp)</span>
+            </button>
+
+            <!-- US Style Clean Invoice Trigger Button -->
+            <button onclick="openCleanInvoiceModal()" class="w-full py-2.5 rounded-xl border border-white/[0.15] bg-white/[0.06] hover:bg-white/[0.12] text-white font-semibold text-xs flex items-center justify-center gap-2 transition">
+              <i class="fa-solid fa-file-invoice text-[#2997ff]"></i>
+              <span>डिजिटल इनवॉइस देखें व डाउनलोड करें</span>
+            </button>
+          </div>
 
           <p class="text-[10px] apple-subtext text-center leading-relaxed">
             * विवरण प्राप्त होने पर टीम डेट फाइनल करने हेतु संपर्क करेगी।
@@ -740,25 +841,26 @@
   <!-- ================= MOBILE FIXED BOTTOM DOCK ================= -->
   <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 apple-glass border-t border-white/[0.08] p-3 px-4 flex items-center justify-between shadow-2xl">
     <div>
-      <span class="text-[10px] apple-subtext block leading-tight">कुल अनुमानित बजट</span>
+      <span class="text-[10px] apple-subtext block leading-tight">कुल बजट (Adv. <span id="mobileAdvanceText">₹4,625</span>)</span>
       <div class="text-xl font-bold text-white leading-tight" id="mobileBottomTotal">₹18,500</div>
     </div>
-    <button onclick="dispatchToWhatsApp()" class="apple-blue-btn text-white font-semibold text-xs px-4 py-2.5 rounded-full flex items-center gap-1.5 shadow-md">
-      <i class="fa-brands fa-whatsapp text-sm"></i>
-      <span>व्हाट्सएप कोटेशन</span>
-    </button>
+    <div class="flex items-center gap-2">
+      <button onclick="openCleanInvoiceModal()" class="bg-white/10 text-white text-xs px-3 py-2.5 rounded-full flex items-center justify-center">
+        <i class="fa-solid fa-file-invoice"></i>
+      </button>
+      <button onclick="dispatchToWhatsApp()" class="apple-blue-btn text-white font-semibold text-xs px-4 py-2.5 rounded-full flex items-center gap-1.5 shadow-md">
+        <i class="fa-brands fa-whatsapp text-sm"></i>
+        <span>कोटेशन</span>
+      </button>
+    </div>
   </div>
 
-
-  <!-- ================= CREATIVE APPLE-GRADE STUDIO LOCATION & GOOGLE MAP ================= -->
+  <!-- ================= CREATIVE GOOGLE MAP ================= -->
   <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
     <div class="apple-glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border border-white/[0.1] bg-gradient-to-b from-[#0e172a]/90 via-[#0a1020]/90 to-[#060a14]/95 shadow-2xl">
-      
-      <!-- Ambient Glow Behind Map -->
       <div class="absolute -top-16 -left-16 w-56 h-56 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
       <div class="absolute -bottom-16 -right-16 w-56 h-56 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <!-- Header with Live Studio Radar Beacon -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.08] relative z-10">
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-[#2997ff] text-[10px] font-bold uppercase tracking-wider mb-2">
@@ -774,7 +876,6 @@
           </p>
         </div>
 
-        <!-- Direct Direction Button -->
         <a href="https://www.google.com/maps/place/COOL+ART%E2%84%A2/@28.0514203,78.3493348,1197m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3974c91193556499:0x38a45907d0fc5e6b!8m2!3d28.0514156!4d78.3519097!16s%2Fg%2F11fyx7hd62" 
            target="_blank" 
            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl apple-blue-btn text-white text-xs sm:text-sm font-bold shadow-lg shadow-blue-600/30 shrink-0">
@@ -783,10 +884,7 @@
         </a>
       </div>
 
-      <!-- Creative Visual Map Canvas Box -->
       <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center relative z-10">
-        
-        <!-- Live Embedded Interactive Map (8 Cols) -->
         <div class="lg:col-span-8 rounded-2xl overflow-hidden border border-white/[0.12] shadow-2xl relative group aspect-[16/10] sm:aspect-[16/9] bg-[#0c1424]">
           <iframe 
             src="https://maps.google.com/maps?q=28.0514156,78.3519097&hl=hi&z=15&output=embed" 
@@ -796,13 +894,11 @@
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
 
-          <!-- Creative Radar Overlay Chip -->
           <div class="absolute top-3 left-3 bg-slate-950/85 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-2 pointer-events-none">
             <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
             <span class="text-[11px] font-bold text-white tracking-wide">COOL ART™ Official Landmark</span>
           </div>
 
-          <!-- Bottom Full View Shortcut Overlay -->
           <a href="https://www.google.com/maps/place/COOL+ART%E2%84%A2/@28.0514203,78.3493348,1197m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3974c91193556499:0x38a45907d0fc5e6b!8m2!3d28.0514156!4d78.3519097!16s%2Fg%2F11fyx7hd62" 
              target="_blank" 
              class="absolute bottom-3 right-3 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-xl backdrop-blur-sm shadow-md transition flex items-center gap-1.5">
@@ -811,9 +907,7 @@
           </a>
         </div>
 
-        <!-- Location Cards & Distance Guide (4 Cols) -->
         <div class="lg:col-span-4 space-y-3.5 text-xs">
-          
           <div class="p-4 rounded-2xl bg-black/45 border border-white/[0.08] space-y-1.5">
             <div class="flex items-center gap-2 text-blue-400 font-bold text-xs">
               <i class="fa-solid fa-map-pin"></i>
@@ -852,18 +946,13 @@
               <i class="fa-solid fa-phone text-emerald-400"></i> +91 9458614610 पर सीधे संपर्क करें
             </a>
           </div>
-
         </div>
-
       </div>
-
     </div>
   </section>
 
   <!-- ================= CLEAN FOOTER (STRICT max-w-5xl FULL WIDTH) ================= -->
   <footer class="mt-20 max-w-5xl mx-auto px-4 sm:px-6">
-    
-    <!-- 100% Perfectly Aligned Footer Card with Main Layout -->
     <div class="w-full bg-white rounded-3xl p-7 sm:p-9 shadow-2xl border border-slate-200 text-center space-y-2 text-slate-700">
       <div class="flex justify-center mb-2">
         <div class="bg-black px-5 py-2.5 rounded-2xl inline-block shadow-sm">
@@ -894,6 +983,120 @@
       &copy; 2026 COOL ART STUDIOS & MEDIA PRODUCTION. ALL RIGHTS RESERVED.
     </p>
   </footer>
+
+  <!-- ================= ULTRA CLEAN US-STYLE DIGITAL INVOICE MODAL ================= -->
+  <div id="invoiceModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative w-full max-w-3xl bg-white text-slate-900 rounded-3xl shadow-2xl p-6 sm:p-10 my-8 overflow-hidden animate-in fade-in zoom-in-95" id="printableInvoiceModal">
+      
+      <!-- Modal Action Bar (No-Print) -->
+      <div class="no-print flex items-center justify-between pb-6 mb-6 border-b border-slate-200">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+          Official Media Invoice
+        </span>
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition">
+            <i class="fa-solid fa-print text-xs"></i> <span>प्रिंट / PDF सेव करें</span>
+          </button>
+          <button onclick="closeCleanInvoiceModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- INVOICE HEADER (US STYLE MINIMAL CLEAN) -->
+      <div class="flex flex-col sm:flex-row justify-between items-start gap-6 pb-8 border-b border-slate-200">
+        <div>
+          <div class="bg-black px-4 py-2 rounded-xl inline-block mb-3">
+            <img src="cool art logo.png" alt="COOL ART®" class="h-6 w-auto object-contain">
+          </div>
+          <h2 class="text-xl font-black text-slate-900 tracking-tight">COOL ART™ STUDIOS</h2>
+          <p class="text-xs text-slate-500 font-medium mt-0.5">Village Nahal, Atrauli, Aligarh, UP - 202280</p>
+          <p class="text-xs text-slate-500 font-medium">Contact: +91 9458614610 | UPI: 9458614610-2@ybl</p>
+        </div>
+
+        <div class="text-left sm:text-right space-y-1">
+          <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight uppercase">INVOICE</h1>
+          <div class="text-xs text-slate-600">
+            <span class="font-bold text-slate-800">Invoice No:</span> <span id="invNumber" class="font-mono">#CA-2026-001</span>
+          </div>
+          <div class="text-xs text-slate-600">
+            <span class="font-bold text-slate-800">Date Issued:</span> <span id="invDateIssued">11 Oct 2026</span>
+          </div>
+          <div class="text-xs text-slate-600">
+            <span class="font-bold text-slate-800">Event Date:</span> <span id="invEventDate" class="font-semibold text-blue-600">--</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLIENT & VENUE BILL-TO SECTION -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 py-6 border-b border-slate-200 text-xs">
+        <div>
+          <span class="font-bold uppercase tracking-wider text-slate-400 block mb-1">BILLED TO:</span>
+          <div class="text-base font-bold text-slate-900" id="invClientName">श्रीमान / श्रीमती</div>
+          <div class="text-slate-600 mt-0.5" id="invClientPhone">फ़ोन: --</div>
+          <div class="text-slate-600" id="invClientCity">स्थान: --</div>
+        </div>
+
+        <div>
+          <span class="font-bold uppercase tracking-wider text-slate-400 block mb-1">EVENT & LOGISTICS DETAILS:</span>
+          <div class="text-slate-700 font-medium" id="invVenueAddress">स्थल पता: --</div>
+          <div class="text-slate-600 mt-0.5" id="invReporting">रिपोर्टिंग समय: --</div>
+          <div class="text-slate-600" id="invTravelStatus">वाहन व्यवस्था: --</div>
+        </div>
+      </div>
+
+      <!-- INVOICE ITEMS TABLE -->
+      <div class="py-6">
+        <table class="w-full text-left text-xs">
+          <thead>
+            <tr class="border-b-2 border-slate-200 text-slate-400 font-bold uppercase tracking-wider">
+              <th class="pb-3 w-12">#</th>
+              <th class="pb-3">विवरण / सेवा (Description)</th>
+              <th class="pb-3 text-right w-28">रकम (Amount)</th>
+            </tr>
+          </thead>
+          <tbody id="invItemsTableBody" class="divide-y divide-slate-100 text-slate-800">
+            <!-- Rendered dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SUMMARY & TOTAL SECTION -->
+      <div class="pt-4 border-t-2 border-slate-200 flex justify-end">
+        <div class="w-full sm:w-72 space-y-2 text-xs">
+          <div class="flex justify-between text-slate-600">
+            <span>Subtotal (कुल पैकेज):</span>
+            <span class="font-bold text-slate-900" id="invSubtotal">₹0</span>
+          </div>
+          <div class="flex justify-between text-slate-600">
+            <span>Booking Advance Selected:</span>
+            <span class="font-bold text-blue-600" id="invSlabSelected">25%</span>
+          </div>
+          <div class="flex justify-between pt-2 border-t border-slate-200 text-sm font-black text-slate-900">
+            <span>TOTAL ESTIMATE:</span>
+            <span class="text-base font-black text-slate-950" id="invTotalAmount">₹0</span>
+          </div>
+          <div class="p-3 bg-blue-50/80 rounded-xl border border-blue-100 space-y-1">
+            <div class="flex justify-between text-xs text-blue-900 font-bold">
+              <span>Advance Payable Today:</span>
+              <span id="invAdvanceDue">₹0</span>
+            </div>
+            <div class="flex justify-between text-[11px] text-slate-600">
+              <span>Balance Due on Event:</span>
+              <span id="invBalanceDue" class="font-semibold text-slate-800">₹0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INVOICE LEGAL FOOTNOTE -->
+      <div class="mt-8 pt-6 border-t border-slate-200 text-[10px] text-slate-500 space-y-1.5 leading-relaxed">
+        <p><strong>नियम एवं शर्तें:</strong> 1. इवेंट के दिन 75% क्लियरेंस के पश्चात ही क्रू रवाना होगा। 2. कार्यक्रम समाप्ति पर शेष 25% देय है। 3. 100% भुगतान के पश्चात ही फाइनल 4K डेटा, पेनड्राइव व एल्बम सुपुर्द किए जाएंगे। 4. 7 दिन के भीतर शेष भुगतान न होने पर डेटा बैकअप की जिम्मेदारी नहीं होगी।</p>
+        <p><strong>कानूनी क्षेत्राधिकार:</strong> किसी भी विवाद या कानूनी कार्यवाही की स्थिति में समस्त न्यायिक मामलों का क्षेत्राधिकार केवल <strong>जिला न्यायालय, अलीगढ़ (उत्तर प्रदेश)</strong> ही मान्य होगा।</p>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ================= JAVASCRIPT LOGIC ================= -->
   <script>
@@ -926,7 +1129,43 @@
     }
     setInterval(nextSlide, 5000);
 
-    // 2. Travel Fare Toggle & Distance Selection Logic
+    // 2. LED Frame Quantity Controls
+    function toggleLedFrame() {
+      const isChecked = document.getElementById('gear_led_frame').checked;
+      const qtyBox = document.getElementById('ledFrameQtyBox');
+      if (isChecked) {
+        qtyBox.classList.remove('hidden');
+      } else {
+        qtyBox.classList.add('hidden');
+      }
+      updateLedFramePrice();
+    }
+
+    function adjustLedQty(change) {
+      const qtyInput = document.getElementById('ledFrameQty');
+      let val = parseInt(qtyInput.value) || 1;
+      val = Math.max(1, Math.min(100, val + change));
+      qtyInput.value = val;
+      updateLedFramePrice();
+    }
+
+    function updateLedQtyFromInput() {
+      const qtyInput = document.getElementById('ledFrameQty');
+      let val = parseInt(qtyInput.value) || 1;
+      val = Math.max(1, Math.min(100, val));
+      qtyInput.value = val;
+      updateLedFramePrice();
+    }
+
+    function updateLedFramePrice() {
+      const isChecked = document.getElementById('gear_led_frame').checked;
+      const qty = parseInt(document.getElementById('ledFrameQty').value) || 1;
+      const total = qty * 500;
+      document.getElementById('ledFrameTotalText').innerText = isChecked ? `+ ₹${total.toLocaleString('en-IN')}` : `+ ₹500`;
+      calcNetTotal();
+    }
+
+    // 3. Travel Fare Toggle & Distance Selection Logic
     function toggleTravelFare() {
       const isChecked = document.getElementById('travelFareCheckbox').checked;
       const distanceBox = document.getElementById('distanceSelectorBox');
@@ -951,7 +1190,27 @@
       calcNetTotal();
     }
 
-    // 3. Real-time Cost Calculation Engine
+    // 4. Payment Slabs Logic (25%, 50%, 75%, 100%)
+    let selectedSlabPercent = 25;
+
+    function selectPaymentSlab(percent) {
+      selectedSlabPercent = percent;
+      [25, 50, 75, 100].forEach(p => {
+        const btn = document.getElementById('slabBtn' + p);
+        if (p === percent) {
+          btn.className = "py-1.5 rounded-lg bg-[#0071e3] text-white transition";
+        } else {
+          btn.className = "py-1.5 rounded-lg text-slate-400 hover:text-white transition";
+        }
+      });
+      document.getElementById('slabPercentLabel').innerText = `${percent}% ${percent === 25 ? 'टोकन एडवांस' : percent === 100 ? 'फुल एडवांस' : 'एडवांस'}`;
+      calcNetTotal();
+    }
+
+    // 5. Global Calculation Engine
+    let currentCalculatedTotal = 0;
+    let currentSelectedItems = [];
+
     function calcNetTotal() {
       let grandTotal = 0;
       let selectedItems = [];
@@ -959,7 +1218,7 @@
       // Scan all regular checkboxes
       const checkedBoxes = document.querySelectorAll('#calculator input[type="checkbox"]:checked');
       checkedBoxes.forEach(cb => {
-        if (cb.id !== 'travelFareCheckbox') {
+        if (cb.id !== 'travelFareCheckbox' && cb.id !== 'gear_led_frame') {
           const val = parseInt(cb.value) || 0;
           grandTotal += val;
           selectedItems.push({
@@ -968,6 +1227,18 @@
           });
         }
       });
+
+      // Handle LED Frame with Quantity
+      const isLedFrameChecked = document.getElementById('gear_led_frame').checked;
+      if (isLedFrameChecked) {
+        const qty = parseInt(document.getElementById('ledFrameQty').value) || 1;
+        const totalLedPrice = qty * 500;
+        grandTotal += totalLedPrice;
+        selectedItems.push({
+          name: `बैकलीट एलईडी फोटो फ्रेम (ट्रांसलाइट प्रिंट + स्टैंड रेंट) × ${qty} यूनिट`,
+          price: totalLedPrice
+        });
+      }
 
       // Handle Travel Fare Checkbox
       const isTravelFareChecked = document.getElementById('travelFareCheckbox').checked;
@@ -986,11 +1257,23 @@
         });
       }
 
+      currentCalculatedTotal = grandTotal;
+      currentSelectedItems = selectedItems;
+
+      // Update Formatted Price Displays
       const formatted = "₹" + grandTotal.toLocaleString('en-IN');
       document.getElementById('liveTotalDisplay').innerText = formatted;
       document.getElementById('mobileBottomTotal').innerText = formatted;
       document.getElementById('selectedCountBadge').innerText = `${selectedItems.length} चुने गए`;
 
+      // Update Slabs Output
+      const advanceAmount = Math.round((grandTotal * selectedSlabPercent) / 100);
+      const balanceDue = grandTotal - advanceAmount;
+      document.getElementById('slabAdvanceAmount').innerText = "₹" + advanceAmount.toLocaleString('en-IN');
+      document.getElementById('slabDueAmount').innerText = "₹" + balanceDue.toLocaleString('en-IN');
+      document.getElementById('mobileAdvanceText').innerText = "₹" + advanceAmount.toLocaleString('en-IN');
+
+      // Update Breakdown Summary List
       const summaryList = document.getElementById('selectedSummaryList');
       if (selectedItems.length === 0) {
         summaryList.innerHTML = `<li class="text-neutral-500 py-1">कोई प्रोग्राम नहीं चुना गया।</li>`;
@@ -1004,14 +1287,13 @@
       }
     }
 
-    // 4. WhatsApp Dispatch Engine with Full Logistics
+    // 6. WhatsApp Dispatch Engine
     function dispatchToWhatsApp() {
       const clientName = document.getElementById('custName').value.trim() || 'क्लाइंट';
       const eventDate = document.getElementById('custDate').value || 'जल्द तय होगी';
       const eventCity = document.getElementById('custCity').value.trim() || 'नहल / अतरौली';
       const clientPhone = document.getElementById('custPhone').value.trim() || 'उपलब्ध नहीं';
 
-      // Travel Details
       const isTravelFareChecked = document.getElementById('travelFareCheckbox').checked;
       let travelStatusText = "";
       if (isTravelFareChecked) {
@@ -1021,7 +1303,6 @@
         travelStatusText = "⚠️ पार्टी खुद जिम्मेदार होगी फोटोग्राफर को अपने वाहन से लाने व ले जाने के लिए (₹0 किराया)";
       }
 
-      // Logistics inputs
       const venueAddress = document.getElementById('venueAddress').value.trim() || 'लोकल स्थल';
       const venueLandmark = document.getElementById('venueLandmark').value.trim() || 'मुख्य मार्ग';
       const reportingTime = document.getElementById('crewReportingTime').value.trim() || 'समय अनुसार';
@@ -1029,24 +1310,12 @@
       const foodArrangement = document.getElementById('foodArrangement').value;
 
       let itemsText = "";
-      let totalAmount = 0;
-
-      const checkedBoxes = document.querySelectorAll('#calculator input[type="checkbox"]:checked');
-      let count = 1;
-      checkedBoxes.forEach((cb) => {
-        if (cb.id !== 'travelFareCheckbox') {
-          const val = parseInt(cb.value);
-          totalAmount += val;
-          itemsText += `\n  ${count}. ${cb.getAttribute('data-name')} (₹${val.toLocaleString('en-IN')})`;
-          count++;
-        }
+      currentSelectedItems.forEach((item, idx) => {
+        itemsText += `\n  ${idx + 1}. ${item.name} (${item.price === 0 ? 'शामिल' : '₹' + item.price.toLocaleString('en-IN')})`;
       });
 
-      if (isTravelFareChecked) {
-        const fare = parseInt(document.getElementById('travelDistanceSelect').value) || 500;
-        totalAmount += fare;
-        itemsText += `\n  ${count}. आवागमन किराया (₹${fare.toLocaleString('en-IN')})`;
-      }
+      const advAmount = Math.round((currentCalculatedTotal * selectedSlabPercent) / 100);
+      const dueAmount = currentCalculatedTotal - advAmount;
 
       const waMessage = 
 `🎬 *COOL ART STUDIOS & MEDIA PRODUCTION*
@@ -1059,7 +1328,9 @@
 
 📋 *चुने गए प्रोग्राम व सुविधाएं:*${itemsText}
 ━━━━━━━━━━━━━━━━━━━━━━
-💰 *कुल अनुमानित बजट:* ₹${totalAmount.toLocaleString('en-IN')}
+💰 *कुल अनुमानित बजट:* ₹${currentCalculatedTotal.toLocaleString('en-IN')}
+💳 *पेमेंट स्टेज चयन:* ${selectedSlabPercent}% (टोकन एडवांस: ₹${advAmount.toLocaleString('en-IN')})
+⏳ *प्रोग्राम पर शेष बकाया:* ₹${dueAmount.toLocaleString('en-IN')}
 ━━━━━━━━━━━━━━━━━━━━━━
 🚗 *आवागमन व लॉजिस्टिक्स विवरण:*
 • *वाहन/किराया:* ${travelStatusText}
@@ -1069,6 +1340,7 @@
 • *स्थल संपर्क सूत्र:* ${contactPerson}
 • *खान-पान व्यवस्था:* ${foodArrangement}
 ━━━━━━━━━━━━━━━━━━━━━━
+⚖️ *कानूनी क्षेत्राधिकार:* समस्त कानूनी व न्यायिक मामलों का क्षेत्राधिकार केवल जिला न्यायालय, अलीगढ़ (उत्तर प्रदेश) रहेगा।
 📞 *हेल्पलाइन:* 9458614610
 
 नमस्ते कृष्ण कांत जी, मैंने वेबसाइट से अपने कार्यक्रम के लिए यह बजट और आवागमन विवरण तैयार किया है। कृपया तारीख कन्फर्म करें।`;
@@ -1076,6 +1348,61 @@
       const studioWhatsApp = "919458614610";
       const targetUrl = `https://wa.me/${studioWhatsApp}?text=${encodeURIComponent(waMessage)}`;
       window.open(targetUrl, '_blank');
+    }
+
+    // 7. US-Style Clean Digital Invoice Modal Logic
+    function openCleanInvoiceModal() {
+      const clientName = document.getElementById('custName').value.trim() || 'माननीय क्लाइंट';
+      const eventDate = document.getElementById('custDate').value || 'जल्द तय होगी';
+      const eventCity = document.getElementById('custCity').value.trim() || 'नहल / अतरौली (अलीगढ़)';
+      const clientPhone = document.getElementById('custPhone').value.trim() || 'उपलब्ध नहीं';
+
+      const venueAddress = document.getElementById('venueAddress').value.trim() || 'प्रोग्राम स्थल';
+      const reportingTime = document.getElementById('crewReportingTime').value.trim() || 'समय अनुसार';
+      const isTravelFareChecked = document.getElementById('travelFareCheckbox').checked;
+      const travelStatus = isTravelFareChecked ? 'स्टूडियो वाहन (किराया शामिल)' : 'पार्टी वाहन व्यवस्था';
+
+      // Set Invoice Data
+      document.getElementById('invClientName').innerText = clientName;
+      document.getElementById('invClientPhone').innerText = "फ़ोन: " + clientPhone;
+      document.getElementById('invClientCity').innerText = "स्थान: " + eventCity;
+      document.getElementById('invEventDate').innerText = eventDate;
+      document.getElementById('invVenueAddress').innerText = "स्थल पता: " + venueAddress;
+      document.getElementById('invReporting').innerText = "रिपोर्टिंग समय: " + reportingTime;
+      document.getElementById('invTravelStatus').innerText = "वाहन व्यवस्था: " + travelStatus;
+
+      // Unique random invoice number
+      const randomInv = Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('invNumber').innerText = `#CA-2026-${randomInv}`;
+
+      // Populate Items
+      const tableBody = document.getElementById('invItemsTableBody');
+      tableBody.innerHTML = currentSelectedItems.map((item, idx) => `
+        <tr class="hover:bg-slate-50/50">
+          <td class="py-2.5 text-slate-400 font-medium">${idx + 1}</td>
+          <td class="py-2.5 font-semibold text-slate-800">${item.name}</td>
+          <td class="py-2.5 text-right font-bold text-slate-900">${item.price === 0 ? 'शामिल' : '₹' + item.price.toLocaleString('en-IN')}</td>
+        </tr>
+      `).join('');
+
+      // Amounts
+      const advAmount = Math.round((currentCalculatedTotal * selectedSlabPercent) / 100);
+      const dueAmount = currentCalculatedTotal - advAmount;
+
+      document.getElementById('invSubtotal').innerText = "₹" + currentCalculatedTotal.toLocaleString('en-IN');
+      document.getElementById('invTotalAmount').innerText = "₹" + currentCalculatedTotal.toLocaleString('en-IN');
+      document.getElementById('invSlabSelected').innerText = `${selectedSlabPercent}%`;
+      document.getElementById('invAdvanceDue').innerText = "₹" + advAmount.toLocaleString('en-IN');
+      document.getElementById('invBalanceDue').innerText = "₹" + dueAmount.toLocaleString('en-IN');
+
+      // Show Modal
+      document.getElementById('invoiceModal').classList.remove('hidden');
+      document.getElementById('invoiceModal').classList.add('flex');
+    }
+
+    function closeCleanInvoiceModal() {
+      document.getElementById('invoiceModal').classList.add('hidden');
+      document.getElementById('invoiceModal').classList.remove('flex');
     }
 
     // Initialize calculation
