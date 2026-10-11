@@ -3,26 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Cool Art Studios | Pro Media Estimator & Invoice Generator</title>
+  <title>Cool Art Studios | Pro Media Estimator, 12x36 Photobook Showcase & Invoice</title>
   
+  <!-- Modern Futuristic Typography: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS & FontAwesome -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <style>
     :root {
-      --system-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     body {
-      font-family: var(--system-font);
+      font-family: var(--font-body);
       background-color: #05070c;
       color: #f5f5f7;
       letter-spacing: -0.015em;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+    h1, h2, h3, h4, .heading-font {
+      font-family: var(--font-heading);
+    }
     body.light-theme {
       background-color: #f5f5f7 !important;
-      color: #1d1d1f !important;
+      color: #111827 !important;
     }
     .apple-grid-texture {
       background-image: 
@@ -44,7 +53,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
     body.light-theme .apple-glass {
-      background: rgba(255, 255, 255, 0.85) !important;
+      background: rgba(255, 255, 255, 0.88) !important;
       border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
     }
     .apple-glass-card {
@@ -55,19 +64,19 @@
       box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
     }
     body.light-theme .apple-glass-card {
-      background: rgba(255, 255, 255, 0.92) !important;
+      background: rgba(255, 255, 255, 0.95) !important;
       border: 1px solid rgba(0, 0, 0, 0.09) !important;
       box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08) !important;
-      color: #1d1d1f !important;
+      color: #111827 !important;
     }
-    body.light-theme .text-white { color: #1d1d1f !important; }
+    body.light-theme .text-white { color: #111827 !important; }
     body.light-theme .bg-black\/40, body.light-theme .bg-black\/45, body.light-theme .bg-black\/50, body.light-theme .bg-black\/60 {
-      background-color: #f0f2f5 !important;
+      background-color: #f1f4f9 !important;
       border-color: rgba(0, 0, 0, 0.08) !important;
     }
     body.light-theme input, body.light-theme select {
       background-color: #ffffff !important;
-      color: #1d1d1f !important;
+      color: #111827 !important;
       border-color: #d1d5db !important;
     }
     .apple-blue-btn {
@@ -77,9 +86,65 @@
     .apple-blue-btn:hover { background-color: #0077ed; transform: scale(1.01); }
     .apple-blue-btn:active { transform: scale(0.98); background-color: #0062c4; }
     .apple-subtext { color: #8b9bb4; }
-    body.light-theme .apple-subtext { color: #6e6e73 !important; }
+    body.light-theme .apple-subtext { color: #64748b !important; }
     .custom-scroll::-webkit-scrollbar { width: 4px; height: 4px; }
     .custom-scroll::-webkit-scrollbar-thumb { background: #25334e; border-radius: 9999px; }
+
+    /* Infinite Marquee Ticker */
+    @keyframes scrollBrands {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: scrollBrands 24s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+    .brand-box {
+      width: 165px;
+      height: 70px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border-radius: 1rem;
+      background: rgba(13, 20, 36, 0.65);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body.light-theme .brand-box {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+    }
+    .brand-box:hover {
+      transform: translateY(-2px);
+      border-color: rgba(41, 151, 255, 0.45);
+      background: rgba(20, 32, 58, 0.9);
+    }
+    body.light-theme .brand-box:hover {
+      background: #ffffff !important;
+      border-color: #0071e3 !important;
+    }
+
+    /* Layflat Center Crease Fold */
+    .center-layflat-crease {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      background: linear-gradient(to right, rgba(0,0,0,0.45), rgba(255,255,255,0.06) 45%, rgba(0,0,0,0.5));
+      box-shadow: 0 0 10px rgba(0,0,0,0.7);
+      pointer-events: none;
+    }
+
     @media print {
       body * { visibility: hidden; }
       #printableInvoiceModal, #printableInvoiceModal * { visibility: visible; }
@@ -94,7 +159,6 @@
 <body class="apple-grid-texture selection:bg-blue-600 selection:text-white pb-32 lg:pb-16 antialiased">
 
   <!-- ================= 1. FLOATING DRAWER CONTROLLER: LANGUAGE & THEME ================= -->
-  <!-- Edge Trigger Button (Never overlaps content on phone) -->
   <div class="fixed right-0 top-1/3 -translate-y-1/2 z-50">
     <button onclick="toggleControlDrawer()" id="drawerTriggerBtn" 
             class="bg-blue-600/90 hover:bg-blue-600 text-white p-2.5 rounded-l-2xl shadow-2xl backdrop-blur-md border-y border-l border-white/20 flex flex-col items-center gap-1.5 transition-transform duration-300 group"
@@ -104,7 +168,6 @@
     </button>
   </div>
 
-  <!-- Slide-out Drawer Panel -->
   <div id="controlDrawerPanel" 
        class="fixed right-0 top-1/3 -translate-y-1/2 z-50 translate-x-full transition-transform duration-300 ease-in-out">
     <div class="apple-glass rounded-l-3xl p-3.5 shadow-2xl border-y border-l border-white/20 flex flex-col items-center gap-4 bg-slate-950/90 text-xs">
@@ -129,26 +192,26 @@
     </div>
   </div>
 
-  <!-- ================= 2. NAVBAR (CLEAN & DIRECT, NO TOP BAR CLUTTER) ================= -->
+  <!-- ================= 2. NAVBAR ================= -->
   <header class="sticky top-0 z-40 apple-glass">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       
       <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
         <img src="cool art logo.png" alt="COOL ART®" class="h-7 sm:h-9 w-auto object-contain brightness-100 group-hover:opacity-90 transition" onerror="this.style.display='none'; document.getElementById('fallbackLogoText').style.display='block';">
         <div id="fallbackLogoText" class="hidden">
-          <span class="text-lg font-extrabold tracking-tight block leading-none">COOL ART&reg;</span>
+          <span class="text-xl font-extrabold tracking-tight block leading-none heading-font">COOL ART&reg;</span>
           <span class="text-[9px] font-semibold tracking-wider text-blue-500 uppercase">Studios & Broadcast</span>
         </div>
         <span class="hidden md:inline-block h-4 w-[1px] bg-white/20 mx-1"></span>
-        <span class="hidden md:inline-block text-[10px] font-medium apple-subtext tracking-wider uppercase" data-i18n="navSubtitle">Studios & Broadcast</span>
+        <span class="hidden md:inline-block text-[11px] font-medium apple-subtext tracking-wider uppercase" data-i18n="navSubtitle">Studios & Broadcast</span>
       </a>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <a href="https://kryshankaant.github.io/sabkuchhprinting/" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-amber-400 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 transition">
+        <a href="https://kryshankaant.github.io/sabkuchhprinting/" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-amber-400 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 transition">
           <i class="fa-solid fa-print text-xs"></i>
           <span data-i18n="printingPortal">प्रिंटिंग सेवा</span>
         </a>
-        <a href="#calculator" class="apple-blue-btn text-white text-xs font-semibold px-4 py-1.5 sm:py-2 rounded-full shadow-md" data-i18n="calcBtn">
+        <a href="#calculator" class="apple-blue-btn text-white text-xs font-bold px-4 py-2 rounded-full shadow-md" data-i18n="calcBtn">
           कैलकुलेटर
         </a>
       </div>
@@ -156,191 +219,362 @@
     </div>
   </header>
 
-  <!-- ================= 3. CINEMATIC FULL-WIDTH HERO STAGE WITH INTEGRATED TEXT OVERLAY ================= -->
-  <section class="relative w-full overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-[700px] flex items-center justify-center">
+  <!-- ================= 3. CINEMATIC PURE FULL-WIDTH VISUAL HERO BANNER (NO TEXT - ROTATING hero1.jpg to hero8.jpg) ================= -->
+  <section class="relative w-full overflow-hidden h-[340px] sm:h-[460px] md:h-[540px] lg:h-[620px] bg-[#05070c]">
     
-    <!-- Background Carousel Images (Full Bleed with Vignette) -->
     <div class="absolute inset-0 z-0">
-      <!-- Slide 1: Royal Wedding -->
-      <div class="portfolio-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&auto=format&fit=crop&q=85" 
-             alt="शाही विवाह सिनेमैटिक शूट" 
-             class="w-full h-full object-cover object-center scale-105 transition-transform duration-10000 ease-out">
+      
+      <!-- Slide 1 (hero1.jpg) -->
+      <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100">
+        <img src="hero1.jpg" 
+             onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&auto=format&fit=crop&q=85'" 
+             alt="Hero 1" class="w-full h-full object-cover object-center">
       </div>
 
-      <!-- Slide 2: 4K Aerial Drone -->
-      <div class="portfolio-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
-        <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1920&auto=format&fit=crop&q=85" 
-             alt="4K ड्रोन कवरेज" 
-             class="w-full h-full object-cover object-center scale-105 transition-transform duration-10000 ease-out">
+      <!-- Slide 2 (hero2.jpg) -->
+      <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
+        <img src="hero2.jpg" 
+             onerror="this.src='https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1920&auto=format&fit=crop&q=85'" 
+             alt="Hero 2" class="w-full h-full object-cover object-center">
       </div>
 
-      <!-- Slide 3: Bhagwat Katha & Religious -->
-      <div class="portfolio-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
-        <img src="https://images.unsplash.com/photo-1545232979-fbf68fe9b10d?w=1920&auto=format&fit=crop&q=85" 
-             alt="धार्मिक महोत्सव व कथा" 
-             class="w-full h-full object-cover object-center scale-105 transition-transform duration-10000 ease-out">
+      <!-- Slide 3 (hero3.jpg) -->
+      <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
+        <img src="hero3.jpg" 
+             onerror="this.src='https://images.unsplash.com/photo-1545232979-fbf68fe9b10d?w=1920&auto=format&fit=crop&q=85'" 
+             alt="Hero 3" class="w-full h-full object-cover object-center">
       </div>
 
-      <!-- Cinematic Multi-Layer Gradient Overlays for Maximum Legibility -->
-      <div class="absolute inset-0 bg-gradient-to-t from-[#05070c] via-[#05070c]/75 to-[#05070c]/50"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-[#05070c]/85 via-transparent to-[#05070c]/85"></div>
-      <div class="absolute inset-0 radial-gradient(circle at center, transparent 30%, #05070c 90%)"></div>
+      <!-- Slide 4 (hero4.jpg) -->
+      <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
+        <img src="hero4.jpg" 
+             onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1920&auto=format&fit=crop&q=85'" 
+             alt="Hero 4" class="w-full h-full object-cover object-center">
+      </div>
+
+      <!-- Slide 5 (hero5.jpg) -->
+      <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
+        <img src="hero5.jpg" 
+             onerror="this.src='https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1920&auto=format&fit=crop&q=85'" 
+             alt="Hero 5" class="w-full h-full object-cover object-center">
+      </div>
+
+      <!-- Slide 6 (hero6.jpg) -->
+      <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
+        <img src="hero6.jpg" 
+             onerror="this.src='https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=1920&auto=format&fit=crop&q=85'" 
+             alt="Hero 6" class="w-full h-full object-cover object-center">
+      </div>
+
+      <!-- Slide 7 (hero7.jpg) -->
+      <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
+        <img src="hero7.jpg" 
+             onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&auto=format&fit=crop&q=85'" 
+             alt="Hero 7" class="w-full h-full object-cover object-center">
+      </div>
+
+      <!-- Slide 8 (hero8.jpg) -->
+      <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
+        <img src="hero8.jpg" 
+             onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1920&auto=format&fit=crop&q=85'" 
+             alt="Hero 8" class="w-full h-full object-cover object-center">
+      </div>
+
+      <!-- Subtle Dark Gradient Vignette for Top/Bottom Contrast -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#05070c] via-transparent to-[#05070c]/50"></div>
     </div>
 
-    <!-- Foreground Content (Naturally Placed Over Banner) -->
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center space-y-6">
+    <!-- Minimal Controls on Banner -->
+    <div class="absolute bottom-4 right-4 z-20 flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15">
+      <button onclick="prevHeroSlide()" class="text-white hover:text-blue-400 text-xs px-1.5 transition">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <span id="heroSlideCounter" class="text-[11px] font-mono font-bold text-slate-300">1 / 8</span>
+      <button onclick="nextHeroSlide()" class="text-white hover:text-blue-400 text-xs px-1.5 transition">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ================= 4. PRO BRAND TICKER RIBBON (.JPG LOGOS READY) ================= -->
+  <div class="w-full overflow-hidden py-3.5 border-y border-white/[0.08] bg-black/50 backdrop-blur-md relative">
+    
+    <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#05070c] to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#05070c] to-transparent z-10 pointer-events-none"></div>
+
+    <div class="marquee-track flex items-center gap-4 sm:gap-6 pl-4">
       
-      <!-- Top Dynamic Capsule Tag -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/70 border border-white/20 backdrop-blur-md text-[#2997ff] text-xs font-semibold shadow-lg">
-        <span class="w-2 h-2 rounded-full bg-[#2997ff] animate-ping"></span>
-        <span data-i18n="heroBadge">सिनेमैटिक 4K • ड्रोन पायलट • लाइव डिस्प्ले</span>
+      <!-- SONY -->
+      <div class="brand-box group cursor-default">
+        <img src="sony.jpg" alt="SONY" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-camera text-blue-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">SONY &alpha;</span>
+        </div>
       </div>
 
-      <!-- Hero Headline Integrated Directly Over Banner -->
-      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-[1.15] max-w-4xl mx-auto drop-shadow-md">
-        <span data-i18n="heroHeading1">हर कार्यक्रम की पारदर्शी व</span><br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#2997ff] via-[#7bc0ff] to-[#ffffff]" data-i18n="heroHeading2">
-          प्रीमियम मीडिया बुकिंग
-        </span>
-      </h1>
-
-      <!-- Subtitle Description -->
-      <p class="text-slate-300 text-xs sm:text-base max-w-2xl mx-auto leading-relaxed font-normal drop-shadow" data-i18n="heroDescription">
-        अपनी पसंद के अनुसार कैमरा, ड्रोन, एलईडी फ्रेम और अलग-अलग रस्में चुनें। सिस्टम पारदर्शी बिल, आवागमन विवरण व प्रोफेशनल इनवॉइस तुरंत तैयार करेगा।
-      </p>
-
-      <!-- Interactive Call to Action Over Banner -->
-      <div class="pt-2 flex flex-wrap items-center justify-center gap-3.5">
-        <a href="#calculator" class="apple-blue-btn text-white text-xs sm:text-sm font-bold px-6 py-3.5 rounded-2xl shadow-xl flex items-center gap-2 group">
-          <i class="fa-solid fa-calculator text-blue-200"></i>
-          <span data-i18n="heroCtaCalc">लाइव बजट कैलकुलेट करें</span>
-          <i class="fa-solid fa-arrow-down text-xs group-hover:translate-y-0.5 transition"></i>
-        </a>
-        <button onclick="dispatchToWhatsApp()" class="px-5 py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/25 text-white text-xs sm:text-sm font-bold backdrop-blur-md shadow-lg transition flex items-center gap-2">
-          <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
-          <span data-i18n="heroCtaWa">सीधे बात करें</span>
-        </button>
+      <!-- DJI -->
+      <div class="brand-box group cursor-default">
+        <img src="dji.jpg" alt="DJI" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-helicopter text-emerald-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">DJI PRO</span>
+        </div>
       </div>
 
-      <!-- Active Slide Context Capsule (Live Dynamic Pill Over Banner) -->
-      <div class="pt-6">
-        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-2xl bg-black/60 border border-white/15 backdrop-blur-md shadow-2xl text-left">
-          <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-          <div>
-            <span class="text-[10px] text-slate-400 block uppercase tracking-wider font-semibold" id="slideContextTag">शाही विवाह कवरेज</span>
-            <span class="text-xs font-bold text-white block leading-tight" id="slideContextTitle">जयमाला, फेरे व प्री-वेडिंग 4K सिनेमैटिक शूट</span>
-          </div>
-          <!-- Next/Prev Minimal Glass Arrows -->
-          <div class="flex items-center gap-1 ml-3 pl-3 border-l border-white/15">
-            <button onclick="prevSlide()" class="w-7 h-7 rounded-full hover:bg-white/15 text-slate-300 hover:text-white flex items-center justify-center transition">
-              <i class="fa-solid fa-chevron-left text-[10px]"></i>
-            </button>
-            <button onclick="nextSlide()" class="w-7 h-7 rounded-full hover:bg-white/15 text-slate-300 hover:text-white flex items-center justify-center transition">
-              <i class="fa-solid fa-chevron-right text-[10px]"></i>
-            </button>
-          </div>
+      <!-- APPLE -->
+      <div class="brand-box group cursor-default">
+        <img src="apple.jpg" alt="APPLE" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-brands fa-apple text-slate-200 text-base"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">APPLE M-CHIP</span>
+        </div>
+      </div>
+
+      <!-- CANON -->
+      <div class="brand-box group cursor-default">
+        <img src="canon.jpg" alt="CANON" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-video text-rose-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">CANON EOS</span>
+        </div>
+      </div>
+
+      <!-- CANVERA -->
+      <div class="brand-box group cursor-default">
+        <img src="canvera.jpg" alt="CANVERA" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-book-open text-amber-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">CANVERA</span>
+        </div>
+      </div>
+
+      <!-- GODOX -->
+      <div class="brand-box group cursor-default">
+        <img src="godox.jpg" alt="GODOX" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-lightbulb text-yellow-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">GODOX LUX</span>
+        </div>
+      </div>
+
+      <!-- NIKON -->
+      <div class="brand-box group cursor-default">
+        <img src="nikon.jpg" alt="NIKON" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-camera-retro text-cyan-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">NIKON Z</span>
+        </div>
+      </div>
+
+      <!-- BLACKMAGIC -->
+      <div class="brand-box group cursor-default">
+        <img src="blackmagic.jpg" alt="BLACKMAGIC" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-film text-purple-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">BLACKMAGIC</span>
+        </div>
+      </div>
+
+      <!-- Seamless Loop Duplicate -->
+      <div class="brand-box group cursor-default">
+        <img src="sony.jpg" alt="SONY" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-camera text-blue-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">SONY &alpha;</span>
+        </div>
+      </div>
+      <div class="brand-box group cursor-default">
+        <img src="dji.jpg" alt="DJI" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-helicopter text-emerald-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">DJI PRO</span>
+        </div>
+      </div>
+      <div class="brand-box group cursor-default">
+        <img src="apple.jpg" alt="APPLE" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-brands fa-apple text-slate-200 text-base"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">APPLE M-CHIP</span>
+        </div>
+      </div>
+      <div class="brand-box group cursor-default">
+        <img src="canon.jpg" alt="CANON" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-video text-rose-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">CANON EOS</span>
+        </div>
+      </div>
+      <div class="brand-box group cursor-default">
+        <img src="canvera.jpg" alt="CANVERA" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-book-open text-amber-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">CANVERA</span>
+        </div>
+      </div>
+      <div class="brand-box group cursor-default">
+        <img src="godox.jpg" alt="GODOX" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-lightbulb text-yellow-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">GODOX LUX</span>
+        </div>
+      </div>
+      <div class="brand-box group cursor-default">
+        <img src="nikon.jpg" alt="NIKON" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-camera-retro text-cyan-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">NIKON Z</span>
+        </div>
+      </div>
+      <div class="brand-box group cursor-default">
+        <img src="blackmagic.jpg" alt="BLACKMAGIC" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="hidden items-center gap-2">
+          <i class="fa-solid fa-film text-purple-400 text-sm"></i>
+          <span class="text-xs font-black tracking-widest uppercase text-slate-300 group-hover:text-white">BLACKMAGIC</span>
         </div>
       </div>
 
     </div>
+  </div>
 
-    <!-- Bottom Gradient Fade into Body -->
-    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-[#05070c] pointer-events-none"></div>
-  </section>
-
-  <!-- ================= 4. PRINTING SISTER VENTURE CARD ================= -->
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-6 pb-2">
-    <div class="apple-glass-card rounded-3xl p-5 sm:p-7 relative overflow-hidden">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-5 relative z-10">
-        <div class="space-y-1.5 text-center md:text-left">
-          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-400 text-[10px] font-bold uppercase tracking-wider" data-i18n="printDivisionTag">
-            Cool Art Sister Division
+  <!-- ================= 5. LUXURY 12X36 PHOTOBOOK ALBUM SHOWCASE (25+1 COVER = 26 SHEETS BROWSER: pg1alb.jpg to pg26alb.jpg) ================= -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
+    <div class="apple-glass-card rounded-3xl p-5 sm:p-8 relative overflow-hidden border border-white/[0.1] bg-gradient-to-b from-[#0e172a]/95 via-[#0c1322]/90 to-[#060a14]/95 shadow-2xl">
+      
+      <!-- Album Showcase Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.08]">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/25 text-amber-400 text-[10px] font-bold uppercase tracking-wider mb-2">
+            <i class="fa-solid fa-gem text-xs"></i> 36" &times; 12" Master Signature Photobook (25+1 Sheets)
           </div>
-          <h2 class="text-lg sm:text-2xl font-bold tracking-tight" data-i18n="printTitle">
-            प्रिंटिंग प्रेस एवं कम्पलीट एडवरटाइजिंग सॉल्यूशंस
+          <h2 class="text-xl sm:text-2xl font-black text-white tracking-tight heading-font">
+            सिनेमैटिक 12&times;36 इंच फोटो एल्बम लाइव शोकेस
           </h2>
-          <p class="apple-subtext text-xs sm:text-sm max-w-xl leading-relaxed" data-i18n="printDesc">
-            शादी कार्ड (निमंत्रण पत्र), फ्लैक्स बोर्ड, विनाइल प्रिंटिंग, पम्पलेट, बिल बुक, कैलेंडर व विजिटिंग कार्ड की प्रिंटिंग।
+          <p class="apple-subtext text-xs sm:text-sm mt-1">
+            25 अंदरूनी शीट्स + 1 मास्टर कवर शीट (कुल 26 शीट्स) &bull; 180&deg; सीमलेस ले-फ्लैट बाइंडिंग।
           </p>
         </div>
 
-        <div class="shrink-0">
-          <a href="https://kryshankaant.github.io/sabkuchhprinting/" target="_blank" 
-             class="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-white hover:bg-slate-100 text-slate-950 text-xs sm:text-sm font-bold shadow-xl transition transform active:scale-95 group">
-            <i class="fa-solid fa-layer-group text-blue-600"></i>
-            <span data-i18n="printCatalogBtn">प्रिंटिंग कैटलॉग व रेट देखें</span>
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500"></i>
-          </a>
+        <!-- Sheet Direct Selector Dropdown -->
+        <div class="flex items-center gap-2 bg-black/60 p-2 rounded-2xl border border-white/15 shrink-0 text-xs">
+          <span class="apple-subtext font-semibold hidden sm:inline">शीट चुनें:</span>
+          <select id="albumSheetSelect" onchange="jumpToSheet(this.value)" class="bg-[#0a0f1d] border border-white/20 rounded-xl px-3 py-1.5 text-white font-bold outline-none focus:border-blue-500 transition">
+            <!-- Dynamically populated 26 sheets via JS -->
+          </select>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ================= 5. PRO GEAR & BRAND TRUST BAR ================= -->
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-4">
-    <div class="apple-glass-card rounded-2xl py-5 px-6 border border-white/[0.08] text-center">
-      <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-400 block mb-4" data-i18n="brandsTitle">
-        इंडस्ट्री-लीडिंग सिनेमा गियर्स एवं टेक्नोलॉजी द्वारा संचालित
-      </span>
+      <!-- Album Canvas Stage (Strict 36x12 Full Open Spread Canvas) -->
+      <div class="mt-6 flex flex-col items-center justify-center">
+        <div class="relative w-full rounded-2xl overflow-hidden border-2 border-white/20 bg-[#02050b] p-2 sm:p-3 shadow-2xl flex items-center justify-center group aspect-[36/13] sm:aspect-[36/12]">
+          
+          <!-- Live 12x36 Sheet Image (Targeting pg1alb.jpg - pg26alb.jpg with 12X36.jpg fallback) -->
+          <img id="currentAlbumSheetImg" 
+               src="pg1alb.jpg" 
+               onerror="this.src='12X36.jpg'" 
+               alt="Photobook Sheet" 
+               class="w-full h-full object-contain rounded-xl shadow-lg cursor-pointer transition-transform duration-300 group-hover:scale-[1.005]"
+               onclick="openLightboxModal(this.src)">
 
-      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 opacity-75 hover:opacity-100 transition duration-300">
-        
-        <div class="flex items-center gap-2 group cursor-default">
-          <i class="fa-solid fa-camera text-base sm:text-xl text-slate-400 group-hover:text-blue-400 transition"></i>
-          <span class="text-xs sm:text-sm font-black tracking-widest uppercase text-slate-300 group-hover:text-white transition">SONY &alpha;</span>
-        </div>
+          <!-- 180-Degree Center Spine Fold Line -->
+          <div class="center-layflat-crease"></div>
 
-        <div class="flex items-center gap-2 group cursor-default">
-          <i class="fa-solid fa-helicopter text-base sm:text-xl text-slate-400 group-hover:text-emerald-400 transition"></i>
-          <span class="text-xs sm:text-sm font-black tracking-widest uppercase text-slate-300 group-hover:text-white transition">DJI PRO</span>
-        </div>
-
-        <div class="flex items-center gap-2 group cursor-default">
-          <i class="fa-brands fa-apple text-base sm:text-xl text-slate-400 group-hover:text-slate-100 transition"></i>
-          <span class="text-xs sm:text-sm font-black tracking-widest uppercase text-slate-300 group-hover:text-white transition">APPLE M-CHIP</span>
-        </div>
-
-        <div class="flex items-center gap-2 group cursor-default">
-          <i class="fa-solid fa-video text-base sm:text-xl text-slate-400 group-hover:text-rose-400 transition"></i>
-          <span class="text-xs sm:text-sm font-black tracking-widest uppercase text-slate-300 group-hover:text-white transition">CANON EOS</span>
-        </div>
-
-        <div class="flex items-center gap-2 group cursor-default">
-          <i class="fa-solid fa-book-open text-base sm:text-xl text-slate-400 group-hover:text-amber-400 transition"></i>
-          <span class="text-xs sm:text-sm font-black tracking-widest uppercase text-slate-300 group-hover:text-white transition">CANVERA</span>
-        </div>
-
-        <div class="flex items-center gap-2 group cursor-default">
-          <i class="fa-solid fa-lightbulb text-base sm:text-xl text-slate-400 group-hover:text-yellow-400 transition"></i>
-          <span class="text-xs sm:text-sm font-black tracking-widest uppercase text-slate-300 group-hover:text-white transition">GODOX LUX</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= 6. CALCULATOR WORKSPACE ================= -->
-  <section id="calculator" class="max-w-5xl mx-auto px-4 sm:px-6 pt-2">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
-      
-      <!-- Left Column (8 Cols) -->
-      <div class="lg:col-span-8 space-y-5">
-
-        <!-- 1. WEDDING CEREMONIES CARD -->
-        <div class="apple-glass-card rounded-3xl p-5 sm:p-7">
-          <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5 mb-4">
-            <div>
-              <h2 class="text-sm sm:text-base font-bold flex items-center gap-2">
-                <i class="fa-solid fa-ring text-[#2997ff]"></i>
-                <span data-i18n="section1Title">1. वैवाहिक रस्में (शादी पूर्व व मुख्य प्रोग्राम)</span>
-              </h2>
-              <p class="text-[11px] apple-subtext mt-0.5" data-i18n="section1Sub">जो-जो रस्में आयोजित हैं, केवल उन्हें अलग-अलग टिक करें</p>
-            </div>
-            <span class="text-[10px] bg-blue-500/10 text-[#2997ff] border border-blue-500/20 px-2.5 py-0.5 rounded-full font-semibold" data-i18n="multiSelectTag">मल्टी-सेलेक्शन</span>
+          <!-- Bottom Status Pill -->
+          <div class="absolute bottom-3 left-4 bg-black/80 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-[10px] sm:text-xs font-bold text-amber-300 border border-amber-400/30 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span id="sheetNumberBadge">शीट 1 / 26 (मास्टर कवर शीट)</span>
           </div>
 
-          <div class="space-y-2.5">
+          <!-- Fullscreen Zoom Button -->
+          <button onclick="openLightboxModal(document.getElementById('currentAlbumSheetImg').src)" 
+                  class="absolute top-4 right-4 bg-black/70 hover:bg-black/90 text-white text-xs font-bold px-3 py-1.5 rounded-xl backdrop-blur-md border border-white/20 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-expand text-[10px]"></i> <span>ज़ूम करें</span>
+          </button>
+        </div>
+
+        <!-- Sheet Controls Navigation Ribbon (Prev, Counter, Next) -->
+        <div class="mt-4 flex items-center justify-between w-full max-w-md px-2">
+          <button onclick="changeAlbumSheet(-1)" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs flex items-center gap-2 border border-white/15 transition active:scale-95">
+            <i class="fa-solid fa-chevron-left text-xs"></i>
+            <span>पिछली शीट</span>
+          </button>
+
+          <span id="sheetQuickCounter" class="text-xs font-bold text-slate-300 font-mono">
+            Sheet 1 of 26
+          </span>
+
+          <button onclick="changeAlbumSheet(1)" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-blue-600/30 transition active:scale-95">
+            <span>अगली शीट</span>
+            <i class="fa-solid fa-chevron-right text-xs"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quality Specs Footer -->
+      <div class="mt-6 pt-5 border-t border-white/[0.08] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+        <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.06] text-center sm:text-left">
+          <span class="text-amber-400 font-bold block mb-0.5"><i class="fa-solid fa-award mr-1"></i> कैनवेरा एचडी लस्टर पेपर</span>
+          <span class="text-slate-400 text-[11px]">100% वाटरप्रूफ, नॉन-टीयर लैमिनेशन व फिंगरप्रिंट सुरक्षित</span>
+        </div>
+        <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.06] text-center sm:text-left">
+          <span class="text-blue-400 font-bold block mb-0.5"><i class="fa-solid fa-arrows-left-right mr-1"></i> 180&deg; सीमलेस ले-फ्लैट बाइंडिंग</span>
+          <span class="text-slate-400 text-[11px]">बीच के फोल्ड पर कोई कटिंग नहीं, 36&times;12 का अखंड पैनोरमा</span>
+        </div>
+        <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.06] text-center sm:text-left">
+          <span class="text-emerald-400 font-bold block mb-0.5"><i class="fa-solid fa-camera mr-1"></i> मास्टर फिनिशिंग</span>
+          <span class="text-slate-400 text-[11px]">PRODUCED BY: COOL ART&reg; STUDIOS</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 6. CALCULATOR WORKSPACE (WITH ACCORDION DRAWERS) ================= -->
+  <section id="calculator" class="max-w-5xl mx-auto px-4 sm:px-6 pt-4">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+      
+      <!-- Left Column: Accordion Drawers (8 Cols) -->
+      <div class="lg:col-span-8 space-y-4">
+
+        <!-- 1. WEDDING CEREMONIES ACCORDION DRAWER (DEFAULT OPEN) -->
+        <div class="apple-glass-card rounded-3xl overflow-hidden border border-white/[0.08] transition-all">
+          <button type="button" onclick="toggleAccordion('sec1')" class="w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-white/[0.02] transition">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-xl bg-blue-500/10 text-[#2997ff] flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-ring text-sm"></i>
+              </div>
+              <div>
+                <h2 class="text-sm sm:text-base font-bold flex items-center gap-2 heading-font">
+                  <span data-i18n="section1Title">1. वैवाहिक रस्में (शादी पूर्व व मुख्य प्रोग्राम)</span>
+                </h2>
+                <p class="text-[11px] apple-subtext mt-0.5" data-i18n="section1Sub">जो-जो रस्में आयोजित हैं, केवल उन्हें अलग-अलग टिक करें</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5 shrink-0 ml-2">
+              <span id="badgeSec1" class="text-[10px] bg-blue-500/10 text-[#2997ff] border border-blue-500/20 px-2.5 py-0.5 rounded-full font-semibold">1 चयनित</span>
+              <i id="chevronSec1" class="fa-solid fa-chevron-up text-xs text-slate-400 transition-transform duration-300"></i>
+            </div>
+          </button>
+
+          <div id="contentSec1" class="p-5 sm:p-6 pt-0 space-y-2.5 border-t border-white/[0.06]">
+            <!-- विवाह पूर्व गोद भराई / रोका शगुन -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_roka_godbharai" value="3500" data-name="विवाह पूर्व गोद भराई / रोका शगुन (लड़की तय होना)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -352,6 +586,7 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹3,500</span>
             </label>
 
+            <!-- सगाई / रिंग सेरेमनी -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_engagement" value="7000" data-name="सगाई / रिंग सेरेमनी व लगन टीका" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -363,6 +598,7 @@
               <span class="text-xs sm:text-bold text-[#2997ff] shrink-0 ml-2">+ ₹7,000</span>
             </label>
 
+            <!-- प्री-वेडिंग आउटडोर -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_prewedding" value="10000" data-name="प्री-वेडिंग सिनेमैटिक आउटडोर शूट (विथ टीज़र)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -374,6 +610,7 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹10,000</span>
             </label>
 
+            <!-- हल्दी सेरेमनी -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_haldi" value="4000" data-name="हल्दी सेरेमनी (येलो थीम व फन शूट)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -385,6 +622,7 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
             </label>
 
+            <!-- मेहंदी सेरेमनी -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_mehendi" value="4000" data-name="मेहंदी सेरेमनी (क्लोजअप शॉट्स)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -396,6 +634,7 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
             </label>
 
+            <!-- महिला संगीत व भात न्योता -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_sangeet" value="5000" data-name="महिला संगीत, डीजे डांस व भात न्योता" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -407,6 +646,7 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹5,000</span>
             </label>
 
+            <!-- मुख्य शादी -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_wedding_main" value="18000" data-name="मुख्य शादी (बारात, जयमाला, फेरे व विदाई) - 2 क्रू" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0" checked>
@@ -418,6 +658,7 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">₹18,000</span>
             </label>
 
+            <!-- बहू गृह प्रवेश -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_bahu_entry" value="3000" data-name="बहू गृह प्रवेश (घर आगमन रस्म व थाली पूजन)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -431,20 +672,28 @@
           </div>
         </div>
 
-        <!-- 2. MATERNITY & RELIGIOUS CARD -->
-        <div class="apple-glass-card rounded-3xl p-5 sm:p-7">
-          <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5 mb-4">
-            <div>
-              <h2 class="text-sm sm:text-base font-bold flex items-center gap-2">
-                <i class="fa-solid fa-om text-[#2997ff]"></i>
-                <span data-i18n="section2Title">2. मातृत्व, धार्मिक व सार्वजनिक कार्यक्रम</span>
-              </h2>
-              <p class="text-[11px] apple-subtext mt-0.5" data-i18n="section2Sub">शिशु आगमन गोद भराई, भागवत कथा, मुंडन व जनसभाएं</p>
+        <!-- 2. MATERNITY & RELIGIOUS ACCORDION DRAWER -->
+        <div class="apple-glass-card rounded-3xl overflow-hidden border border-white/[0.08] transition-all">
+          <button type="button" onclick="toggleAccordion('sec2')" class="w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-white/[0.02] transition">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-om text-sm"></i>
+              </div>
+              <div>
+                <h2 class="text-sm sm:text-base font-bold flex items-center gap-2 heading-font">
+                  <span data-i18n="section2Title">2. मातृत्व, धार्मिक व सार्वजनिक कार्यक्रम</span>
+                </h2>
+                <p class="text-[11px] apple-subtext mt-0.5" data-i18n="section2Sub">शिशु आगमन गोद भराई, भागवत कथा, मुंडन व जनसभाएं</p>
+              </div>
             </div>
-            <span class="text-[10px] bg-white/[0.06] text-white/70 px-2.5 py-0.5 rounded-full font-semibold" data-i18n="optionalTag">ऐच्छिक</span>
-          </div>
+            <div class="flex items-center gap-2.5 shrink-0 ml-2">
+              <span id="badgeSec2" class="text-[10px] bg-white/[0.06] text-slate-400 border border-white/[0.1] px-2.5 py-0.5 rounded-full font-semibold" data-i18n="optionalTag">ऐच्छिक</span>
+              <i id="chevronSec2" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+            </div>
+          </button>
 
-          <div class="space-y-2.5">
+          <div id="contentSec2" class="hidden p-5 sm:p-6 pt-0 space-y-2.5 border-t border-white/[0.06]">
+            <!-- शिशु आगमन गोद भराई -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_baby_shower" value="4000" data-name="शिशु आगमन गोद भराई / साध पूजन (Baby Shower)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -456,6 +705,7 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
             </label>
 
+            <!-- श्रीमद्भागवत कथा -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_bhagwat" value="22000" data-name="श्रीमद्भागवत कथा (7-दिवसीय संपूर्ण ज्ञान यज्ञ)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -467,6 +717,7 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹22,000</span>
             </label>
 
+            <!-- मुंडन / कुआं पूजन -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_mundan" value="5000" data-name="कुआं पूजन / जलवा पूजन / मुंडन संस्कार" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -478,6 +729,7 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹5,000</span>
             </label>
 
+            <!-- जन्मदिन / गृह प्रवेश -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_birthday" value="4000" data-name="जन्मदिन उत्सव / गृह प्रवेश पूजा" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -491,21 +743,28 @@
           </div>
         </div>
 
-        <!-- 3. ADDITIONAL GEARS & LED FRAMES -->
-        <div class="apple-glass-card rounded-3xl p-5 sm:p-7">
-          <div class="flex items-center justify-between border-b border-white/[0.08] pb-3.5 mb-4">
-            <div>
-              <h2 class="text-sm sm:text-base font-bold flex items-center gap-2">
-                <i class="fa-solid fa-camera-retro text-[#2997ff]"></i>
-                <span data-i18n="section3Title">3. अतिरिक्त कैमरा, ड्रोन, एलईडी फ्रेम व एल्बम</span>
-              </h2>
-              <p class="text-[11px] apple-subtext mt-0.5" data-i18n="section3Sub">गियर्स, बैकलीट फ्रेम्स व फोटोबुक विकल्प</p>
+        <!-- 3. ADDITIONAL GEARS & LED FRAMES ACCORDION DRAWER -->
+        <div class="apple-glass-card rounded-3xl overflow-hidden border border-white/[0.08] transition-all">
+          <button type="button" onclick="toggleAccordion('sec3')" class="w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-white/[0.02] transition">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-camera-retro text-sm"></i>
+              </div>
+              <div>
+                <h2 class="text-sm sm:text-base font-bold flex items-center gap-2 heading-font">
+                  <span data-i18n="section3Title">3. अतिरिक्त कैमरा, ड्रोन, एलईडी फ्रेम व एल्बम</span>
+                </h2>
+                <p class="text-[11px] apple-subtext mt-0.5" data-i18n="section3Sub">गियर्स, बैकलीट फ्रेम्स व फोटोबुक विकल्प</p>
+              </div>
             </div>
-            <span class="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-semibold" data-i18n="addonTag">ऐड-ऑन</span>
-          </div>
+            <div class="flex items-center gap-2.5 shrink-0 ml-2">
+              <span id="badgeSec3" class="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded-full font-semibold" data-i18n="addonTag">ऐड-ऑन</span>
+              <i id="chevronSec3" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+            </div>
+          </button>
 
-          <div class="space-y-2.5">
-            <!-- LED FRAME WITH COUNTER -->
+          <div id="contentSec3" class="hidden p-5 sm:p-6 pt-0 space-y-2.5 border-t border-white/[0.06]">
+            <!-- BACKLIT LED FRAME WITH [+] / [-] COUNTER -->
             <div class="p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start justify-between cursor-pointer">
                 <label class="flex items-start gap-3 cursor-pointer flex-1">
@@ -542,7 +801,7 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
             </label>
 
-            <!-- Normal Album (3500) -->
+            <!-- Normal Album -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="gear_album_normal" value="3500" data-name="नॉर्मल डिजिटल फोटो एल्बम (25 शीट - बजट फ्रेंडली)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -554,7 +813,7 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹3,500</span>
             </label>
 
-            <!-- Premium Canvera Album (7000) -->
+            <!-- Premium Canvera Album -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="gear_album_canvera" value="7000" data-name="प्रीमियम कैनवेरा 30-शीट लेदरबैक फोटो एल्बम" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -568,17 +827,27 @@
           </div>
         </div>
 
-        <!-- 4. LOGISTICS & TRANSPORT -->
-        <div class="apple-glass-card rounded-3xl p-5 sm:p-7">
-          <div class="border-b border-white/[0.08] pb-3.5 mb-4">
-            <h2 class="text-sm sm:text-base font-bold flex items-center gap-2">
-              <i class="fa-solid fa-truck-ramp-box text-[#2997ff]"></i>
-              <span data-i18n="section4Title">4. आवागमन, किराया व लॉजिस्टिक्स विवरण</span>
-            </h2>
-            <p class="text-[11px] apple-subtext mt-0.5" data-i18n="section4Sub">दूरी के अनुसार किराया स्वतः डिफ़ॉल्ट जुड़ा हुआ है</p>
-          </div>
+        <!-- 4. LOGISTICS ACCORDION DRAWER -->
+        <div class="apple-glass-card rounded-3xl overflow-hidden border border-white/[0.08] transition-all">
+          <button type="button" onclick="toggleAccordion('sec4')" class="w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-white/[0.02] transition">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-truck-ramp-box text-sm"></i>
+              </div>
+              <div>
+                <h2 class="text-sm sm:text-base font-bold flex items-center gap-2 heading-font">
+                  <span data-i18n="section4Title">4. आवागमन, किराया व लॉजिस्टिक्स विवरण</span>
+                </h2>
+                <p class="text-[11px] apple-subtext mt-0.5" data-i18n="section4Sub">दूरी के अनुसार किराया स्वतः डिफ़ॉल्ट जुड़ा हुआ है</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5 shrink-0 ml-2">
+              <span id="badgeSec4" class="text-[10px] bg-blue-500/10 text-[#2997ff] border border-blue-500/20 px-2.5 py-0.5 rounded-full font-semibold">किराया शामिल</span>
+              <i id="chevronSec4" class="fa-solid fa-chevron-up text-xs text-slate-400 transition-transform duration-300"></i>
+            </div>
+          </button>
 
-          <div class="space-y-4">
+          <div id="contentSec4" class="p-5 sm:p-6 pt-0 space-y-4 border-t border-white/[0.06]">
             <div class="p-4 bg-black/50 border border-blue-500/30 rounded-2xl">
               <label class="flex items-start justify-between cursor-pointer">
                 <div class="flex items-start gap-3">
@@ -622,17 +891,27 @@
           </div>
         </div>
 
-        <!-- 5. TERMS & JURISDICTION (ALIGARH COURT) -->
-        <div class="apple-glass-card rounded-3xl p-5 sm:p-7 border border-amber-500/20">
-          <div class="border-b border-white/[0.08] pb-3.5 mb-4 flex items-center justify-between">
-            <h2 class="text-sm sm:text-base font-bold text-amber-400 flex items-center gap-2">
-              <i class="fa-solid fa-scale-balanced"></i>
-              <span data-i18n="termsTitle">5. आवश्यक नियम, भुगतान शर्तें एवं कानूनी क्षेत्राधिकार</span>
-            </h2>
-            <span class="text-[10px] bg-amber-400/10 text-amber-300 border border-amber-400/25 px-2.5 py-0.5 rounded-full font-semibold" data-i18n="mandatoryTag">अनिवार्य नियम</span>
-          </div>
+        <!-- 5. TERMS & JURISDICTION ACCORDION DRAWER -->
+        <div class="apple-glass-card rounded-3xl overflow-hidden border border-amber-500/25 transition-all">
+          <button type="button" onclick="toggleAccordion('sec5')" class="w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-white/[0.02] transition">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-scale-balanced text-sm"></i>
+              </div>
+              <div>
+                <h2 class="text-sm sm:text-base font-bold text-amber-400 flex items-center gap-2 heading-font">
+                  <span data-i18n="termsTitle">5. आवश्यक नियम, भुगतान शर्तें एवं कानूनी क्षेत्राधिकार</span>
+                </h2>
+                <p class="text-[11px] apple-subtext mt-0.5">भुगतान नियम, डेटा सुरक्षा व अलीगढ़ न्यायालय अधिकार</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5 shrink-0 ml-2">
+              <span class="text-[10px] bg-amber-400/10 text-amber-300 border border-amber-400/25 px-2.5 py-0.5 rounded-full font-semibold" data-i18n="mandatoryTag">अनिवार्य नियम</span>
+              <i id="chevronSec5" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+            </div>
+          </button>
 
-          <div class="space-y-3 text-xs leading-relaxed apple-subtext">
+          <div id="contentSec5" class="hidden p-5 sm:p-6 pt-0 space-y-3 text-xs leading-relaxed apple-subtext border-t border-white/[0.06]">
             <p data-i18n="term1"><strong>1. इवेंट के दिन 75% क्लियरेंस अनिवार्य:</strong> कार्यक्रम की तारीख (या उससे एक दिन पूर्व) कुल बिल का 75% भुगतान जमा होना अनिवार्य है, उसके बाद ही कैमरा क्रू रवाना होगा।</p>
             <p data-i18n="term2"><strong>2. 100% पेमेंट पर ही डेटा डिलीवरी:</strong> हमारे सभी पैकेजेस भारी डिस्काउंटेड हैं, अतः ओरिजिनल RAW फाइल्स, 4K पेनड्राइव या एल्बम 100% फाइनल पेमेंट क्लियर होने के बाद ही हैंडओवर की जाएगी।</p>
             <p data-i18n="term3"><strong>3. 7 दिन की डेटा बैकअप समय-सीमा:</strong> यदि कार्यक्रम संपन्न होने के 7 दिनों के भीतर बकाया भुगतान नहीं किया जाता, तो स्टूडियो की स्टोरेज से डेटा सुरक्षित रखने की कोई जिम्मेदारी नहीं होगी।</p>
@@ -650,13 +929,13 @@
             <span class="text-[10px] font-semibold text-[#2997ff] uppercase tracking-wider bg-blue-500/10 px-2.5 py-0.5 rounded-full border border-blue-500/20" data-i18n="summaryTag">
               Estimate Summary
             </span>
-            <h3 class="text-base font-bold mt-1.5" data-i18n="totalEstimateHeading">कुल अनुमानित बजट</h3>
+            <h3 class="text-base font-bold mt-1.5 heading-font" data-i18n="totalEstimateHeading">कुल अनुमानित बजट</h3>
           </div>
 
           <!-- Total Bill Widget -->
           <div class="bg-black/60 p-4 rounded-2xl border border-white/[0.08] text-center">
             <span class="text-[11px] apple-subtext block mb-0.5" data-i18n="finalAmountLabel">फाइनल एस्टीमेट राशि</span>
-            <div class="text-3xl sm:text-4xl font-black text-blue-500 tracking-tight" id="liveTotalDisplay">₹18,500</div>
+            <div class="text-3xl sm:text-4xl font-black text-blue-500 tracking-tight heading-font" id="liveTotalDisplay">₹18,500</div>
           </div>
 
           <!-- Selected Items List -->
@@ -665,7 +944,7 @@
             </ul>
           </div>
 
-          <!-- PAYMENT SLABS: 75% AND 100% -->
+          <!-- PAYMENT SLABS: STRICTLY 75% AND 100% -->
           <div class="p-3.5 bg-black/50 rounded-2xl border border-white/[0.08] space-y-2.5">
             <div class="flex items-center justify-between text-xs">
               <span class="apple-subtext font-semibold" data-i18n="slabHeader">पेमेंट स्टेज चयन:</span>
@@ -713,7 +992,7 @@
             </div>
           </div>
 
-          <!-- SHARP SQUARE QR CODE CONTAINER -->
+          <!-- SHARP SQUARE QR CODE CONTAINER (NO EXTRA UPI ID TEXT) -->
           <div class="p-4 bg-black/50 border border-white/[0.08] text-center space-y-2">
             <span class="apple-subtext text-[11px] block font-semibold" data-i18n="qrScanTitle">टोकन एडवांस हेतु QR स्कैन करें</span>
             
@@ -745,8 +1024,36 @@
     </div>
   </section>
 
-  <!-- ================= 7. CREATIVE GOOGLE MAP ================= -->
+  <!-- ================= 7. COOL ART SISTER DIVISION: PRINTING PRESS (STRATEGICALLY BEFORE MAP) ================= -->
   <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-4">
+    <div class="apple-glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border border-amber-400/20 bg-gradient-to-r from-[#141026]/90 via-[#0e172a]/90 to-[#070e1c]/95">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+        <div class="space-y-2 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 border border-amber-400/25 text-amber-400 text-[10px] font-bold uppercase tracking-wider" data-i18n="printDivisionTag">
+            <i class="fa-solid fa-print"></i> Cool Art Sister Division
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black text-white tracking-tight heading-font" data-i18n="printTitle">
+            प्रिंटिंग प्रेस एवं कम्पलीट एडवरटाइजिंग सॉल्यूशंस
+          </h2>
+          <p class="apple-subtext text-xs sm:text-sm max-w-xl leading-relaxed" data-i18n="printDesc">
+            शादी कार्ड (निमंत्रण पत्र), फ्लैक्स बोर्ड, विनाइल प्रिंटिंग, पम्पलेट, बिल बुक, कैलेंडर व विजिटिंग कार्ड की थोक व फुटकर हाई-स्पीड प्रिंटिंग।
+          </p>
+        </div>
+
+        <div class="shrink-0">
+          <a href="https://kryshankaant.github.io/sabkuchhprinting/" target="_blank" 
+             class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs sm:text-sm font-black shadow-xl transition transform active:scale-95 group">
+            <i class="fa-solid fa-layer-group text-slate-900"></i>
+            <span data-i18n="printCatalogBtn">प्रिंटिंग कैटलॉग व रेट देखें</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-800"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. CREATIVE GOOGLE MAP ================= -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 pt-6 pb-4">
     <div class="apple-glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden border border-white/[0.1] shadow-2xl">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/[0.08] relative z-10">
         <div>
@@ -754,7 +1061,7 @@
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
             <span data-i18n="mapLiveBadge">लाइव स्टूडियो लोकेशन • आसानी से पहुंचें</span>
           </div>
-          <h2 class="text-xl sm:text-2xl font-black tracking-tight flex items-center gap-2">
+          <h2 class="text-xl sm:text-2xl font-black tracking-tight flex items-center gap-2 heading-font">
             <span data-i18n="mapTitle">स्टूडियो विजिट व मीटिंग प्वाइंट</span>
             <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">COOL ART™</span>
           </h2>
@@ -799,7 +1106,7 @@
     </div>
   </section>
 
-  <!-- ================= 8. CLEAN FOOTER ================= -->
+  <!-- ================= 9. CLEAN FOOTER ================= -->
   <footer class="mt-20 max-w-5xl mx-auto px-4 sm:px-6">
     <div class="w-full bg-white text-slate-800 rounded-3xl p-7 sm:p-9 shadow-2xl border border-slate-200 text-center space-y-2">
       <div class="flex justify-center mb-2">
@@ -807,7 +1114,7 @@
           <img src="cool art logo.png" alt="COOL ART®" class="h-6 sm:h-7 w-auto object-contain">
         </div>
       </div>
-      <h3 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight">
+      <h3 class="text-base sm:text-lg font-bold text-slate-900 tracking-tight heading-font">
         Designed & Developed by: <span class="text-[#0071e3] font-black">COOL ART&reg;</span>
       </h3>
       <p class="text-xs sm:text-sm font-semibold text-slate-600">
@@ -828,7 +1135,7 @@
     </div>
   </footer>
 
-  <!-- ================= 9. DIGITAL INVOICE MODAL (US CLEAN STYLE) ================= -->
+  <!-- ================= 10. DIGITAL INVOICE MODAL (US CLEAN STYLE) ================= -->
   <div id="invoiceModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
     <div class="relative w-full max-w-3xl bg-white text-slate-900 rounded-3xl shadow-2xl p-6 sm:p-10 my-8 overflow-hidden" id="printableInvoiceModal">
       
@@ -851,13 +1158,13 @@
           <div class="bg-black px-4 py-2 rounded-xl inline-block mb-3">
             <img src="cool art logo.png" alt="COOL ART®" class="h-6 w-auto object-contain">
           </div>
-          <h2 class="text-xl font-black text-slate-900 tracking-tight">COOL ART™ STUDIOS</h2>
+          <h2 class="text-xl font-black text-slate-900 tracking-tight heading-font">COOL ART™ STUDIOS</h2>
           <p class="text-xs text-slate-500 font-medium mt-0.5">Village Nahal, Atrauli, Aligarh, UP - 202280</p>
           <p class="text-xs text-slate-500 font-medium">Contact: +91 9458614610</p>
         </div>
 
         <div class="text-left sm:text-right space-y-1">
-          <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight uppercase">INVOICE</h1>
+          <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight uppercase heading-font">INVOICE</h1>
           <div class="text-xs text-slate-600">
             <span class="font-bold text-slate-800">Invoice No:</span> <span id="invNumber" class="font-mono">#CA-2026-001</span>
           </div>
@@ -909,7 +1216,7 @@
             <span>Advance Clearance Selected:</span>
             <span class="font-bold text-blue-600" id="invSlabSelected">75%</span>
           </div>
-          <div class="flex justify-between pt-2 border-t border-slate-200 text-sm font-black text-slate-900">
+          <div class="flex justify-between pt-2 border-t border-slate-200 text-sm font-black text-slate-900 heading-font">
             <span>TOTAL ESTIMATE:</span>
             <span class="text-base font-black text-slate-950" id="invTotalAmount">₹0</span>
           </div>
@@ -934,9 +1241,127 @@
     </div>
   </div>
 
-  <!-- ================= 10. JAVASCRIPT ENGINE ================= -->
+  <!-- ================= 11. JAVASCRIPT ENGINE ================= -->
   <script>
-    // 0. Slide Drawer Toggle (Language & Theme Drawer)
+    // 1. Photobook 26-Sheet Engine (pg1alb.jpg to pg26alb.jpg)
+    let currentAlbumSheet = 1;
+    const totalAlbumSheets = 26;
+
+    function initAlbumSheetsDropdown() {
+      const select = document.getElementById('albumSheetSelect');
+      if (!select) return;
+      select.innerHTML = '';
+      for (let i = 1; i <= totalAlbumSheets; i++) {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.innerText = i === 1 ? 'शीट 1 (मास्टर कवर शीट)' : `शीट ${i} (12×36 स्प्रेड)`;
+        select.appendChild(opt);
+      }
+    }
+
+    function renderAlbumSheet(sheetNum) {
+      if (sheetNum < 1) sheetNum = 1;
+      if (sheetNum > totalAlbumSheets) sheetNum = totalAlbumSheets;
+      currentAlbumSheet = sheetNum;
+
+      const img = document.getElementById('currentAlbumSheetImg');
+      const badge = document.getElementById('sheetNumberBadge');
+      const counter = document.getElementById('sheetQuickCounter');
+      const select = document.getElementById('albumSheetSelect');
+
+      if (img) {
+        img.src = `pg${sheetNum}alb.jpg`;
+      }
+      if (badge) {
+        badge.innerText = sheetNum === 1 
+          ? 'शीट 1 / 26 (मास्टर कवर शीट)' 
+          : `शीट ${sheetNum} / 26 (12×36 पूरी खुली शीट)`;
+      }
+      if (counter) {
+        counter.innerText = `Sheet ${sheetNum} of ${totalAlbumSheets}`;
+      }
+      if (select) {
+        select.value = sheetNum;
+      }
+    }
+
+    function changeAlbumSheet(delta) {
+      let next = currentAlbumSheet + delta;
+      if (next > totalAlbumSheets) next = 1;
+      if (next < 1) next = totalAlbumSheets;
+      renderAlbumSheet(next);
+    }
+
+    function jumpToSheet(val) {
+      renderAlbumSheet(parseInt(val) || 1);
+    }
+
+    function openLightboxModal(src) {
+      const modal = document.getElementById('albumLightboxModal');
+      const img = document.getElementById('lightboxImg');
+      if (modal && img) {
+        img.src = src;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeLightboxModal() {
+      const modal = document.getElementById('albumLightboxModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    // 2. Pure Hero Visual Carousel (hero1.jpg to hero8.jpg)
+    let currentHeroIndex = 0;
+    const heroSlides = document.querySelectorAll('.hero-slide');
+
+    function showHeroSlide(index) {
+      if (!heroSlides.length) return;
+      heroSlides.forEach((s, i) => {
+        if (i === index) {
+          s.classList.remove('opacity-0', 'pointer-events-none');
+          s.classList.add('opacity-100');
+        } else {
+          s.classList.add('opacity-0', 'pointer-events-none');
+          s.classList.remove('opacity-100');
+        }
+      });
+      currentHeroIndex = index;
+      const counter = document.getElementById('heroSlideCounter');
+      if (counter) {
+        counter.innerText = `${index + 1} / ${heroSlides.length}`;
+      }
+    }
+
+    function nextHeroSlide() {
+      showHeroSlide((currentHeroIndex + 1) % heroSlides.length);
+    }
+
+    function prevHeroSlide() {
+      showHeroSlide((currentHeroIndex - 1 + heroSlides.length) % heroSlides.length);
+    }
+
+    setInterval(nextHeroSlide, 4500);
+
+    // 3. Accordion Drawer Toggle for Calculator Sections
+    function toggleAccordion(secId) {
+      const content = document.getElementById('content' + secId.charAt(0).toUpperCase() + secId.slice(1));
+      const chevron = document.getElementById('chevron' + secId.charAt(0).toUpperCase() + secId.slice(1));
+      if (!content) return;
+      const isHidden = content.classList.contains('hidden');
+      if (isHidden) {
+        content.classList.remove('hidden');
+        if (chevron) chevron.className = "fa-solid fa-chevron-up text-xs text-slate-400 transition-transform duration-300";
+      } else {
+        content.classList.add('hidden');
+        if (chevron) chevron.className = "fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-300";
+      }
+    }
+
+    // 4. Slide Drawer Toggle (Language & Theme)
     let isDrawerOpen = false;
     function toggleControlDrawer() {
       const drawer = document.getElementById('controlDrawerPanel');
@@ -948,26 +1373,18 @@
       }
     }
 
-    // 1. Language Dictionary (HI / EN)
+    // 5. Language Dictionary (HI / EN)
     const i18nData = {
       hi: {
         navSubtitle: "Studios & Broadcast",
         printingPortal: "प्रिंटिंग सेवा",
         calcBtn: "कैलकुलेटर",
-        heroBadge: "सिनेमैटिक 4K • ड्रोन पायलट • लाइव डिस्प्ले",
-        heroHeading1: "हर कार्यक्रम की पारदर्शी व",
-        heroHeading2: "प्रीमियम मीडिया बुकिंग",
-        heroDescription: "अपनी पसंद के अनुसार कैमरा, ड्रोन, एलईडी फ्रेम और अलग-अलग रस्में चुनें। सिस्टम पारदर्शी बिल, आवागमन विवरण व प्रोफेशनल इनवॉइस तुरंत तैयार करेगा।",
-        heroCtaCalc: "लाइव बजट कैलकुलेट करें",
-        heroCtaWa: "सीधे बात करें",
         printDivisionTag: "Cool Art Sister Division",
         printTitle: "प्रिंटिंग प्रेस एवं कम्पलीट एडवरटाइजिंग सॉल्यूशंस",
         printDesc: "शादी कार्ड (निमंत्रण पत्र), फ्लैक्स बोर्ड, विनाइल प्रिंटिंग, पम्पलेट, बिल बुक, कैलेंडर व विजिटिंग कार्ड की प्रिंटिंग।",
         printCatalogBtn: "प्रिंटिंग कैटलॉग व रेट देखें",
-        brandsTitle: "इंडस्ट्री-लीडिंग सिनेमा गियर्स एवं टेक्नोलॉजी द्वारा संचालित",
         section1Title: "1. वैवाहिक रस्में (शादी पूर्व व मुख्य प्रोग्राम)",
         section1Sub: "जो-जो रस्में आयोजित हैं, केवल उन्हें अलग-अलग टिक करें",
-        multiSelectTag: "मल्टी-सेलेक्शन",
         p1Title: "विवाह पूर्व गोद भराई / रोका शगुन (लड़की तय होना)",
         p1Sub: "रिश्ता पक्का करने की रस्म (लड़की के घर या बाहर रेस्टोरेंट/होटल)",
         p2Title: "सगाई / रिंग सेरेमनी व लगन टीका",
@@ -1051,20 +1468,12 @@
         navSubtitle: "Studios & Broadcast",
         printingPortal: "Printing Portal",
         calcBtn: "Calculator",
-        heroBadge: "Cinematic 4K • Drone Pilot • Live Display",
-        heroHeading1: "Transparent & Premium",
-        heroHeading2: "Media Event Booking",
-        heroDescription: "Select cameras, aerial drone, backlit LED frames and ceremonies. The system generates live quotes, travel logistics and clean digital invoices.",
-        heroCtaCalc: "Calculate Live Budget",
-        heroCtaWa: "Chat on WhatsApp",
         printDivisionTag: "Cool Art Sister Division",
         printTitle: "Printing Press & Complete Advertising Solutions",
         printDesc: "Wedding Invitation Cards, Flex Banners, Vinyl Printing, Pamphlets, Bill Books & Stationeries.",
         printCatalogBtn: "Explore Printing Portal",
-        brandsTitle: "POWERED BY INDUSTRY-LEADING CINEMA GEARS & TECHNOLOGY",
         section1Title: "1. Wedding Ceremonies & Functions",
         section1Sub: "Check only the ceremonies taking place at your event",
-        multiSelectTag: "Multi-Select",
         p1Title: "Pre-Wedding Roka / Sagun Ceremony",
         p1Sub: "Match fixing ceremony portraiture & family shoots",
         p2Title: "Ring Ceremony & Engagement",
@@ -1162,7 +1571,7 @@
       calcNetTotal();
     }
 
-    // 2. Theme Toggle (Dark / Light)
+    // 6. Theme Toggle (Dark / Light)
     function toggleTheme() {
       const isLight = document.body.classList.toggle('light-theme');
       const icon = document.getElementById('themeIcon');
@@ -1173,39 +1582,7 @@
       }
     }
 
-    // 3. Carousel Engine with Meta Updates
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.portfolio-slide');
-    const slideMeta = [
-      { tagHi: "शाही विवाह कवरेज", tagEn: "ROYAL WEDDING", titleHi: "जयमाला, फेरे व प्री-वेडिंग 4K सिनेमैटिक शूट", titleEn: "Varmala, Pheras & Pre-Wedding 4K Cinematic Shoot" },
-      { tagHi: "4K एरियल ड्रोन", tagEn: "4K AERIAL DRONE", titleHi: "बारात, विशाल पंडाल व जनसमूह का आसमानी व्यू", titleEn: "Baraat, Grand Stage & Audience Bird-Eye View" },
-      { tagHi: "धार्मिक महोत्सव", tagEn: "DEVOTIONAL BROADCAST", titleHi: "श्रीमद्भागवत कथा, कलश यात्रा व लाइव टेलीकास्ट", titleEn: "Bhagwat Katha, Kalash Yatra & Live Broadcast" }
-    ];
-
-    function showSlide(index) {
-      slides.forEach((s, i) => {
-        if (i === index) {
-          s.classList.remove('opacity-0', 'pointer-events-none');
-          s.classList.add('opacity-100');
-        } else {
-          s.classList.add('opacity-0', 'pointer-events-none');
-          s.classList.remove('opacity-100');
-        }
-      });
-
-      const tagEl = document.getElementById('slideContextTag');
-      const titleEl = document.getElementById('slideContextTitle');
-      if (tagEl && titleEl && slideMeta[index]) {
-        tagEl.innerText = currentLang === 'hi' ? slideMeta[index].tagHi : slideMeta[index].tagEn;
-        titleEl.innerText = currentLang === 'hi' ? slideMeta[index].titleHi : slideMeta[index].titleEn;
-      }
-      currentSlide = index;
-    }
-    function nextSlide() { showSlide((currentSlide + 1) % slides.length); }
-    function prevSlide() { showSlide((currentSlide - 1 + slides.length) % slides.length); }
-    setInterval(nextSlide, 5000);
-
-    // 4. LED Frame Quantity Controls
+    // 7. LED Frame Quantity Controls
     function toggleLedFrame() {
       const isChecked = document.getElementById('gear_led_frame').checked;
       document.getElementById('ledFrameQtyBox').classList.toggle('hidden', !isChecked);
@@ -1232,7 +1609,7 @@
       calcNetTotal();
     }
 
-    // 5. Travel Conveyance
+    // 8. Travel Conveyance
     function toggleTravelFare() {
       const isChecked = document.getElementById('travelFareCheckbox').checked;
       document.getElementById('distanceSelectorBox').classList.toggle('hidden', !isChecked);
@@ -1246,7 +1623,7 @@
       calcNetTotal();
     }
 
-    // 6. Payment Slabs: STRICTLY 75% AND 100%
+    // 9. Payment Slabs: STRICTLY 75% AND 100%
     let selectedSlabPercent = 75;
     function selectPaymentSlab(percent) {
       selectedSlabPercent = percent;
@@ -1256,7 +1633,7 @@
       calcNetTotal();
     }
 
-    // 7. Net Calculation Engine
+    // 10. Net Calculation Engine
     let currentCalculatedTotal = 0;
     let currentSelectedItems = [];
 
@@ -1310,7 +1687,7 @@
       `).join('');
     }
 
-    // 8. WhatsApp Dispatch
+    // 11. WhatsApp Dispatch
     function dispatchToWhatsApp() {
       const clientName = document.getElementById('custName').value.trim() || 'क्लाइंट';
       const eventDate = document.getElementById('custDate').value || 'TBD';
@@ -1346,7 +1723,7 @@
       window.open(`https://wa.me/919458614610?text=${encodeURIComponent(waMessage)}`, '_blank');
     }
 
-    // 9. Digital Invoice Modal
+    // 12. Digital Invoice Modal
     function openCleanInvoiceModal() {
       const clientName = document.getElementById('custName').value.trim() || 'Honorable Client';
       const eventDate = document.getElementById('custDate').value || 'To be decided';
@@ -1388,7 +1765,9 @@
       document.getElementById('invoiceModal').classList.remove('flex');
     }
 
-    // Initialize calculation
+    // Startup Initialization
+    initAlbumSheetsDropdown();
+    renderAlbumSheet(1);
     calcNetTotal();
   </script>
 </body>
