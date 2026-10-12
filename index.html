@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Cool Art Studios | Pro Media Estimator, 12x36 Photobook Showcase & Invoice</title>
+  <title>Cool Art Studios | Pro Media Estimator, Photobook Showcase & Invoice</title>
   
   <!-- Modern Futuristic Typography: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,16 +158,16 @@
 </head>
 <body class="apple-grid-texture selection:bg-blue-600 selection:text-white pb-32 lg:pb-16 antialiased">
 
-  <!-- ================= 1. FLOATING DRAWER CONTROLLER: LANGUAGE & THEME ================= -->
+  <!-- ================= 1. FLOATING SETTINGS TRIGGER: TRANSPARENT FROSTED GLASS ICON ONLY ================= -->
   <div class="fixed right-0 top-1/3 -translate-y-1/2 z-50">
     <button onclick="toggleControlDrawer()" id="drawerTriggerBtn" 
-            class="bg-blue-600/90 hover:bg-blue-600 text-white p-2.5 rounded-l-2xl shadow-2xl backdrop-blur-md border-y border-l border-white/20 flex flex-col items-center gap-1.5 transition-transform duration-300 group"
+            class="w-10 h-10 rounded-l-2xl bg-white/[0.08] hover:bg-white/[0.18] text-white/90 backdrop-blur-xl border-y border-l border-white/20 shadow-2xl flex items-center justify-center transition-all group"
             title="Settings">
-      <i class="fa-solid fa-sliders text-sm group-hover:rotate-90 transition-transform"></i>
-      <span class="text-[9px] font-extrabold uppercase" style="writing-mode: vertical-rl;">SETTINGS</span>
+      <i class="fa-solid fa-gear text-base text-slate-300 group-hover:rotate-90 group-hover:text-blue-400 transition-all"></i>
     </button>
   </div>
 
+  <!-- Settings Drawer Panel -->
   <div id="controlDrawerPanel" 
        class="fixed right-0 top-1/3 -translate-y-1/2 z-50 translate-x-full transition-transform duration-300 ease-in-out">
     <div class="apple-glass rounded-l-3xl p-3.5 shadow-2xl border-y border-l border-white/20 flex flex-col items-center gap-4 bg-slate-950/90 text-xs">
@@ -177,13 +177,13 @@
       </button>
 
       <div class="flex flex-col items-center gap-1 w-full pt-1 border-t border-white/10">
-        <span class="text-[9px] font-semibold text-slate-400 uppercase tracking-wider">भाषा</span>
+        <span class="text-[9px] font-semibold text-slate-400 uppercase tracking-wider" data-i18n="langLabel">भाषा</span>
         <button onclick="toggleLanguage('hi')" id="langHiBtn" class="w-9 h-8 rounded-xl bg-blue-600 text-white font-bold transition flex items-center justify-center">HI</button>
         <button onclick="toggleLanguage('en')" id="langEnBtn" class="w-9 h-8 rounded-xl bg-white/10 text-slate-400 hover:text-white font-bold transition flex items-center justify-center">EN</button>
       </div>
 
       <div class="flex flex-col items-center gap-1 w-full pt-2 border-t border-white/10">
-        <span class="text-[9px] font-semibold text-slate-400 uppercase tracking-wider">थीम</span>
+        <span class="text-[9px] font-semibold text-slate-400 uppercase tracking-wider" data-i18n="themeLabel">थीम</span>
         <button onclick="toggleTheme()" id="themeBtn" class="w-9 h-8 rounded-xl bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white font-bold transition flex items-center justify-center" title="Toggle Light/Dark Theme">
           <i class="fa-solid fa-moon text-xs" id="themeIcon"></i>
         </button>
@@ -192,25 +192,20 @@
     </div>
   </div>
 
-  <!-- ================= 2. NAVBAR ================= -->
+  <!-- ================= 2. NAVBAR (STUDIOS & BROADCAST VISIBLE ON PHONE & DESKTOP) ================= -->
   <header class="sticky top-0 z-40 apple-glass">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       
-      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
-        <img src="cool art logo.png" alt="COOL ART®" class="h-7 sm:h-9 w-auto object-contain brightness-100 group-hover:opacity-90 transition" onerror="this.style.display='none'; document.getElementById('fallbackLogoText').style.display='block';">
+      <a href="#" class="flex items-center gap-2 group">
+        <img src="cool art logo.png" alt="COOL ART®" class="h-6 sm:h-8 w-auto object-contain brightness-100 group-hover:opacity-90 transition" onerror="this.style.display='none'; document.getElementById('fallbackLogoText').style.display='block';">
         <div id="fallbackLogoText" class="hidden">
-          <span class="text-xl font-extrabold tracking-tight block leading-none heading-font">COOL ART&reg;</span>
-          <span class="text-[9px] font-semibold tracking-wider text-blue-500 uppercase">Studios & Broadcast</span>
+          <span class="text-lg sm:text-xl font-extrabold tracking-tight block leading-none heading-font">COOL ART&reg;</span>
         </div>
-        <span class="hidden md:inline-block h-4 w-[1px] bg-white/20 mx-1"></span>
-        <span class="hidden md:inline-block text-[11px] font-medium apple-subtext tracking-wider uppercase" data-i18n="navSubtitle">Studios & Broadcast</span>
+        <span class="inline-block h-3.5 sm:h-4 w-[1px] bg-white/20 mx-1"></span>
+        <span class="inline-block text-[10px] sm:text-[11px] font-semibold apple-subtext tracking-wider uppercase" data-i18n="navSubtitle">Studios & Broadcast</span>
       </a>
 
-      <div class="flex items-center gap-2 sm:gap-3">
-        <a href="https://kryshankaant.github.io/sabkuchhprinting/" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-amber-400 bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 transition">
-          <i class="fa-solid fa-print text-xs"></i>
-          <span data-i18n="printingPortal">प्रिंटिंग सेवा</span>
-        </a>
+      <div>
         <a href="#calculator" class="apple-blue-btn text-white text-xs font-bold px-4 py-2 rounded-full shadow-md" data-i18n="calcBtn">
           कैलकुलेटर
         </a>
@@ -219,79 +214,44 @@
     </div>
   </header>
 
-  <!-- ================= 3. CINEMATIC PURE FULL-WIDTH VISUAL HERO BANNER (NO TEXT - ROTATING hero1.jpg to hero8.jpg) ================= -->
-  <section class="relative w-full overflow-hidden h-[340px] sm:h-[460px] md:h-[540px] lg:h-[620px] bg-[#05070c]">
+  <!-- ================= 3. CINEMATIC VISUAL HERO BANNER WITH TOUCH SWIPE (NO BUTTONS, NO TEXT) ================= -->
+  <section id="heroSection" class="relative w-full overflow-hidden h-[340px] sm:h-[460px] md:h-[540px] lg:h-[620px] bg-[#05070c] cursor-grab active:cursor-grabbing select-none">
     
     <div class="absolute inset-0 z-0">
       
-      <!-- Slide 1 (hero1.jpg) -->
       <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100">
-        <img src="hero1.jpg" 
-             onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&auto=format&fit=crop&q=85'" 
-             alt="Hero 1" class="w-full h-full object-cover object-center">
+        <img src="hero1.jpg" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&auto=format&fit=crop&q=85'" alt="Hero 1" class="w-full h-full object-cover object-center pointer-events-none">
       </div>
 
-      <!-- Slide 2 (hero2.jpg) -->
       <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
-        <img src="hero2.jpg" 
-             onerror="this.src='https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1920&auto=format&fit=crop&q=85'" 
-             alt="Hero 2" class="w-full h-full object-cover object-center">
+        <img src="hero2.jpg" onerror="this.src='https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1920&auto=format&fit=crop&q=85'" alt="Hero 2" class="w-full h-full object-cover object-center pointer-events-none">
       </div>
 
-      <!-- Slide 3 (hero3.jpg) -->
       <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
-        <img src="hero3.jpg" 
-             onerror="this.src='https://images.unsplash.com/photo-1545232979-fbf68fe9b10d?w=1920&auto=format&fit=crop&q=85'" 
-             alt="Hero 3" class="w-full h-full object-cover object-center">
+        <img src="hero3.jpg" onerror="this.src='https://images.unsplash.com/photo-1545232979-fbf68fe9b10d?w=1920&auto=format&fit=crop&q=85'" alt="Hero 3" class="w-full h-full object-cover object-center pointer-events-none">
       </div>
 
-      <!-- Slide 4 (hero4.jpg) -->
       <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
-        <img src="hero4.jpg" 
-             onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1920&auto=format&fit=crop&q=85'" 
-             alt="Hero 4" class="w-full h-full object-cover object-center">
+        <img src="hero4.jpg" onerror="this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1920&auto=format&fit=crop&q=85'" alt="Hero 4" class="w-full h-full object-cover object-center pointer-events-none">
       </div>
 
-      <!-- Slide 5 (hero5.jpg) -->
       <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
-        <img src="hero5.jpg" 
-             onerror="this.src='https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1920&auto=format&fit=crop&q=85'" 
-             alt="Hero 5" class="w-full h-full object-cover object-center">
+        <img src="hero5.jpg" onerror="this.src='https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1920&auto=format&fit=crop&q=85'" alt="Hero 5" class="w-full h-full object-cover object-center pointer-events-none">
       </div>
 
-      <!-- Slide 6 (hero6.jpg) -->
       <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
-        <img src="hero6.jpg" 
-             onerror="this.src='https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=1920&auto=format&fit=crop&q=85'" 
-             alt="Hero 6" class="w-full h-full object-cover object-center">
+        <img src="hero6.jpg" onerror="this.src='https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=1920&auto=format&fit=crop&q=85'" alt="Hero 6" class="w-full h-full object-cover object-center pointer-events-none">
       </div>
 
-      <!-- Slide 7 (hero7.jpg) -->
       <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
-        <img src="hero7.jpg" 
-             onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&auto=format&fit=crop&q=85'" 
-             alt="Hero 7" class="w-full h-full object-cover object-center">
+        <img src="hero7.jpg" onerror="this.src='https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&auto=format&fit=crop&q=85'" alt="Hero 7" class="w-full h-full object-cover object-center pointer-events-none">
       </div>
 
-      <!-- Slide 8 (hero8.jpg) -->
       <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none">
-        <img src="hero8.jpg" 
-             onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1920&auto=format&fit=crop&q=85'" 
-             alt="Hero 8" class="w-full h-full object-cover object-center">
+        <img src="hero8.jpg" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1920&auto=format&fit=crop&q=85'" alt="Hero 8" class="w-full h-full object-cover object-center pointer-events-none">
       </div>
 
-      <div class="absolute inset-0 bg-gradient-to-t from-[#05070c] via-transparent to-[#05070c]/50"></div>
-    </div>
-
-    <!-- Minimal Controls on Banner -->
-    <div class="absolute bottom-4 right-4 z-20 flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15">
-      <button onclick="prevHeroSlide()" class="text-white hover:text-blue-400 text-xs px-1.5 transition">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-      <span id="heroSlideCounter" class="text-[11px] font-mono font-bold text-slate-300">1 / 8</span>
-      <button onclick="nextHeroSlide()" class="text-white hover:text-blue-400 text-xs px-1.5 transition">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#05070c] via-transparent to-[#05070c]/50 pointer-events-none"></div>
     </div>
 
   </section>
@@ -304,7 +264,6 @@
 
     <div class="marquee-track flex items-center gap-4 sm:gap-6 pl-4">
       
-      <!-- SONY -->
       <div class="brand-box group cursor-default">
         <img src="sony.jpg" alt="SONY" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -314,7 +273,6 @@
         </div>
       </div>
 
-      <!-- DJI -->
       <div class="brand-box group cursor-default">
         <img src="dji.jpg" alt="DJI" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -324,7 +282,6 @@
         </div>
       </div>
 
-      <!-- APPLE -->
       <div class="brand-box group cursor-default">
         <img src="apple.jpg" alt="APPLE" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -334,7 +291,6 @@
         </div>
       </div>
 
-      <!-- CANON -->
       <div class="brand-box group cursor-default">
         <img src="canon.jpg" alt="CANON" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -344,7 +300,6 @@
         </div>
       </div>
 
-      <!-- CANVERA -->
       <div class="brand-box group cursor-default">
         <img src="canvera.jpg" alt="CANVERA" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -354,7 +309,6 @@
         </div>
       </div>
 
-      <!-- GODOX -->
       <div class="brand-box group cursor-default">
         <img src="godox.jpg" alt="GODOX" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -364,7 +318,6 @@
         </div>
       </div>
 
-      <!-- NIKON -->
       <div class="brand-box group cursor-default">
         <img src="nikon.jpg" alt="NIKON" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -374,7 +327,6 @@
         </div>
       </div>
 
-      <!-- BLACKMAGIC -->
       <div class="brand-box group cursor-default">
         <img src="blackmagic.jpg" alt="BLACKMAGIC" class="h-6 w-auto max-w-[130px] object-contain brightness-95 group-hover:brightness-100 transition" 
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -453,83 +405,72 @@
     </div>
   </div>
 
-  <!-- ================= 5. FULL-BLEED 12X36 MASTER PHOTOBOOK SHOWCASE (ZERO CLUTTER, MAXIMUM PHONE SIZE) ================= -->
+  <!-- ================= 5. LATEST PROJECT PHOTOBOOK SHOWCASE (CLEAN, NO MARKS, NO 1/26 COUNTER) ================= -->
   <section class="max-w-5xl mx-auto px-2 sm:px-6 pt-6 pb-2">
     <div class="apple-glass-card rounded-3xl p-3 sm:p-6 relative overflow-hidden border border-white/[0.1] shadow-2xl">
       
-      <!-- Minimalist Compact Bar: Title, Sheet Counter & Info Icon Trigger -->
+      <!-- Minimalist Compact Bar: LATEST PROJECT + Info Icon -->
       <div class="flex items-center justify-between pb-3 px-2 border-b border-white/[0.08]">
         <div class="flex items-center gap-2">
           <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
-          <h2 class="text-xs sm:text-sm font-black text-white tracking-wide uppercase heading-font">
-            12&times;36 मास्टर फोटोबुक
+          <h2 class="text-xs sm:text-sm font-black text-white tracking-wider uppercase heading-font" data-i18n="latestProjectTitle">
+            लेटेस्ट प्रोजेक्ट
           </h2>
-          <span id="sheetQuickCounter" class="text-[11px] font-mono font-bold text-[#2997ff] bg-blue-500/10 border border-blue-500/20 px-2 py-0.5 rounded-full">
-            1 / 26
-          </span>
         </div>
 
         <div class="flex items-center gap-2">
-          <!-- Sheet Direct Jump Selector -->
           <select id="albumSheetSelect" onchange="jumpToSheet(this.value)" class="bg-[#0a0f1d] border border-white/20 rounded-xl px-2.5 py-1 text-white font-bold text-xs outline-none focus:border-blue-500 transition">
           </select>
           
-          <!-- Info Details Trigger Icon Button -->
           <button onclick="toggleAlbumDetailsModal()" 
                   class="w-8 h-8 rounded-xl bg-white/10 hover:bg-white/20 text-amber-400 border border-amber-400/30 flex items-center justify-center transition" 
-                  title="एल्बम खूबियाँ व स्पेसिफिकेशन">
+                  title="Details">
             <i class="fa-solid fa-circle-info text-sm"></i>
           </button>
         </div>
       </div>
 
-      <!-- Edge-to-Edge Sheet Display Stage (Maximum Width on Phones) -->
+      <!-- Edge-to-Edge Sheet Display Stage (No mark/badge on sheet) -->
       <div class="relative w-full rounded-2xl overflow-hidden bg-black mt-3 border border-white/15 flex items-center justify-center group aspect-[36/13] sm:aspect-[36/12]">
         
-        <!-- Live Sheet Image -->
         <img id="currentAlbumSheetImg" 
              src="pg1alb.jpg" 
              onerror="this.src='12X36.jpg'" 
-             alt="12x36 Photobook Sheet" 
+             alt="Photobook Sheet" 
              class="w-full h-full object-contain cursor-pointer transition-transform duration-300 group-hover:scale-[1.01]"
              onclick="openLightboxModal(this.src)">
 
         <!-- Center Layflat Crease -->
         <div class="center-layflat-crease"></div>
 
-        <!-- Floating Left Arrow (On Image) -->
+        <!-- Floating Left Arrow -->
         <button onclick="changeAlbumSheet(-1)" 
                 class="absolute left-1.5 sm:left-3 top-1/2 -translate-y-1/2 w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition active:scale-95 shadow-xl">
           <i class="fa-solid fa-chevron-left text-xs sm:text-sm"></i>
         </button>
 
-        <!-- Floating Right Arrow (On Image) -->
+        <!-- Floating Right Arrow -->
         <button onclick="changeAlbumSheet(1)" 
                 class="absolute right-1.5 sm:right-3 top-1/2 -translate-y-1/2 w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-blue-600/85 hover:bg-blue-600 text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition active:scale-95 shadow-xl">
           <i class="fa-solid fa-chevron-right text-xs sm:text-sm"></i>
         </button>
 
-        <!-- Floating Bottom Badge -->
-        <div class="absolute bottom-2 left-2 sm:left-3 bg-black/85 backdrop-blur-md px-2.5 py-0.5 rounded-lg text-[9px] sm:text-[11px] font-bold text-amber-300 border border-amber-400/30 pointer-events-none">
-          <span id="sheetNumberBadge">शीट 1 (मास्टर कवर)</span>
-        </div>
-
         <!-- Fullscreen Zoom Icon -->
         <button onclick="openLightboxModal(document.getElementById('currentAlbumSheetImg').src)" 
                 class="absolute top-2 right-2 bg-black/75 hover:bg-black/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/20 flex items-center gap-1 transition">
-          <i class="fa-solid fa-expand text-[9px]"></i> <span class="hidden sm:inline">ज़ूम</span>
+          <i class="fa-solid fa-expand text-[9px]"></i> <span class="hidden sm:inline" data-i18n="zoomText">ज़ूम</span>
         </button>
       </div>
 
     </div>
   </section>
 
-  <!-- ================= ALBUM SPECS POPUP MODAL (ON ICON CLICK) ================= -->
+  <!-- ================= ALBUM SPECS POPUP MODAL ================= -->
   <div id="albumDetailsModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
     <div class="relative max-w-md w-full bg-[#0d1627] text-white rounded-3xl p-6 border border-white/15 shadow-2xl space-y-4">
       <div class="flex items-center justify-between pb-3 border-b border-white/10">
-        <h3 class="text-sm font-bold text-amber-400 flex items-center gap-2 heading-font">
-          <i class="fa-solid fa-gem text-xs"></i> 12&times;36 एल्बम खूबियाँ व विवरण
+        <h3 class="text-sm font-bold text-amber-400 flex items-center gap-2 heading-font" data-i18n="albumModalTitle">
+          <i class="fa-solid fa-gem text-xs"></i> एल्बम खूबियाँ व स्पेसिफिकेशन
         </h3>
         <button onclick="toggleAlbumDetailsModal()" class="w-7 h-7 rounded-full bg-white/10 text-slate-300 hover:text-white flex items-center justify-center transition">
           <i class="fa-solid fa-xmark text-xs"></i>
@@ -538,34 +479,34 @@
 
       <div class="space-y-2.5 text-xs">
         <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.08] space-y-1">
-          <span class="text-amber-300 font-bold flex items-center gap-1.5">
+          <span class="text-amber-300 font-bold flex items-center gap-1.5" data-i18n="albumSpec1Title">
             <i class="fa-solid fa-award"></i> 25+1 मास्टर शीट स्ट्रक्चर
           </span>
-          <p class="text-slate-300 text-[11px] leading-relaxed">
+          <p class="text-slate-300 text-[11px] leading-relaxed" data-i18n="albumSpec1Desc">
             25 अंदरूनी 12&times;36 इंच स्प्रेड शीट्स + 1 मास्टर कवर शीट (कुल 26 पैनोरमिक शीट्स)।
           </p>
         </div>
 
         <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.08] space-y-1">
-          <span class="text-blue-300 font-bold flex items-center gap-1.5">
+          <span class="text-blue-300 font-bold flex items-center gap-1.5" data-i18n="albumSpec2Title">
             <i class="fa-solid fa-arrows-left-right"></i> 180&deg; सीमलेस ले-फ्लैट बाइंडिंग
           </span>
-          <p class="text-slate-300 text-[11px] leading-relaxed">
+          <p class="text-slate-300 text-[11px] leading-relaxed" data-i18n="albumSpec2Desc">
             बीच के जोड़ पर कोई कटिंग नहीं, पन्ना पूरा सीधा 180 डिग्री खुलता है।
           </p>
         </div>
 
         <div class="p-3 rounded-2xl bg-black/40 border border-white/[0.08] space-y-1">
-          <span class="text-emerald-300 font-bold flex items-center gap-1.5">
+          <span class="text-emerald-300 font-bold flex items-center gap-1.5" data-i18n="albumSpec3Title">
             <i class="fa-solid fa-droplet-slash"></i> वाटरप्रूफ व नॉन-टीयर लैमिनेशन
           </span>
-          <p class="text-slate-300 text-[11px] leading-relaxed">
+          <p class="text-slate-300 text-[11px] leading-relaxed" data-i18n="albumSpec3Desc">
             कैनवेरा एचडी लस्टर पेपर, पानी व फिंगरप्रिंट सुरक्षित, 50 साल कलर लाइफ।
           </p>
         </div>
       </div>
 
-      <button onclick="toggleAlbumDetailsModal()" class="w-full py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs shadow-lg transition">
+      <button onclick="toggleAlbumDetailsModal()" class="w-full py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs shadow-lg transition" data-i18n="gotItBtn">
         समझ गया
       </button>
     </div>
@@ -578,7 +519,7 @@
         &times;
       </button>
       <img id="lightboxImg" src="" alt="Album HD Preview" class="max-h-[85vh] w-auto max-w-full rounded-2xl shadow-2xl object-contain border border-white/20">
-      <span class="text-xs text-slate-400 mt-3 font-semibold">कहीं भी क्लिक करके बंद करें</span>
+      <span class="text-xs text-slate-400 mt-3 font-semibold" data-i18n="clickToClose">कहीं भी क्लिक करके बंद करें</span>
     </div>
   </div>
 
@@ -589,7 +530,7 @@
       <!-- Left Column: Accordion Drawers (8 Cols) -->
       <div class="lg:col-span-8 space-y-4">
 
-        <!-- 1. WEDDING CEREMONIES ACCORDION DRAWER (DEFAULT OPEN) -->
+        <!-- 1. WEDDING CEREMONIES ACCORDION DRAWER -->
         <div class="apple-glass-card rounded-3xl overflow-hidden border border-white/[0.08] transition-all">
           <button type="button" onclick="toggleAccordion('sec1')" class="w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-white/[0.02] transition">
             <div class="flex items-center gap-3">
@@ -610,7 +551,6 @@
           </button>
 
           <div id="contentSec1" class="p-5 sm:p-6 pt-0 space-y-2.5 border-t border-white/[0.06]">
-            <!-- विवाह पूर्व गोद भराई / रोका शगुन -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_roka_godbharai" value="3500" data-name="विवाह पूर्व गोद भराई / रोका शगुन (लड़की तय होना)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -622,7 +562,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹3,500</span>
             </label>
 
-            <!-- सगाई / रिंग सेरेमनी -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_engagement" value="7000" data-name="सगाई / रिंग सेरेमनी व लगन टीका" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -634,19 +573,17 @@
               <span class="text-xs sm:text-bold text-[#2997ff] shrink-0 ml-2">+ ₹7,000</span>
             </label>
 
-            <!-- प्री-वेडिंग आउटडोर -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_prewedding" value="10000" data-name="प्री-वेडिंग सिनेमैटिक आउटडोर शूट (विथ टीज़र)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
                 <div>
                   <div class="text-xs sm:text-sm font-semibold leading-tight" data-i18n="p3Title">प्री-वेडिंग सिनेमैटिक आउटडोर शूट</div>
-                  <div class="text-[11px] apple-subtext mt-0.5" data-i18n="p3Sub">लोकेशन वीडियो टीज़र, रील्स, 3-4 ड्रेस चेंज व एडिटेड फोटोज</div>
+                  <div class="text-[11px] apple-subtext mt-0.5" data-i18n="p3Sub">लोकेशन वीडियो टीज़र, रील्स, 3-4 dress changes व एडिटेड फोटोज</div>
                 </div>
               </div>
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹10,000</span>
             </label>
 
-            <!-- हल्दी सेरेमनी -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_haldi" value="4000" data-name="हल्दी सेरेमनी (येलो थीम व फन शूट)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -658,7 +595,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
             </label>
 
-            <!-- मेहंदी सेरेमनी -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_mehendi" value="4000" data-name="मेहंदी सेरेमनी (क्लोजअप शॉट्स)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -670,10 +606,9 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
             </label>
 
-            <!-- महिला संगीत व भात न्योता -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
-                <input type="checkbox" id="prog_sangeet" value="5000" data-name="महिला संगीत, डीजे डांस व भात न्योता" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
+                <input type="checkbox" id="prog_sangeet" value="5000" data-name="महिला संगीत, डीजे डांस व भात / मयका न्योता" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
                 <div>
                   <div class="text-xs sm:text-sm font-semibold leading-tight" data-i18n="p6Title">महिला संगीत, डीजे डांस व भात / मयका न्योता</div>
                   <div class="text-[11px] apple-subtext mt-0.5" data-i18n="p6Sub">पारिवारिक डांस परफॉर्मेंस, ढोलक व भात भरने की रस्म</div>
@@ -682,7 +617,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹5,000</span>
             </label>
 
-            <!-- मुख्य शादी -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_wedding_main" value="18000" data-name="मुख्य शादी (बारात, जयमाला, फेरे व विदाई) - 2 क्रू" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0" checked>
@@ -694,7 +628,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">₹18,000</span>
             </label>
 
-            <!-- बहू गृह प्रवेश -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_bahu_entry" value="3000" data-name="बहू गृह प्रवेश (घर आगमन रस्म व थाली पूजन)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -729,7 +662,6 @@
           </button>
 
           <div id="contentSec2" class="hidden p-5 sm:p-6 pt-0 space-y-2.5 border-t border-white/[0.06]">
-            <!-- शिशु आगमन गोद भराई -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_baby_shower" value="4000" data-name="शिशु आगमन गोद भराई / साध पूजन (Baby Shower)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -741,7 +673,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹4,000</span>
             </label>
 
-            <!-- श्रीमद्भागवत कथा -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_bhagwat" value="22000" data-name="श्रीमद्भागवत कथा (7-दिवसीय संपूर्ण ज्ञान यज्ञ)" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -753,7 +684,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹22,000</span>
             </label>
 
-            <!-- मुंडन / कुआं पूजन -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_mundan" value="5000" data-name="कुआं पूजन / जलवा पूजन / मुंडन संस्कार" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -765,7 +695,6 @@
               <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2">+ ₹5,000</span>
             </label>
 
-            <!-- जन्मदिन / गृह प्रवेश -->
             <label class="flex items-center justify-between p-3.5 bg-black/40 border border-white/[0.06] rounded-2xl cursor-pointer hover:border-blue-500/50 transition has-[:checked]:border-[#0071e3] has-[:checked]:bg-[#0071e3]/10">
               <div class="flex items-start gap-3">
                 <input type="checkbox" id="prog_birthday" value="4000" data-name="जन्मदिन उत्सव / गृह प्रवेश पूजा" onchange="calcNetTotal()" class="w-4 h-4 mt-0.5 rounded text-[#0071e3] bg-black border-white/20 shrink-0">
@@ -814,7 +743,6 @@
                 <span class="text-xs sm:text-sm font-bold text-[#2997ff] shrink-0 ml-2" id="ledFrameTotalText">+ ₹500</span>
               </div>
 
-              <!-- Counter -->
               <div id="ledFrameQtyBox" class="hidden mt-3 pt-3 border-t border-white/[0.08] flex items-center justify-between text-xs">
                 <span class="apple-subtext font-medium" data-i18n="g1QtyLabel">फ्रेम संख्या चुनें (Quantity):</span>
                 <div class="flex items-center gap-2 bg-[#0a0f1d] px-2 py-1 rounded-xl border border-white/[0.12]">
@@ -938,7 +866,7 @@
                 <h2 class="text-sm sm:text-base font-bold text-amber-400 flex items-center gap-2 heading-font">
                   <span data-i18n="termsTitle">5. आवश्यक नियम, भुगतान शर्तें एवं कानूनी क्षेत्राधिकार</span>
                 </h2>
-                <p class="text-[11px] apple-subtext mt-0.5">भुगतान नियम, डेटा सुरक्षा व अलीगढ़ न्यायालय अधिकार</p>
+                <p class="text-[11px] apple-subtext mt-0.5" data-i18n="termsSub">भुगतान नियम, डेटा सुरक्षा व अलीगढ़ न्यायालय अधिकार</p>
               </div>
             </div>
             <div class="flex items-center gap-2.5 shrink-0 ml-2">
@@ -988,8 +916,8 @@
             </div>
 
             <div class="grid grid-cols-2 gap-1.5 p-1 bg-[#0a0f1d] rounded-xl border border-white/[0.08] text-xs font-bold text-center">
-              <button type="button" onclick="selectPaymentSlab(75)" id="slabBtn75" class="py-2 rounded-lg bg-[#0071e3] text-white transition">75% एडवांस</button>
-              <button type="button" onclick="selectPaymentSlab(100)" id="slabBtn100" class="py-2 rounded-lg text-slate-400 hover:text-white transition">100% फुल</button>
+              <button type="button" onclick="selectPaymentSlab(75)" id="slabBtn75" class="py-2 rounded-lg bg-[#0071e3] text-white transition" data-i18n="slab75Btn">75% एडवांस</button>
+              <button type="button" onclick="selectPaymentSlab(100)" id="slabBtn100" class="py-2 rounded-lg text-slate-400 hover:text-white transition" data-i18n="slab100Btn">100% फुल</button>
             </div>
 
             <div class="pt-2 border-t border-white/[0.06] flex items-center justify-between text-xs">
@@ -1028,7 +956,7 @@
             </div>
           </div>
 
-          <!-- SHARP SQUARE QR CODE CONTAINER (NO EXTRA UPI ID TEXT) -->
+          <!-- SHARP SQUARE QR CODE CONTAINER -->
           <div class="p-4 bg-black/50 border border-white/[0.08] text-center space-y-2">
             <span class="apple-subtext text-[11px] block font-semibold" data-i18n="qrScanTitle">टोकन एडवांस हेतु QR स्कैन करें</span>
             
@@ -1176,12 +1104,12 @@
     <div class="relative w-full max-w-3xl bg-white text-slate-900 rounded-3xl shadow-2xl p-6 sm:p-10 my-8 overflow-hidden" id="printableInvoiceModal">
       
       <div class="no-print flex items-center justify-between pb-6 mb-6 border-b border-slate-200">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full" data-i18n="invBadge">
           Official Media Invoice
         </span>
         <div class="flex items-center gap-2">
           <button onclick="window.print()" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm transition">
-            <i class="fa-solid fa-print text-xs"></i> <span>प्रिंट / PDF सेव करें</span>
+            <i class="fa-solid fa-print text-xs"></i> <span data-i18n="invPrintBtn">प्रिंट / PDF सेव करें</span>
           </button>
           <button onclick="closeCleanInvoiceModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
             <i class="fa-solid fa-xmark text-sm"></i>
@@ -1202,27 +1130,27 @@
         <div class="text-left sm:text-right space-y-1">
           <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight uppercase heading-font">INVOICE</h1>
           <div class="text-xs text-slate-600">
-            <span class="font-bold text-slate-800">Invoice No:</span> <span id="invNumber" class="font-mono">#CA-2026-001</span>
+            <span class="font-bold text-slate-800" data-i18n="invNumberLabel">Invoice No:</span> <span id="invNumber" class="font-mono">#CA-2026-001</span>
           </div>
           <div class="text-xs text-slate-600">
-            <span class="font-bold text-slate-800">Date:</span> <span id="invDateIssued">11 Oct 2026</span>
+            <span class="font-bold text-slate-800" data-i18n="invDateLabel">Date:</span> <span id="invDateIssued">11 Oct 2026</span>
           </div>
           <div class="text-xs text-slate-600">
-            <span class="font-bold text-slate-800">Event Date:</span> <span id="invEventDate" class="font-semibold text-blue-600">--</span>
+            <span class="font-bold text-slate-800" data-i18n="invEventDateLabel">Event Date:</span> <span id="invEventDate" class="font-semibold text-blue-600">--</span>
           </div>
         </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 py-6 border-b border-slate-200 text-xs">
         <div>
-          <span class="font-bold uppercase tracking-wider text-slate-400 block mb-1">BILLED TO:</span>
+          <span class="font-bold uppercase tracking-wider text-slate-400 block mb-1" data-i18n="invBilledTo">BILLED TO:</span>
           <div class="text-base font-bold text-slate-900" id="invClientName">श्रीमान / श्रीमती</div>
           <div class="text-slate-600 mt-0.5" id="invClientPhone">फ़ोन: --</div>
           <div class="text-slate-600" id="invClientCity">स्थान: --</div>
         </div>
 
         <div>
-          <span class="font-bold uppercase tracking-wider text-slate-400 block mb-1">EVENT VENUE:</span>
+          <span class="font-bold uppercase tracking-wider text-slate-400 block mb-1" data-i18n="invVenueTitle">EVENT VENUE:</span>
           <div class="text-slate-700 font-medium" id="invVenueAddress">स्थल पता: --</div>
           <div class="text-slate-600 mt-0.5" id="invTravelStatus">वाहन व्यवस्था: --</div>
         </div>
@@ -1233,8 +1161,8 @@
           <thead>
             <tr class="border-b-2 border-slate-200 text-slate-400 font-bold uppercase tracking-wider">
               <th class="pb-3 w-12">#</th>
-              <th class="pb-3">विवरण / सेवा (Description)</th>
-              <th class="pb-3 text-right w-28">रकम (Amount)</th>
+              <th class="pb-3" data-i18n="invTableDesc">विवरण / सेवा (Description)</th>
+              <th class="pb-3 text-right w-28" data-i18n="invTableAmount">रकम (Amount)</th>
             </tr>
           </thead>
           <tbody id="invItemsTableBody" class="divide-y divide-slate-100 text-slate-800">
@@ -1245,24 +1173,24 @@
       <div class="pt-4 border-t-2 border-slate-200 flex justify-end">
         <div class="w-full sm:w-72 space-y-2 text-xs">
           <div class="flex justify-between text-slate-600">
-            <span>Subtotal:</span>
+            <span data-i18n="invSubtotalLabel">Subtotal:</span>
             <span class="font-bold text-slate-900" id="invSubtotal">₹0</span>
           </div>
           <div class="flex justify-between text-slate-600">
-            <span>Advance Clearance Selected:</span>
+            <span data-i18n="invAdvanceSelectedLabel">Advance Selected:</span>
             <span class="font-bold text-blue-600" id="invSlabSelected">75%</span>
           </div>
           <div class="flex justify-between pt-2 border-t border-slate-200 text-sm font-black text-slate-900 heading-font">
-            <span>TOTAL ESTIMATE:</span>
+            <span data-i18n="invTotalLabel">TOTAL ESTIMATE:</span>
             <span class="text-base font-black text-slate-950" id="invTotalAmount">₹0</span>
           </div>
           <div class="p-3 bg-blue-50/80 rounded-xl border border-blue-100 space-y-1">
             <div class="flex justify-between text-xs text-blue-900 font-bold">
-              <span>Advance Payable:</span>
+              <span data-i18n="invAdvancePayableLabel">Advance Payable:</span>
               <span id="invAdvanceDue">₹0</span>
             </div>
             <div class="flex justify-between text-[11px] text-slate-600">
-              <span>Balance Due on Event:</span>
+              <span data-i18n="invBalanceDueLabel">Balance Due on Event:</span>
               <span id="invBalanceDue" class="font-semibold text-slate-800">₹0</span>
             </div>
           </div>
@@ -1270,8 +1198,8 @@
       </div>
 
       <div class="mt-8 pt-6 border-t border-slate-200 text-[10px] text-slate-500 space-y-1.5 leading-relaxed">
-        <p><strong>नियम:</strong> 1. इवेंट के दिन 75% क्लियरेंस आवश्यक है। 2. 100% भुगतान के बाद ही 4K डेटा व पेनड्राइव हैंडओवर किया जाएगा। 3. 7 दिन के भीतर शेष भुगतान न होने पर डेटा बैकअप की जवाबदेही नहीं होगी।</p>
-        <p><strong>कानूनी क्षेत्राधिकार:</strong> समस्त कानूनी व न्यायिक मामलों का क्षेत्राधिकार केवल <strong>जिला न्यायालय, अलीगढ़ (उत्तर प्रदेश)</strong> मान्य होगा।</p>
+        <p data-i18n="invTermsNote"><strong>नियम:</strong> 1. इवेंट के दिन 75% क्लियरेंस आवश्यक है। 2. 100% भुगतान के बाद ही 4K डेटा व पेनड्राइव हैंडओवर किया जाएगा। 3. 7 दिन के भीतर शेष भुगतान न होने पर डेटा बैकअप की जवाबदेही नहीं होगी।</p>
+        <p data-i18n="invJurisdictionNote"><strong>कानूनी क्षेत्राधिकार:</strong> समस्त कानूनी व न्यायिक मामलों का क्षेत्राधिकार केवल <strong>जिला न्यायालय, अलीगढ़ (उत्तर प्रदेश)</strong> मान्य होगा।</p>
       </div>
 
     </div>
@@ -1279,7 +1207,7 @@
 
   <!-- ================= 11. JAVASCRIPT ENGINE ================= -->
   <script>
-    // 1. Photobook 26-Sheet Engine (pg1alb.jpg to pg26alb.jpg)
+    // 1. Photobook 26-Sheet Engine
     let currentAlbumSheet = 1;
     const totalAlbumSheets = 26;
 
@@ -1290,7 +1218,9 @@
       for (let i = 1; i <= totalAlbumSheets; i++) {
         const opt = document.createElement('option');
         opt.value = i;
-        opt.innerText = i === 1 ? 'शीट 1 (मास्टर कवर)' : `शीट ${i} (12×36)`;
+        opt.innerText = currentLang === 'hi' 
+          ? (i === 1 ? 'शीट 1 (मास्टर कवर)' : `शीट ${i} (12×36)`)
+          : (i === 1 ? 'Sheet 1 (Cover)' : `Sheet ${i} (12×36)`);
         select.appendChild(opt);
       }
     }
@@ -1301,20 +1231,10 @@
       currentAlbumSheet = sheetNum;
 
       const img = document.getElementById('currentAlbumSheetImg');
-      const badge = document.getElementById('sheetNumberBadge');
-      const counter = document.getElementById('sheetQuickCounter');
       const select = document.getElementById('albumSheetSelect');
 
       if (img) {
         img.src = `pg${sheetNum}alb.jpg`;
-      }
-      if (badge) {
-        badge.innerText = sheetNum === 1 
-          ? 'शीट 1 (मास्टर कवर)' 
-          : `शीट ${sheetNum} / 26`;
-      }
-      if (counter) {
-        counter.innerText = `${sheetNum} / ${totalAlbumSheets}`;
       }
       if (select) {
         select.value = sheetNum;
@@ -1357,7 +1277,7 @@
       }
     }
 
-    // 2. Pure Hero Visual Carousel (hero1.jpg to hero8.jpg)
+    // 2. Pure Hero Visual Carousel with Touch Swipe
     let currentHeroIndex = 0;
     const heroSlides = document.querySelectorAll('.hero-slide');
 
@@ -1373,10 +1293,6 @@
         }
       });
       currentHeroIndex = index;
-      const counter = document.getElementById('heroSlideCounter');
-      if (counter) {
-        counter.innerText = `${index + 1} / ${heroSlides.length}`;
-      }
     }
 
     function nextHeroSlide() {
@@ -1388,6 +1304,33 @@
     }
 
     setInterval(nextHeroSlide, 4500);
+
+    // Hero Touch Swipe Handlers
+    const heroSec = document.getElementById('heroSection');
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    if (heroSec) {
+      heroSec.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      heroSec.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleHeroSwipe();
+      }, { passive: true });
+    }
+
+    function handleHeroSwipe() {
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) {
+          nextHeroSlide(); // Swiped left -> next
+        } else {
+          prevHeroSlide(); // Swiped right -> prev
+        }
+      }
+    }
 
     // 3. Accordion Drawer Toggle for Calculator Sections
     function toggleAccordion(secId) {
@@ -1416,15 +1359,27 @@
       }
     }
 
-    // 5. Language Dictionary (HI / EN)
+    // 5. Complete Comprehensive Bilingual Dictionary (100% Hindi <-> English)
     const i18nData = {
       hi: {
         navSubtitle: "Studios & Broadcast",
-        printingPortal: "प्रिंटिंग सेवा",
         calcBtn: "कैलकुलेटर",
+        langLabel: "भाषा",
+        themeLabel: "थीम",
+        latestProjectTitle: "लेटेस्ट प्रोजेक्ट",
+        zoomText: "ज़ूम",
+        clickToClose: "कहीं भी क्लिक करके बंद करें",
+        albumModalTitle: "एल्बम खूबियाँ व स्पेसिफिकेशन",
+        albumSpec1Title: "25+1 मास्टर शीट स्ट्रक्चर",
+        albumSpec1Desc: "25 अंदरूनी 12×36 इंच स्प्रेड शीट्स + 1 मास्टर कवर शीट (कुल 26 पैनोरमिक शीट्स)।",
+        albumSpec2Title: "180° सीमलेस ले-फ्लैट बाइंडिंग",
+        albumSpec2Desc: "बीच के जोड़ पर कोई कटिंग नहीं, पन्ना पूरा सीधा 180 डिग्री खुलता है।",
+        albumSpec3Title: "वाटरप्रूफ व नॉन-टीयर लैमिनेशन",
+        albumSpec3Desc: "कैनवेरा एचडी लस्टर पेपर, पानी व फिंगरप्रिंट सुरक्षित, 50 साल कलर लाइफ।",
+        gotItBtn: "समझ गया",
         printDivisionTag: "Cool Art Sister Division",
         printTitle: "प्रिंटिंग प्रेस एवं कम्पलीट एडवरटाइजिंग सॉल्यूशंस",
-        printDesc: "शादी कार्ड (निमंत्रण पत्र), फ्लैक्स बोर्ड, विनाइल प्रिंटिंग, पम्पलेट, बिल बुक, कैलेंडर व विजिटिंग कार्ड की प्रिंटिंग।",
+        printDesc: "शादी कार्ड (निमंत्रण पत्र), फ्लैक्स बोर्ड, विनाइल प्रिंटिंग, पम्पलेट, बिल बुक, कैलेंडर व विजिटिंग कार्ड की थोक व फुटकर हाई-स्पीड प्रिंटिंग।",
         printCatalogBtn: "प्रिंटिंग कैटलॉग व रेट देखें",
         section1Title: "1. वैवाहिक रस्में (शादी पूर्व व मुख्य प्रोग्राम)",
         section1Sub: "जो-जो रस्में आयोजित हैं, केवल उन्हें अलग-अलग टिक करें",
@@ -1481,6 +1436,7 @@
         venueLabel: "प्रोग्राम स्थल का पता *",
         landmarkLabel: "स्थल तक का रास्ता व लैंडमार्क *",
         termsTitle: "5. आवश्यक नियम, भुगतान शर्तें एवं कानूनी क्षेत्राधिकार",
+        termsSub: "भुगतान नियम, डेटा सुरक्षा व अलीगढ़ न्यायालय अधिकार",
         mandatoryTag: "अनिवार्य नियम",
         term1: "1. इवेंट के दिन 75% क्लियरेंस अनिवार्य: कार्यक्रम की तारीख (या उससे एक दिन पूर्व) कुल बिल का 75% भुगतान जमा होना अनिवार्य है, उसके बाद ही कैमरा क्रू रवाना होगा।",
         term2: "2. 100% पेमेंट पर ही डेटा डिलीवरी: हमारे सभी पैकेजेस भारी डिस्काउंटेड हैं, अतः ओरिजिनल RAW फाइल्स, 4K पेनड्राइव या एल्बम 100% फाइनल पेमेंट क्लियर होने के बाद ही हैंडओवर की जाएगी।",
@@ -1490,6 +1446,8 @@
         totalEstimateHeading: "कुल अनुमानित बजट",
         finalAmountLabel: "फाइनल एस्टीमेट राशि",
         slabHeader: "पेमेंट स्टेज चयन:",
+        slab75Btn: "75% एडवांस",
+        slab100Btn: "100% फुल",
         advancePayable: "देय एडवांस:",
         balanceDue: "बाकी बकाया:",
         clientNameLabel: "आयोजक / क्लाइंट का नाम *",
@@ -1505,18 +1463,46 @@
         mapSub: "गाँव नहल, अतरौली (अलीगढ़) — बुकिंग चर्चा व एल्बम सैंपल देखने हेतु सादर आमंत्रित हैं।",
         mapNavBtn: "गूगल मैप्स पर रास्ता देखें (Navigate)",
         addressTitle: "सटीक पता (Official Address)",
-        fullAddress: "COOL ART™ Studios & Printing Press, ग्राम नहल, तहसील अतरौली, जिला अलीगढ़ (उत्तर प्रदेश) - 202280"
+        fullAddress: "COOL ART™ Studios & Printing Press, ग्राम नहल, तहसील अतरौली, जिला अलीगढ़ (उत्तर प्रदेश) - 202280",
+        invBadge: "Official Media Invoice",
+        invPrintBtn: "प्रिंट / PDF सेव करें",
+        invNumberLabel: "Invoice No:",
+        invDateLabel: "Date:",
+        invEventDateLabel: "Event Date:",
+        invBilledTo: "BILLED TO:",
+        invVenueTitle: "EVENT VENUE:",
+        invTableDesc: "विवरण / सेवा (Description)",
+        invTableAmount: "रकम (Amount)",
+        invSubtotalLabel: "Subtotal:",
+        invAdvanceSelectedLabel: "Advance Selected:",
+        invTotalLabel: "TOTAL ESTIMATE:",
+        invAdvancePayableLabel: "Advance Payable:",
+        invBalanceDueLabel: "Balance Due on Event:",
+        invTermsNote: "नियम: 1. इवेंट के दिन 75% क्लियरेंस आवश्यक है। 2. 100% भुगतान के बाद ही 4K डेटा व पेनड्राइव हैंडओवर किया जाएगा। 3. 7 दिन के भीतर शेष भुगतान न होने पर डेटा बैकअप की जवाबदेही नहीं होगी।",
+        invJurisdictionNote: "कानूनी क्षेत्राधिकार: समस्त कानूनी व न्यायिक मामलों का क्षेत्राधिकार केवल जिला न्यायालय, अलीगढ़ (उत्तर प्रदेश) मान्य होगा।"
       },
       en: {
         navSubtitle: "Studios & Broadcast",
-        printingPortal: "Printing Portal",
         calcBtn: "Calculator",
+        langLabel: "Language",
+        themeLabel: "Theme",
+        latestProjectTitle: "LATEST PROJECT",
+        zoomText: "Zoom",
+        clickToClose: "Click anywhere to close",
+        albumModalTitle: "Photobook Specs & Features",
+        albumSpec1Title: "25+1 Master Sheet Structure",
+        albumSpec1Desc: "25 inner 12×36 inch panoramic spread sheets + 1 master cover sheet (26 sheets total).",
+        albumSpec2Title: "180° Seamless Layflat Binding",
+        albumSpec2Desc: "No center cuts, seamless flat 180-degree spread without image splitting.",
+        albumSpec3Title: "Waterproof & Non-Tear Lamination",
+        albumSpec3Desc: "Canvera HD Luster paper, fingerprint-resistant, 50-year color fidelity.",
+        gotItBtn: "Got it",
         printDivisionTag: "Cool Art Sister Division",
         printTitle: "Printing Press & Complete Advertising Solutions",
         printDesc: "Wedding Invitation Cards, Flex Banners, Vinyl Printing, Pamphlets, Bill Books & Stationeries.",
         printCatalogBtn: "Explore Printing Portal",
         section1Title: "1. Wedding Ceremonies & Functions",
-        section1Sub: "Check only the ceremonies taking place at your event",
+        section1Sub: "Select the ceremonies taking place at your event",
         p1Title: "Pre-Wedding Roka / Sagun Ceremony",
         p1Sub: "Match fixing ceremony portraiture & family shoots",
         p2Title: "Ring Ceremony & Engagement",
@@ -1570,6 +1556,7 @@
         venueLabel: "Event Venue Address *",
         landmarkLabel: "Route & Landmark *",
         termsTitle: "5. Mandatory Terms, Payment Rules & Jurisdiction",
+        termsSub: "Payment rules, data security & court jurisdiction",
         mandatoryTag: "Strict Policy",
         term1: "1. 75% Clearance Mandatory on Event Date: Camera crew dispatches only after 75% of total estimate is settled.",
         term2: "2. 100% Payment Mandatory for Deliverables: 4K raw footage, mixing pendrives and albums are handed over only after 100% final clearance.",
@@ -1579,6 +1566,8 @@
         totalEstimateHeading: "Estimated Budget",
         finalAmountLabel: "Final Estimate Total",
         slabHeader: "Select Payment Clearance:",
+        slab75Btn: "75% Advance",
+        slab100Btn: "100% Full",
         advancePayable: "Payable Advance:",
         balanceDue: "Balance Due:",
         clientNameLabel: "Client Name *",
@@ -1594,7 +1583,23 @@
         mapSub: "Village Nahal, Atrauli, Aligarh (UP) — You are cordially invited for album demo & booking discussions.",
         mapNavBtn: "Open GPS Navigation",
         addressTitle: "Official Studio Address",
-        fullAddress: "COOL ART™ Studios & Printing Press, Village Nahal, Atrauli, Aligarh, UP - 202280"
+        fullAddress: "COOL ART™ Studios & Printing Press, Village Nahal, Atrauli, Aligarh, UP - 202280",
+        invBadge: "Official Media Invoice",
+        invPrintBtn: "Print / Save PDF",
+        invNumberLabel: "Invoice No:",
+        invDateLabel: "Date:",
+        invEventDateLabel: "Event Date:",
+        invBilledTo: "BILLED TO:",
+        invVenueTitle: "EVENT VENUE:",
+        invTableDesc: "Description / Service",
+        invTableAmount: "Amount",
+        invSubtotalLabel: "Subtotal:",
+        invAdvanceSelectedLabel: "Advance Selected:",
+        invTotalLabel: "TOTAL ESTIMATE:",
+        invAdvancePayableLabel: "Advance Payable:",
+        invBalanceDueLabel: "Balance Due on Event:",
+        invTermsNote: "Terms: 1. 75% clearance required on event day. 2. 4K footage & pendrive delivered only after 100% final clearance. 3. Backup not guaranteed if remaining balance is unpaid after 7 days.",
+        invJurisdictionNote: "Legal Jurisdiction: All legal proceedings strictly subject to District Court, Aligarh (UP) jurisdiction only."
       }
     };
 
@@ -1611,6 +1616,23 @@
           el.innerHTML = i18nData[lang][key];
         }
       });
+
+      // Update placeholders
+      if (lang === 'en') {
+        document.getElementById('custName').placeholder = "Enter your full name";
+        document.getElementById('custCity').placeholder = "Nahal / Atrauli / City";
+        document.getElementById('custPhone').placeholder = "10-digit phone number";
+        document.getElementById('venueAddress').placeholder = "Village / Banquet / Venue Name";
+        document.getElementById('venueLandmark').placeholder = "Main road / Landmark / School";
+      } else {
+        document.getElementById('custName').placeholder = "अपना नाम दर्ज करें";
+        document.getElementById('custCity').placeholder = "नहल / अतरौली";
+        document.getElementById('custPhone').placeholder = "10 अंकों का फोन नंबर";
+        document.getElementById('venueAddress').placeholder = "गाँव / मैरिज होम का नाम";
+        document.getElementById('venueLandmark').placeholder = "मेन बस स्टैंड, नहर पुलिया या स्कूल";
+      }
+
+      initAlbumSheetsDropdown();
       calcNetTotal();
     }
 
@@ -1641,7 +1663,8 @@
     function updateLedQtyFromInput() {
       const qtyInput = document.getElementById('ledFrameQty');
       let val = parseInt(qtyInput.value) || 1;
-      qtyInput.value = Math.max(1, Math.min(100, val));
+      val = Math.max(1, Math.min(100, val));
+      qtyInput.value = val;
       updateLedFramePrice();
     }
     function updateLedFramePrice() {
@@ -1672,7 +1695,9 @@
       selectedSlabPercent = percent;
       document.getElementById('slabBtn75').className = percent === 75 ? "py-2 rounded-lg bg-[#0071e3] text-white transition" : "py-2 rounded-lg text-slate-400 hover:text-white transition";
       document.getElementById('slabBtn100').className = percent === 100 ? "py-2 rounded-lg bg-[#0071e3] text-white transition" : "py-2 rounded-lg text-slate-400 hover:text-white transition";
-      document.getElementById('slabPercentLabel').innerText = percent === 75 ? (currentLang === 'hi' ? "75% एडवांस क्लियरेंस" : "75% Advance Clearance") : (currentLang === 'hi' ? "100% फुल पेमेंट" : "100% Full Payment");
+      document.getElementById('slabPercentLabel').innerText = percent === 75 
+        ? (currentLang === 'hi' ? "75% एडवांस क्लियरेंस" : "75% Advance Clearance") 
+        : (currentLang === 'hi' ? "100% फुल पेमेंट" : "100% Full Payment");
       calcNetTotal();
     }
 
@@ -1732,11 +1757,11 @@
 
     // 11. WhatsApp Dispatch
     function dispatchToWhatsApp() {
-      const clientName = document.getElementById('custName').value.trim() || 'क्लाइंट';
+      const clientName = document.getElementById('custName').value.trim() || (currentLang === 'hi' ? 'क्लाइंट' : 'Client');
       const eventDate = document.getElementById('custDate').value || 'TBD';
-      const eventCity = document.getElementById('custCity').value.trim() || 'नहल / अतरौली';
+      const eventCity = document.getElementById('custCity').value.trim() || 'Nahal / Atrauli';
       const clientPhone = document.getElementById('custPhone').value.trim() || 'NA';
-      const venueAddress = document.getElementById('venueAddress').value.trim() || 'स्थानीय स्थल';
+      const venueAddress = document.getElementById('venueAddress').value.trim() || 'Venue Location';
 
       let itemsText = "";
       currentSelectedItems.forEach((item, idx) => {
@@ -1749,7 +1774,7 @@
       const waMessage = 
 `🎬 *COOL ART STUDIOS - BOOKING ESTIMATE*
 ━━━━━━━━━━━━━━━━━━━━━━
-👤 *आयोजक/Client:* ${clientName}
+👤 *Client:* ${clientName}
 📞 *Phone:* ${clientPhone}
 📅 *Event Date:* ${eventDate}
 📍 *Location:* ${eventCity} (${venueAddress})
@@ -1768,18 +1793,20 @@
 
     // 12. Digital Invoice Modal
     function openCleanInvoiceModal() {
-      const clientName = document.getElementById('custName').value.trim() || 'Honorable Client';
+      const clientName = document.getElementById('custName').value.trim() || (currentLang === 'hi' ? 'माननीय क्लाइंट' : 'Valued Client');
       const eventDate = document.getElementById('custDate').value || 'To be decided';
       const eventCity = document.getElementById('custCity').value.trim() || 'Nahal / Atrauli (Aligarh)';
       const clientPhone = document.getElementById('custPhone').value.trim() || 'Not Provided';
       const venueAddress = document.getElementById('venueAddress').value.trim() || 'Main Event Location';
 
       document.getElementById('invClientName').innerText = clientName;
-      document.getElementById('invClientPhone').innerText = "Phone: " + clientPhone;
-      document.getElementById('invClientCity').innerText = "Location: " + eventCity;
+      document.getElementById('invClientPhone').innerText = (currentLang === 'hi' ? "फ़ोन: " : "Phone: ") + clientPhone;
+      document.getElementById('invClientCity').innerText = (currentLang === 'hi' ? "स्थान: " : "Location: ") + eventCity;
       document.getElementById('invEventDate').innerText = eventDate;
-      document.getElementById('invVenueAddress').innerText = "Venue: " + venueAddress;
-      document.getElementById('invTravelStatus').innerText = document.getElementById('travelFareCheckbox').checked ? "Studio Conveyance Included" : "Self Party Vehicle";
+      document.getElementById('invVenueAddress').innerText = (currentLang === 'hi' ? "स्थल पता: " : "Venue: ") + venueAddress;
+      document.getElementById('invTravelStatus').innerText = document.getElementById('travelFareCheckbox').checked 
+        ? (currentLang === 'hi' ? "स्टूडियो वाहन (किराया शामिल)" : "Studio Vehicle Included") 
+        : (currentLang === 'hi' ? "पार्टी वाहन व्यवस्था" : "Party Vehicle Arranged");
       document.getElementById('invNumber').innerText = `#CA-2026-${Math.floor(1000 + Math.random() * 9000)}`;
 
       document.getElementById('invItemsTableBody').innerHTML = currentSelectedItems.map((item, idx) => `
